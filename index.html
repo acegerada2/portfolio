@@ -4,142 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ace Gerada — Virtual Executive Assistant & B2B Lead Generation</title>
+<meta name="description" content="Ace Gerada — Virtual Executive Assistant & B2B Lead Generation specialist. 9+ years supporting C-level leaders. Rates from $10–$15/hr depending on scope.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b1020; --bg2:#0f1630; --card:#161f3d; --card2:#1b2547;
-    --ink:#e6e9f5; --muted:#9aa3c7; --accent:#38bdf8; --accent2:#22d3ee;
-    --gold:#f6c453; --line:rgba(148,163,209,.16); --good:#34d399;
-    --shadow:0 18px 50px rgba(2,6,23,.55);
+    --bg:#faf6ef; --bg2:#fffdf8; --card:#ffffff; --card2:#f4ecdf;
+    --ink:#2b2118; --muted:#7d6c58; --accent:#c2603f; --accent2:#d98e5f;
+    --gold:#d9a441; --sage:#5f8f6f; --good:#4f8a63;
+    --line:rgba(43,33,24,.12); --line2:rgba(43,33,24,.06);
+    --shadow:0 18px 44px rgba(93,66,38,.14);
+    --shadow2:0 10px 26px rgba(93,66,38,.10);
+    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --sans:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
   }
   [data-theme="light"]{
-    --bg:#f4f6fb; --bg2:#ffffff; --card:#ffffff; --card2:#eef2fb;
-    --ink:#0d1530; --muted:#4c5a85; --line:rgba(13,21,48,.12); --shadow:0 18px 50px rgba(13,21,48,.12);
+    --bg:#faf6ef; --bg2:#fffdf8; --card:#ffffff; --card2:#f4ecdf;
+    --ink:#2b2118; --muted:#7d6c58; --accent:#c2603f; --accent2:#d98e5f;
+    --gold:#d9a441; --sage:#5f8f6f; --good:#4f8a63;
+    --line:rgba(43,33,24,.12); --line2:rgba(43,33,24,.06);
+    --shadow:0 18px 44px rgba(93,66,38,.14);
+    --shadow2:0 10px 26px rgba(93,66,38,.10);
+  }
+  [data-theme="dark"]{
+    --bg:#1d1711; --bg2:#241d15; --card:#2a2219; --card2:#332a1f;
+    --ink:#f4ecdf; --muted:#b3a08a; --accent:#e08a5f; --accent2:#f0b27a;
+    --gold:#e5b95c; --sage:#8fbf9f; --good:#7fbf92;
+    --line:rgba(244,236,223,.14); --line2:rgba(244,236,223,.07);
+    --shadow:0 18px 44px rgba(0,0,0,.45);
+    --shadow2:0 10px 26px rgba(0,0,0,.35);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    background:radial-gradient(1200px 600px at 85% -10%, rgba(56,189,248,.14), transparent 55%),
-               radial-gradient(900px 500px at -10% 20%, rgba(34,211,238,.10), transparent 50%),
-               var(--bg);
-    color:var(--ink); line-height:1.6;
+    font-family:var(--sans);
+    background:
+      radial-gradient(1100px 520px at 88% -8%, rgba(217,158,95,.16), transparent 55%),
+      radial-gradient(900px 480px at -8% 18%, rgba(95,143,111,.10), transparent 50%),
+      var(--bg);
+    color:var(--ink); line-height:1.62;
+    -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  /* subtle paper grain */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
   a{color:var(--accent);text-decoration:none}
   button{font-family:inherit}
 
   /* ---------- Header ---------- */
   header.site{
     position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(12px);
-    background:color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter:blur(14px);
+    background:color-mix(in srgb, var(--bg) 80%, transparent);
     border-bottom:1px solid var(--line);
   }
-  nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-weight:800;letter-spacing:.5px}
+  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.2px;color:var(--ink)}
   .logo .dot{color:var(--accent)}
-  .navlinks{display:flex;gap:22px;align-items:center}
-  .navlinks a{color:var(--muted);font-size:14px;font-weight:600}
+  .navlinks{display:flex;gap:24px;align-items:center}
+  .navlinks a{color:var(--muted);font-size:13.5px;font-weight:600}
   .navlinks a:hover{color:var(--accent)}
-  .navcta{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f!important;
-          padding:8px 16px;border-radius:999px;font-weight:700}
+  .navcta{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff!important;
+          padding:8px 18px;border-radius:999px;font-weight:700;box-shadow:var(--shadow2)}
+  .navcta:hover{transform:translateY(-1px)}
   .themeBtn{background:transparent;border:1px solid var(--line);color:var(--ink);
-            width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:16px}
-  .hamburger{display:none;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:10px;width:38px;height:38px;cursor:pointer}
-  @media(max-width:820px){
-    .navlinks{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;
-      background:var(--bg2);border-bottom:1px solid var(--line);padding:18px;gap:14px}
+            width:36px;height:36px;border-radius:12px;cursor:pointer;font-size:16px;transition:.15s}
+  .themeBtn:hover{border-color:var(--accent)}
+  .hamburger{display:none;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:12px;width:38px;height:38px;cursor:pointer}
+  @media(max-width:860px){
+    .navlinks{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;
+      background:var(--bg2);border-bottom:1px solid var(--line);padding:18px;gap:14px;box-shadow:var(--shadow)}
     .navlinks.open{display:flex}
     .hamburger{display:block}
   }
 
   /* ---------- Hero ---------- */
-  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;padding:90px 0 70px;align-items:center}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;padding:92px 0 74px;align-items:center}
   .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
-    background:color-mix(in srgb, var(--accent) 10%, transparent);color:var(--accent);
-    font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:20px}
+    background:color-mix(in srgb, var(--sage) 10%, transparent);color:var(--sage);
+    font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:22px;letter-spacing:.4px}
   .kicker .pulse{width:8px;height:8px;border-radius:50%;background:var(--good);animation:pulse 1.8s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
-  .hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.12;font-weight:800;letter-spacing:-.5px}
-  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;background-clip:text;color:transparent}
-  .subhead{margin:18px 0 26px;color:var(--muted);font-size:17px;max-width:560px}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,138,99,.5)}70%{box-shadow:0 0 0 8px rgba(79,138,99,0)}100%{box-shadow:0 0 0 0 rgba(79,138,99,0)}}
+  .hero h1{font-family:var(--serif);font-size:clamp(34px,5vw,58px);line-height:1.08;font-weight:600;letter-spacing:-1px}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .subhead{margin:20px 0 28px;color:var(--muted);font-size:17px;max-width:560px}
   .herocta{display:flex;gap:14px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;
-    font-weight:700;font-size:15px;cursor:pointer;border:none;transition:transform .15s, box-shadow .15s}
+    font-weight:700;font-size:14.5px;cursor:pointer;border:none;transition:transform .15s, box-shadow .15s, border-color .15s}
   .btn:hover{transform:translateY(-2px)}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f;box-shadow:0 12px 30px rgba(56,189,248,.35)}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 12px 28px rgba(194,96,63,.35)}
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
   .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .trust{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
-  .trust span{color:var(--muted);font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center}
-  .trust span b{color:var(--accent);font-size:20px}
-  .herocard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;
+  .trust{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap}
+  .trust span{color:var(--muted);font-size:13.5px;font-weight:600;display:flex;gap:8px;align-items:center}
+  .trust span b{font-family:var(--serif);color:var(--accent);font-size:22px;font-weight:700}
+  .herocard{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;
     box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .herocard::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg,transparent 60%,var(--accent),transparent 70%);animation:spin 6s linear infinite;opacity:.35}
+  .herocard::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg,transparent 62%,var(--accent2),transparent 72%);animation:spin 7s linear infinite;opacity:.28}
   @keyframes spin{to{transform:rotate(360deg)}}
-  .herocard .inner{position:relative;background:var(--card);border-radius:16px;padding:24px}
-  .avatar{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04121f;font-weight:800;font-size:22px}
-  .hc-name{font-weight:800;font-size:18px;margin-top:14px}
+  .herocard .inner{position:relative;background:var(--card);border-radius:18px;padding:24px}
+  .avatar{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:var(--serif);font-weight:700;font-size:23px;box-shadow:var(--shadow2)}
+  .hc-name{font-family:var(--serif);font-weight:700;font-size:19px;margin-top:14px}
   .hc-role{color:var(--muted);font-size:13.5px}
   .availability{display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:color-mix(in srgb,var(--good) 12%,transparent);
     color:var(--good);font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px}
   .skillbar{margin-top:20px;display:grid;gap:12px}
   .sb div{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:5px}
-  .sb i{display:block;height:7px;border-radius:99px;background:color-mix(in srgb,var(--accent) 18%,transparent);overflow:hidden}
-  .sb i b{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0;transition:width 1.2s ease}
+  .sb i{display:block;height:7px;border-radius:99px;background:color-mix(in srgb,var(--accent) 16%,transparent);overflow:hidden}
+  .sb i b{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0;transition:width 1.2s cubic-bezier(.22,.61,.36,1)}
 
   section{padding:84px 0}
-  .eyebrow{color:var(--accent);font-weight:800;font-size:13px;letter-spacing:2.5px;text-transform:uppercase}
-  h2.sec{font-size:clamp(26px,3.6vw,40px);font-weight:800;letter-spacing:-.5px;margin:10px 0 14px}
-  .secsub{color:var(--muted);max-width:640px;font-size:16px}
+  .eyebrow{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:2.6px;text-transform:uppercase}
+  h2.sec{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:600;letter-spacing:-.6px;margin:10px 0 14px;line-height:1.12}
+  h2.sec em{font-style:italic;color:var(--accent)}
+  .secsub{color:var(--muted);max-width:660px;font-size:16px}
 
   /* ---------- Stats ---------- */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;transition:transform .2s}
-  .stat:hover{transform:translateY(-4px)}
-  .stat .n{font-size:34px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 20px;text-align:center;transition:transform .2s, box-shadow .2s}
+  .stat:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+  .stat .n{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--accent)}
   .stat .l{color:var(--muted);font-size:13px;font-weight:600;margin-top:6px}
   @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;padding:56px 0 40px}}
 
   /* ---------- Services ---------- */
   .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0}
   .tab{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:10px 18px;
-    border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
-  .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f;border-color:transparent}
+    border-radius:999px;font-weight:700;font-size:13.5px;cursor:pointer;transition:.15s}
+  .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent;box-shadow:var(--shadow2)}
   .tab:hover:not(.active){color:var(--accent);border-color:var(--accent)}
   .service{display:none;grid-template-columns:1.2fr .8fr;gap:26px;background:var(--card);
-    border:1px solid var(--line);border-radius:22px;padding:30px;animation:fadein .35s ease}
+    border:1px solid var(--line);border-radius:24px;padding:32px;animation:fadein .35s ease;box-shadow:var(--shadow2)}
   .service.active{display:grid}
   @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .service h3{font-size:22px;font-weight:800;margin-bottom:10px}
+  .service h3{font-family:var(--serif);font-size:24px;font-weight:700;margin-bottom:10px}
   .service .desc{color:var(--muted);margin-bottom:16px}
   .service .dlv{display:grid;gap:8px;margin-bottom:18px}
   .service .dlv li{list-style:none;display:flex;gap:10px;font-size:14.5px}
   .service .dlv li::before{content:"✓";color:var(--good);font-weight:800}
   .service .for{font-size:13.5px;color:var(--muted);background:color-mix(in srgb,var(--accent) 8%,transparent);
-    border:1px dashed color-mix(in srgb,var(--accent) 35%,transparent);border-radius:12px;padding:12px 14px}
+    border:1px dashed color-mix(in srgb,var(--accent) 35%,transparent);border-radius:14px;padding:12px 14px}
   .service .for b{color:var(--accent)}
   .srvicon{font-size:46px;margin-bottom:8px}
   @media(max-width:820px){.service,.service.active{grid-template-columns:1fr}}
 
   /* ---------- Process ---------- */
   .process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
-  .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 20px}
-  .step .num{position:absolute;top:16px;right:18px;font-weight:800;font-size:34px;color:color-mix(in srgb,var(--accent) 22%,transparent)}
-  .step h4{font-size:16px;font-weight:800;margin:12px 0 6px}
+  .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 20px;transition:transform .2s}
+  .step:hover{transform:translateY(-4px)}
+  .step .num{position:absolute;top:14px;right:18px;font-family:var(--serif);font-weight:700;font-size:38px;color:color-mix(in srgb,var(--accent) 24%,transparent)}
+  .step h4{font-family:var(--serif);font-size:17px;font-weight:700;margin:12px 0 6px}
   .step p{color:var(--muted);font-size:13.8px}
   @media(max-width:820px){.process{grid-template-columns:1fr 1fr}}
+
+  /* ---------- Case studies (Pinterest masonry) ---------- */
+  .masonry{columns:3;column-gap:18px;margin-top:34px}
+  .pin{break-inside:avoid;margin-bottom:18px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;overflow:hidden;transition:transform .2s, box-shadow .2s;box-shadow:var(--shadow2)}
+  .pin:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .pin .art{height:var(--h,150px);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden}
+  .pin .art .big{font-family:var(--serif);font-weight:700;font-size:44px;color:#fff;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.18)}
+  .pin .art .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.85);color:#3d2f22;
+    font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .pin .body{padding:16px 18px 18px}
+  .pin .body h4{font-family:var(--serif);font-size:17.5px;font-weight:700;margin-bottom:4px}
+  .pin .body p{color:var(--muted);font-size:13.5px}
+  .pin .metric{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12.5px;font-weight:800;
+    color:var(--good);background:color-mix(in srgb,var(--good) 10%,transparent);padding:5px 12px;border-radius:999px}
+  .art.a1{background:linear-gradient(135deg,#c2603f,#d98e5f)}
+  .art.a2{background:linear-gradient(135deg,#5f8f6f,#8fbf9f)}
+  .art.a3{background:linear-gradient(135deg,#d9a441,#e5b95c)}
+  .art.a4{background:linear-gradient(135deg,#8a6a9e,#b79ac9)}
+  .art.a5{background:linear-gradient(135deg,#4f7d9e,#7fb0cf)}
+  .art.a6{background:linear-gradient(135deg,#a05f4f,#d98e5f)}
+  @media(max-width:900px){.masonry{columns:2}}
+  @media(max-width:560px){.masonry{columns:1}}
 
   /* ---------- Tools ---------- */
   .toolfilters{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
   .tchip{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;
     font-weight:700;font-size:13px;cursor:pointer;transition:.15s}
-  .tchip.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f;border-color:transparent}
+  .tchip.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
   .toolgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:700;
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-weight:700;
     font-size:14px;display:flex;align-items:center;gap:10px;transition:.15s;cursor:default}
   .tool:hover{border-color:var(--accent);transform:translateY(-2px)}
   .tool .ic{width:8px;height:8px;border-radius:50%;background:var(--accent)}
@@ -148,11 +198,11 @@
   /* ---------- Timeline ---------- */
   .timeline{position:relative;margin-top:34px;padding-left:26px;border-left:2px solid var(--line)}
   .titem{position:relative;margin-bottom:22px;padding:20px 22px;background:var(--card);
-    border:1px solid var(--line);border-radius:16px}
+    border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow2)}
   .titem::before{content:"";position:absolute;left:-31px;top:26px;width:12px;height:12px;border-radius:50%;
     background:linear-gradient(135deg,var(--accent),var(--accent2));border:3px solid var(--bg)}
   .titem .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;cursor:pointer}
-  .titem h4{font-size:16px;font-weight:800}
+  .titem h4{font-family:var(--serif);font-size:17px;font-weight:700}
   .titem .when{color:var(--accent);font-size:13px;font-weight:700}
   .titem .role{color:var(--muted);font-size:13.5px;font-weight:600}
   .titem .bullets{max-height:0;overflow:hidden;transition:max-height .35s ease;opacity:0;transition-property:max-height,opacity}
@@ -162,52 +212,59 @@
   .chev{margin-left:auto;transition:transform .25s;color:var(--muted)}
   .titem.open .chev{transform:rotate(180deg)}
 
+  /* ---------- Outcomes ---------- */
+  .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .outcome{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .2s}
+  .outcome:hover{transform:translateY(-4px)}
+  .outcome .quote{font-size:15px;color:var(--ink);font-style:italic}
+  .outcome .meta{margin-top:16px;color:var(--muted);font-size:13px;font-weight:600}
+  .outcome .num2{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--accent);margin-bottom:8px}
+  @media(max-width:820px){.outcomes{grid-template-columns:1fr}}
+
   /* ---------- Pricing ---------- */
-  .plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
-  .pcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
-  .planhead{display:block;font-size:17px;font-weight:800}
+  .pricinggrid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:30px;align-items:start}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow2)}
+  .planhead{font-family:var(--serif);font-size:19px;font-weight:700;display:block}
   .plansub{color:var(--muted);font-size:13.8px;margin:6px 0 18px}
   .opts{display:grid;gap:8px}
   .opts label{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);
-    border-radius:12px;padding:12px 14px;cursor:pointer;font-size:14.5px;font-weight:600;transition:.15s}
+    border-radius:14px;padding:12px 14px;cursor:pointer;font-size:14.5px;font-weight:600;transition:.15s}
   .opts label:hover{border-color:var(--accent)}
   .opts label:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
   .opts input{accent-color:var(--accent);width:17px;height:17px;cursor:pointer}
   .opts b{margin-left:auto;color:var(--accent);font-weight:800}
-  .bunder{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-    margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-  .bunder .servcount{color:var(--muted);font-size:12.5px;font-weight:700}
-  .bunder .btprice{font-size:26px;font-weight:800;margin-top:2px}
-  .bunder .btprice small{font-size:12.5px;color:var(--muted);font-weight:600}
+  .ratebox{margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .ratebox .rl{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .ratebox .rl small{color:var(--muted);font-size:12.5px;font-weight:700}
+  .ratebox .rate{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--accent);line-height:1}
+  .ratebox .rate small{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:600}
+  .scopemeter{margin-top:14px}
+  .scopemeter .sl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+  .scopemeter .track{height:8px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);margin-top:6px;overflow:hidden}
+  .scopemeter .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--sage),var(--gold),var(--accent));transition:width .5s cubic-bezier(.22,.61,.36,1)}
   .plannote{margin-top:12px;color:var(--muted);font-size:12.8px}
   .hb{display:grid;gap:10px}
   .hrow{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;background:var(--bg);
-    border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .hrow.pop{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+    border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:.15s}
+  .hrow:hover{border-color:var(--accent)}
+  .hrow.pop{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);background:color-mix(in srgb,var(--accent) 5%,transparent)}
   .hrow b{font-size:15px;display:block}
   .hrow small{color:var(--muted);font-size:12.5px;font-weight:600}
-  .hrate{font-size:20px;font-weight:800;color:var(--accent);white-space:nowrap}
-  .hrate small{font-size:11.5px;color:var(--muted);font-weight:600}
+  .hrate{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);white-space:nowrap}
+  .hrate small{font-family:var(--sans);font-size:11.5px;color:var(--muted);font-weight:600}
   .hrow .btn{padding:9px 18px;font-size:13.5px}
-  @media(max-width:820px){.plans{grid-template-columns:1fr}.hrow{grid-template-columns:1fr auto}.hrow .btn{grid-column:1/-1;justify-content:center}}
-
-  /* ---------- Outcomes ---------- */
-  .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  .outcome{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
-  .outcome .quote{font-size:15px;color:var(--ink)}
-  .outcome .meta{margin-top:16px;color:var(--muted);font-size:13px;font-weight:600}
-  .outcome .num2{font-size:26px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
-  @media(max-width:820px){.outcomes{grid-template-columns:1fr}}
+  .popbadge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+    color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2));padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  @media(max-width:860px){.pricinggrid{grid-template-columns:1fr}.hrow{grid-template-columns:1fr auto}.hrow .btn{grid-column:1/-1;justify-content:center}}
 
   /* ---------- Contact ---------- */
   .contactbox{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--line);
-    border-radius:26px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
-  .contactbox h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-.5px;margin:8px 0 12px}
+    border-radius:28px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;box-shadow:var(--shadow2)}
+  .contactbox h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.5px;margin:8px 0 12px}
   .contactbox p{color:var(--muted)}
   .contactways{display:grid;gap:12px}
   .cway{display:flex;align-items:center;gap:14px;background:var(--bg);border:1px solid var(--line);
-    padding:16px 18px;border-radius:14px;font-weight:700;transition:.15s}
+    padding:16px 18px;border-radius:16px;font-weight:700;transition:.15s}
   .cway:hover{border-color:var(--accent);transform:translateX(4px)}
   .cway .em{font-size:20px}
   .cway small{display:block;color:var(--muted);font-weight:600}
@@ -217,25 +274,29 @@
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.on{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
 </style>
 </head>
-<body data-theme="dark">
+<body data-theme="light">
 
 <header class="site">
   <nav class="wrap">
     <a class="logo" href="#top">Ace<span class="dot">.</span>Gerada</a>
     <div class="navlinks" id="navlinks">
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#tools">Tools</a>
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#packages">Pricing</a>
       <a href="dashboard.html">📊 Dashboard</a>
       <a href="#contact" class="navcta">Book a Call</a>
     </div>
     <div style="display:flex;gap:10px;align-items:center">
-      <button class="themeBtn" id="themeBtn" title="Toggle theme">☀</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+      <button class="themeBtn" id="themeBtn" title="Toggle theme" aria-label="Toggle light and dark theme">☾</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </div>
   </nav>
 </header>
@@ -243,7 +304,7 @@
 <section id="top" class="hero wrap">
   <div>
     <span class="kicker"><span class="pulse"></span> Available for new clients</span>
-    <h1>Your Remote <em>Executive Assistant</em> &amp; B2B <em>Lead Generation</em> Partner</h1>
+    <h1>Your remote <em>executive assistant</em> &amp; B2B <em>lead generation</em> partner</h1>
     <p class="subhead">
       I help founders, C-suite leaders, and agencies reclaim their time and win more qualified
       meetings — with sharp executive support, precision lead pipelines, and AI-powered automation
@@ -291,7 +352,7 @@
 <section id="services">
   <div class="wrap">
     <div class="eyebrow">Services</div>
-    <h2 class="sec">What I can take off your plate</h2>
+    <h2 class="sec">What I can take <em>off your plate</em></h2>
     <p class="secsub">Pick a service to see exactly what I deliver and who it's built for.</p>
 
     <div class="tabs" id="servicetabs">
@@ -405,7 +466,7 @@
 <section id="process" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Process</div>
-    <h2 class="sec">How working with me looks</h2>
+    <h2 class="sec">How working with me <em>looks</em></h2>
     <div class="process">
       <div class="step reveal"><div class="num">01</div><h4>Discover</h4><p>We map your workflows, ICP, tools, and biggest time leaks.</p></div>
       <div class="step reveal"><div class="num">02</div><h4>Plan</h4><p>You get a clear roadmap of what I'll own, automate, and deliver.</p></div>
@@ -415,10 +476,68 @@
   </div>
 </section>
 
-<section id="tools">
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow">Selected Work</div>
+    <h2 class="sec">Case studies, <em>pinned</em></h2>
+    <p class="secsub">Real engagements with measurable outcomes — the kind of work I'd bring to your business.</p>
+    <div class="masonry">
+      <div class="pin reveal">
+        <div class="art a1" style="--h:170px"><span class="tag">Lead Gen</span><span class="big">01</span></div>
+        <div class="body">
+          <h4>Drumheller Construction</h4>
+          <p>Owned the end-to-end pipeline — ICP research, list building, outreach, and qualification — and built Claude-based systems that automate ICP matching.</p>
+          <span class="metric">▲ Manual research time cut</span>
+        </div>
+      </div>
+      <div class="pin reveal">
+        <div class="art a2" style="--h:130px"><span class="tag">Executive Support</span><span class="big">02</span></div>
+        <div class="body">
+          <h4>AKKO</h4>
+          <p>VP-level inbox, calendar, and CRM administration across HubSpot &amp; ClickUp — turning meeting recordings into structured action items tracked to completion.</p>
+          <span class="metric">✓ Action items tracked to done</span>
+        </div>
+      </div>
+      <div class="pin reveal">
+        <div class="art a3" style="--h:150px"><span class="tag">Operations</span><span class="big">03</span></div>
+        <div class="body">
+          <h4>BrainGainzLC</h4>
+          <p>Redesigned operational procedures end to end, cutting redundant steps and lifting workflow efficiency by 80%.</p>
+          <span class="metric">▲ 80% efficiency gain</span>
+        </div>
+      </div>
+      <div class="pin reveal">
+        <div class="art a4" style="--h:140px"><span class="tag">Data</span><span class="big">04</span></div>
+        <div class="body">
+          <h4>MintLeads</h4>
+          <p>Audited and maintained prospect databases to 95% accuracy and protected sender reputation with blacklist and unsubscribe management.</p>
+          <span class="metric">✓ 95% database accuracy</span>
+        </div>
+      </div>
+      <div class="pin reveal">
+        <div class="art a5" style="--h:160px"><span class="tag">Marketing</span><span class="big">05</span></div>
+        <div class="body">
+          <h4>Portillo Realty Group</h4>
+          <p>Created SOPs and onboarding manuals that sped up team ramp-up, and ran targeted social campaigns that lifted audience engagement 25%.</p>
+          <span class="metric">▲ 25% engagement lift</span>
+        </div>
+      </div>
+      <div class="pin reveal">
+        <div class="art a6" style="--h:120px"><span class="tag">B2B Outreach</span><span class="big">06</span></div>
+        <div class="body">
+          <h4>Extenteam</h4>
+          <p>Executed multi-touch B2B outreach campaigns targeting hospitality decision-makers via LinkedIn Sales Navigator and email automation.</p>
+          <span class="metric">✓ Multi-touch campaigns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Toolbox</div>
-    <h2 class="sec">The stack I work in daily</h2>
+    <h2 class="sec">The stack I work in <em>daily</em></h2>
     <p class="secsub">Filter by category — every tool audited and used on real client work.</p>
     <div class="toolfilters" id="toolfilters">
       <button class="tchip active" data-f="all">All</button>
@@ -458,10 +577,10 @@
   </div>
 </section>
 
-<section id="experience" style="padding-top:0">
+<section id="experience">
   <div class="wrap">
     <div class="eyebrow">Experience</div>
-    <h2 class="sec">Track record since 2017</h2>
+    <h2 class="sec">Track record <em>since 2017</em></h2>
     <p class="secsub">Tap any role to expand the highlights.</p>
     <div class="timeline" id="timeline">
       <div class="titem open">
@@ -530,10 +649,10 @@
   </div>
 </section>
 
-<section id="outcomes">
+<section id="outcomes" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Proof</div>
-    <h2 class="sec">Outcomes, not just activity</h2>
+    <h2 class="sec">Outcomes, <em>not just activity</em></h2>
     <div class="outcomes">
       <div class="outcome reveal">
         <div class="num2">80%</div>
@@ -580,43 +699,49 @@
 <section id="packages">
   <div class="wrap">
     <div class="eyebrow">Pricing</div>
-    <h2 class="sec">Simple, transparent rates</h2>
-    <p class="secsub">Start at <strong>$8 per service</strong> — every additional service you add is just <strong>$8 more</strong> (e.g., Virtual Assistance + Executive Assistance = $16). Prefer committed hours? Bundles run <strong>$10–$15/hr</strong> depending on the service mix.</p>
+    <h2 class="sec">Simple rates, <em>scoped to your work</em></h2>
+    <p class="secsub">Rates run <strong>$10–$15/hr</strong> depending on the scope of work. Build your own mix below — the more scope you hand over, the higher the rate, capped at $15. Prefer a preset? Pick a package.</p>
 
-    <div class="plans">
+    <div class="pricinggrid">
       <div class="pcard">
-        <span class="planhead">🛠 Build your own — pay per service</span>
-        <p class="plansub">Tick any mix of services. Each service is $8; each add-on is exactly $8 more. No lock-in.</p>
+        <span class="planhead">🧮 Build your scope — $10–$15/hr</span>
+        <p class="plansub">Tick the services you need. Rate starts at $10 and scales with scope, capped at $15. No lock-in.</p>
         <div class="opts" id="optlist">
-          <label><input type="checkbox" value="Virtual Assistance" checked><span>Virtual Assistance</span><b>$8</b></label>
-          <label><input type="checkbox" value="Executive Assistance"><span>Executive Assistance</span><b>$8</b></label>
-          <label><input type="checkbox" value="B2B Lead Generation"><span>B2B Lead Generation</span><b>$8</b></label>
-          <label><input type="checkbox" value="CRM &amp; Pipeline Management"><span>CRM &amp; Pipeline Management</span><b>$8</b></label>
-          <label><input type="checkbox" value="AI Workflow Automation"><span>AI Workflow Automation</span><b>$8</b></label>
-          <label><input type="checkbox" value="Email Outreach &amp; Deliverability"><span>Email Outreach &amp; Deliverability</span><b>$8</b></label>
-          <label><input type="checkbox" value="Operations &amp; SOPs"><span>Operations &amp; SOPs</span><b>$8</b></label>
+          <label><input type="checkbox" value="Virtual Assistance" checked><span>Virtual Assistance</span><b>+$0</b></label>
+          <label><input type="checkbox" value="Executive Assistance"><span>Executive Assistance</span><b>+$1</b></label>
+          <label><input type="checkbox" value="B2B Lead Generation"><span>B2B Lead Generation</span><b>+$1</b></label>
+          <label><input type="checkbox" value="CRM &amp; Pipeline Management"><span>CRM &amp; Pipeline Management</span><b>+$1</b></label>
+          <label><input type="checkbox" value="AI Workflow Automation"><span>AI Workflow Automation</span><b>+$1</b></label>
+          <label><input type="checkbox" value="Email Outreach &amp; Deliverability"><span>Email Outreach &amp; Deliverability</span><b>+$1</b></label>
+          <label><input type="checkbox" value="Operations &amp; SOPs"><span>Operations &amp; SOPs</span><b>+$1</b></label>
         </div>
-        <div class="bunder">
-          <div>
-            <small class="servcount" id="servcount">1 service selected</small>
-            <div class="btprice"><span id="btprice">$8</span><small>/month · per service</small></div>
+        <div class="ratebox">
+          <div class="rl">
+            <div>
+              <small id="servcount">1 service · simple scope</small>
+              <div class="rate"><span id="rate">$10</span><small>/hr</small></div>
+            </div>
+            <a class="btn primary" id="buildcta" href="mailto:ace.gerada@gmail.com?subject=I%27d%20like%20a%20scope%20(Virtual%20Assistance)">Request this scope ➜</a>
           </div>
-          <a class="btn primary" id="buildcta" href="mailto:ace.gerada@gmail.com?subject=I%27d%20like%20a%20bundle%20(Virtual%20Assistance)">Request this bundle ➜</a>
+          <div class="scopemeter">
+            <div class="sl"><span>Simple</span><span>Standard</span><span>Complex</span></div>
+            <div class="track"><div class="fill" id="scopefill"></div></div>
+          </div>
         </div>
-        <p class="plannote">⚡ Each new service added = +$8. Prices fixed in USD.</p>
+        <p class="plannote">⚡ Base rate $10/hr · each added service +$1 · capped at $15/hr. Prices fixed in USD.</p>
       </div>
 
       <div class="pcard">
-        <span class="planhead">📅 Committed hours — $10–$15/hr</span>
-        <p class="plansub">Reserved monthly hours with priority. Your rate depends on the services and package you pick.</p>
+        <span class="planhead">📦 Preset packages</span>
+        <p class="plansub">Reserved monthly hours with priority. Your rate depends on the scope you pick.</p>
         <div class="hb">
           <div class="hrow">
-            <div><b>Essentials</b><small>Virtual or Executive Assistance</small></div>
+            <div><b>Essential</b><small>Virtual or Executive Assistance</small></div>
             <div class="hrate">$10<small>/hr</small></div>
-            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Essentials%20package%20($10/hr)">Choose</a>
+            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Essential%20package%20($10/hr)">Choose</a>
           </div>
           <div class="hrow pop">
-            <div><b>Growth</b><small>Assistance + Lead Gen or CRM Management</small></div>
+            <div><b>Growth<span class="popbadge">Popular</span></b><small>Assistance + Lead Gen or CRM Management</small></div>
             <div class="hrate">$12<small>/hr</small></div>
             <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Growth%20package%20($12/hr)">Choose</a>
           </div>
@@ -659,13 +784,16 @@
 </footer>
 
 <script>
-// Theme toggle
-const root = document.documentElement;
+// Theme toggle (defaults to light, remembers choice)
 const themeBtn = document.getElementById('themeBtn');
+const saved = localStorage.getItem('ace-theme');
+if (saved) document.body.dataset.theme = saved;
+themeBtn.textContent = document.body.dataset.theme === 'dark' ? '☀' : '☾';
 themeBtn.addEventListener('click', () => {
   const cur = document.body.dataset.theme;
   document.body.dataset.theme = cur === 'dark' ? 'light' : 'dark';
   themeBtn.textContent = cur === 'dark' ? '☾' : '☀';
+  localStorage.setItem('ace-theme', document.body.dataset.theme);
 });
 
 // Mobile nav
@@ -699,27 +827,34 @@ document.querySelectorAll('.titem .top').forEach(top => top.addEventListener('cl
   top.closest('.titem').classList.toggle('open');
 }));
 
-// Pricing builder — $8 per service, +$8 per add-on
+// Scope-based pricing — $10 base, +$1 per service, capped at $15
 const optList = document.getElementById('optlist');
 const servCount = document.getElementById('servcount');
-const btPrice = document.getElementById('btprice');
+const rateEl = document.getElementById('rate');
+const scopeFill = document.getElementById('scopefill');
 const buildCta = document.getElementById('buildcta');
-function updateBundle(){
-  const picked = [...optList.querySelectorAll('input:checked')];
-  const total = picked.length * 8;
-  servCount.textContent = picked.length + (picked.length === 1 ? ' service selected' : ' services selected');
-  btPrice.textContent = '$' + total;
-  const svcs = ' (' + picked.map(p => p.value).join(', ') + ')';
-  buildCta.href = 'mailto:ace.gerada@gmail.com?subject=' + encodeURIComponent("I'd like a bundle" + svcs);
+function scopeLabel(n){
+  if (n <= 1) return 'simple scope';
+  if (n <= 3) return 'standard scope';
+  return 'complex scope';
 }
-optList.addEventListener('change', updateBundle);
-updateBundle();
+function updateScope(){
+  const picked = [...optList.querySelectorAll('input:checked')];
+  const n = picked.length;
+  const rate = Math.min(10 + (n - 1), 15);
+  servCount.textContent = n + ' service' + (n === 1 ? '' : 's') + ' · ' + scopeLabel(n);
+  rateEl.textContent = '$' + rate;
+  scopeFill.style.width = Math.min(((rate - 10) / 5) * 100, 100) + '%';
+  const svcs = ' (' + picked.map(p => p.value).join(', ') + ')';
+  buildCta.href = 'mailto:ace.gerada@gmail.com?subject=' + encodeURIComponent("I'd like a scope" + svcs + " at $" + rate + "/hr");
+}
+optList.addEventListener('change', updateScope);
+updateScope();
 
 // Reveal on scroll + counters + skillbars
 const revealEls = document.querySelectorAll('.reveal');
 const counters = document.querySelectorAll('.counter');
 const bars = document.querySelectorAll('.skillbar b[data-w]');
-let counted = false, barred = false;
 
 function checkReveal(){
   revealEls.forEach(el => {
@@ -731,7 +866,7 @@ function runCounters(){
   counters.forEach(c => {
     const r = c.getBoundingClientRect();
     if (r.top < window.innerHeight - 40 && !c.dataset.done){
-      c.dataset.done = 1; counted = true;
+      c.dataset.done = 1;
       const target = +c.dataset.t, suffix = c.dataset.suffix || '';
       const start = performance.now(), dur = 1400;
       (function tick(now){

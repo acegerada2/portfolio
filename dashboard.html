@@ -6,20 +6,22 @@
 <title>Clawee · Pipeline & Lead Intelligence</title>
 <style>
   :root{
-    --bg:#0b1020; --bg2:#0f1630; --card:#161f3d; --card2:#1b2547;
-    --ink:#e6e9f5; --muted:#9aa3c7; --accent:#38bdf8; --accent2:#22d3ee;
-    --gold:#f6c453; --good:#34d399; --bad:#f87171;
-    --line:rgba(148,163,209,.16); --shadow:0 18px 50px rgba(2,6,23,.55);
+    --bg:#faf6ef; --bg2:#fffdf8; --card:#ffffff; --card2:#f4ecdf;
+    --ink:#2b2118; --muted:#7d6c58; --accent:#c2603f; --accent2:#d98e5f;
+    --gold:#d9a441; --good:#4f8a63; --bad:#c25b4a;
+    --line:rgba(43,33,24,.12); --shadow:0 18px 44px rgba(93,66,38,.14);
   }
-  [data-theme="light"]{
-    --bg:#f4f6fb; --bg2:#ffffff; --card:#ffffff; --card2:#eef2fb;
-    --ink:#0d1530; --muted:#4c5a85; --line:rgba(13,21,48,.12); --shadow:0 18px 50px rgba(13,21,48,.12);
+  [data-theme="dark"]{
+    --bg:#1d1711; --bg2:#241d15; --card:#2a2219; --card2:#332a1f;
+    --ink:#f4ecdf; --muted:#b3a08a; --accent:#e08a5f; --accent2:#f0b27a;
+    --gold:#e5b95c; --good:#7fbf92; --bad:#e07a6a;
+    --line:rgba(244,236,223,.14); --shadow:0 18px 44px rgba(0,0,0,.45);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    background:radial-gradient(1100px 500px at 90% -10%, rgba(56,189,248,.13), transparent 55%),
-               radial-gradient(800px 450px at -10% 30%, rgba(34,211,238,.10), transparent 50%),
+    background:radial-gradient(1100px 500px at 90% -10%, rgba(217,158,95,.14), transparent 55%),
+               radial-gradient(800px 450px at -10% 30%, rgba(95,143,111,.10), transparent 50%),
                var(--bg);
     color:var(--ink); line-height:1.55; min-height:100vh;
   }
@@ -31,7 +33,7 @@
     position:sticky;top:0;height:100vh;background:color-mix(in srgb, var(--bg2) 60%, transparent)}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.3px;margin:0 6px 20px}
   .brand .mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04121f;font-weight:800}
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:800}
   .brand small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.6px;text-transform:uppercase}
   .nav{display:flex;flex-direction:column;gap:2px}
   .nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:11px;color:var(--muted);
@@ -55,7 +57,7 @@
   .seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
   .seg button{border:none;background:transparent;color:var(--muted);font-weight:700;font-size:12.5px;
     padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
-  .seg button.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f}
+  .seg button.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}
   .iconbtn{width:38px;height:38px;border-radius:11px;background:var(--card);border:1px solid var(--line);
     color:var(--ink);cursor:pointer;font-size:15px;transition:.15s}
   .iconbtn:hover{border-color:var(--accent)}
@@ -110,7 +112,7 @@
   .pills{display:flex;gap:7px;flex-wrap:wrap}
   .pill{background:var(--bg);border:1px solid var(--line);color:var(--muted);font-size:11.5px;font-weight:700;
     padding:7px 12px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
-  .pill.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04121f;border-color:transparent}
+  .pill.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
   .tblwrap{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
   th{text-align:left;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px;
@@ -123,11 +125,11 @@
   .src{color:var(--muted);font-weight:600}
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px}
   .badge i{width:6px;height:6px;border-radius:50%;background:currentColor}
-  .st-new{color:#38bdf8;background:color-mix(in srgb,#38bdf8 13%,transparent)}
-  .st-eng{color:#f6c453;background:color-mix(in srgb,#f6c453 13%,transparent)}
-  .st-qua{color:#34d399;background:color-mix(in srgb,#34d399 13%,transparent)}
-  .st-won{color:#22d3ee;background:color-mix(in srgb,#22d3ee 13%,transparent)}
-  .st-lost{color:#f87171;background:color-mix(in srgb,#f87171 13%,transparent)}
+  .st-new{color:#c2603f;background:color-mix(in srgb,#c2603f 13%,transparent)}
+  .st-eng{color:#d9a441;background:color-mix(in srgb,#d9a441 13%,transparent)}
+  .st-qua{color:#4f8a63;background:color-mix(in srgb,#4f8a63 13%,transparent)}
+  .st-won{color:#5f8f6f;background:color-mix(in srgb,#5f8f6f 13%,transparent)}
+  .st-lost{color:#c25b4a;background:color-mix(in srgb,#c25b4a 13%,transparent)}
   .empty{padding:34px;text-align:center;color:var(--muted);font-size:13.5px;display:none}
   .empty.show{display:block}
   .empty .em{font-size:30px;display:block;margin-bottom:8px}
@@ -151,7 +153,7 @@
   }
 </style>
 </head>
-<body data-theme="dark">
+<body data-theme="light">
 
 <div class="up-mob">
   <a class="brand" href="index.html"><span class="mark">C</span><span>Clawee<small>pipeline intel</small></span></a>
@@ -267,7 +269,7 @@ const CHANNELS = {
   '30d': [['Apollo.io',156],['LinkedIn',132],['Outbound Email',118],['Website Form',74],['Referrals',64]],
   '90d': [['Apollo.io',472],['LinkedIn',410],['Outbound Email',356],['Website Form',228],['Referrals',192]]
 };
-const SOURCES = [['LinkedIn','#38bdf8',32],['Apollo.io','#22d3ee',28],['Email','#f6c453',18],['Website','#34d399',12],['Referral','#9aa3c7',10]];
+const SOURCES = [['LinkedIn','#c2603f',32],['Apollo.io','#d98e5f',28],['Email','#d9a441',18],['Website','#5f8f6f',12],['Referral','#8a6a9e',10]];
 const ACCTS = [
   { nm:'Northwind Logistics', in:'Supply chain · US', vl:18400, p:82 },
   { nm:'Brightline Health',   in:'Healthcare · EU',   vl:14200, p:64 },
@@ -328,9 +330,9 @@ function drawSpark(svg, data){
   const d = pts.map((p, j) => (j ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
   const gid = 'sg' + Math.random().toString(36).slice(2);
   svg.innerHTML = '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1">' +
-    '<stop offset="0" stop-color="#38bdf8" stop-opacity=".30"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient></defs>' +
+    '<stop offset="0" stop-color="#c2603f" stop-opacity=".30"/><stop offset="1" stop-color="#c2603f" stop-opacity="0"/></linearGradient></defs>' +
     '<path d="' + d + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="url(#' + gid + ')" stroke="none"/>' +
-    '<path d="' + d + '" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+    '<path d="' + d + '" fill="none" stroke="#c2603f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
 }
 
 /* ---------- line chart ---------- */
@@ -345,24 +347,24 @@ function drawLine(){
   const last = data.length - 1;
   let s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Leads over time">';
   s += '<defs><linearGradient id="lgrad" x1="0" y1="0" x2="0" y2="1">' +
-       '<stop offset="0" stop-color="#38bdf8" stop-opacity=".32"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient></defs>';
+       '<stop offset="0" stop-color="#c2603f" stop-opacity=".32"/><stop offset="1" stop-color="#c2603f" stop-opacity="0"/></linearGradient></defs>';
   for (let g = 0; g <= 4; g++){
     const gy = pt + (g / 4) * ih;
-    s += '<line x1="' + pl + '" y1="' + gy + '" x2="' + (W - pr) + '" y2="' + gy + '" stroke="rgba(148,163,209,.12)"/>';
-    s += '<text x="' + (pl - 8) + '" y="' + (gy + 4) + '" fill="#9aa3c7" font-size="10.5" text-anchor="end">' + Math.round(max * (1 - g / 4)) + '</text>';
+    s += '<line x1="' + pl + '" y1="' + gy + '" x2="' + (W - pr) + '" y2="' + gy + '" stroke="rgba(43,33,24,.12)"/>';
+    s += '<text x="' + (pl - 8) + '" y="' + (gy + 4) + '" fill="#7d6c58" font-size="10.5" text-anchor="end">' + Math.round(max * (1 - g / 4)) + '</text>';
   }
   const step = data.length > 30 ? Math.ceil(data.length / 8) : 2;
   for (let i = 0; i < data.length; i += step){
-    s += '<text x="' + x(i) + '" y="' + (H - 8) + '" fill="#9aa3c7" font-size="10.5" text-anchor="middle">d' + (last - i) + '</text>';
+    s += '<text x="' + x(i) + '" y="' + (H - 8) + '" fill="#7d6c58" font-size="10.5" text-anchor="middle">d' + (last - i) + '</text>';
   }
-  s += '<text x="' + x(last) + '" y="' + (H - 8) + '" fill="#9aa3c7" font-size="10.5" text-anchor="middle">today</text>';
+  s += '<text x="' + x(last) + '" y="' + (H - 8) + '" fill="#7d6c58" font-size="10.5" text-anchor="middle">today</text>';
   const pts = data.map((v, i) => x(i).toFixed(1) + ',' + y(v).toFixed(1));
   s += '<path d="M' + pts[0] + ' L' + pts.slice(1).join(' L') + ' L' + x(last) + ',' + (pt + ih) + ' L' + x(0) + ',' + (pt + ih) + ' Z" fill="url(#lgrad)" stroke="none"/>';
-  s += '<path id="lpath" d="M' + pts.join(' L') + '" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"' +
+  s += '<path id="lpath" d="M' + pts.join(' L') + '" fill="none" stroke="#c2603f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"' +
     (reduced() ? '' : ' stroke-dasharray="2000" stroke-dashoffset="2000"') + '/>';
   s += '<path id="ltrack" d="M' + pts.join(' L') + '" fill="none" stroke="transparent" stroke-width="18" style="cursor:crosshair"/>';
-  s += '<line id="lneedle" x1="0" y1="0" x2="0" y2="0" stroke="rgba(148,163,209,.4)" stroke-dasharray="3 3" visibility="hidden"/>';
-  s += '<circle id="cdot" r="4" fill="#38bdf8" stroke="var(--bg)" stroke-width="2" visibility="hidden"/>';
+  s += '<line id="lneedle" x1="0" y1="0" x2="0" y2="0" stroke="rgba(43,33,24,.35)" stroke-dasharray="3 3" visibility="hidden"/>';
+  s += '<circle id="cdot" r="4" fill="#c2603f" stroke="var(--bg)" stroke-width="2" visibility="hidden"/>';
   s += '<text id="cval" font-size="11" font-weight="700" fill="currentColor" visibility="hidden"></text>';
   s += '</svg>';
   s += '<div class="tip" id="lineTip"><b></b><span></span></div>';
@@ -430,7 +432,7 @@ function drawDonut(){
   });
   s += '</g>';
   s += '<text x="50%" y="47%" text-anchor="middle" font-size="28" font-weight="800" fill="currentColor" id="donutTotal">0</text>';
-  s += '<text x="50%" y="57%" text-anchor="middle" font-size="10.5" fill="#9aa3c7">leads total</text>';
+  s += '<text x="50%" y="57%" text-anchor="middle" font-size="10.5" fill="#7d6c58">leads total</text>';
   s += '</svg>';
   s += '<div class="legend">' + SOURCES.map((src, i) =>
     '<div class="lg"><i style="background:' + src[1] + '"></i>' + src[0] + '<b id="lg' + i + '">0%</b></div>').join('') + '</div>';

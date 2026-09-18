@@ -700,20 +700,20 @@
   <div class="wrap">
     <div class="eyebrow">Pricing</div>
     <h2 class="sec">Simple rates, <em>scoped to your work</em></h2>
-    <p class="secsub">Rates run <strong>$10–$15/hr</strong> depending on the scope of work. Build your own mix below — the more scope you hand over, the higher the rate, capped at $15. Prefer a preset? Pick a package.</p>
+    <p class="secsub">Rates start at <strong>$8/hr</strong> for Virtual Assistance and add <strong>$5 per additional scope of work</strong>. Build your own mix below — the more scope you hand over, the higher the rate. Prefer a preset? Pick a package.</p>
 
     <div class="pricinggrid">
       <div class="pcard">
-        <span class="planhead">🧮 Build your scope — $10–$15/hr</span>
-        <p class="plansub">Tick the services you need. Rate starts at $10 and scales with scope, capped at $15. No lock-in.</p>
+        <span class="planhead">🧮 Build your scope — from $8/hr</span>
+        <p class="plansub">Tick the services you need. Rate starts at $8 for VA and adds $5 per additional scope. No lock-in.</p>
         <div class="opts" id="optlist">
           <label><input type="checkbox" value="Virtual Assistance" checked><span>Virtual Assistance</span><b>+$0</b></label>
-          <label><input type="checkbox" value="Executive Assistance"><span>Executive Assistance</span><b>+$1</b></label>
-          <label><input type="checkbox" value="B2B Lead Generation"><span>B2B Lead Generation</span><b>+$1</b></label>
-          <label><input type="checkbox" value="CRM &amp; Pipeline Management"><span>CRM &amp; Pipeline Management</span><b>+$1</b></label>
-          <label><input type="checkbox" value="AI Workflow Automation"><span>AI Workflow Automation</span><b>+$1</b></label>
-          <label><input type="checkbox" value="Email Outreach &amp; Deliverability"><span>Email Outreach &amp; Deliverability</span><b>+$1</b></label>
-          <label><input type="checkbox" value="Operations &amp; SOPs"><span>Operations &amp; SOPs</span><b>+$1</b></label>
+          <label><input type="checkbox" value="Executive Assistance"><span>Executive Assistance</span><b>+$5</b></label>
+          <label><input type="checkbox" value="B2B Lead Generation"><span>B2B Lead Generation</span><b>+$5</b></label>
+          <label><input type="checkbox" value="CRM &amp; Pipeline Management"><span>CRM &amp; Pipeline Management</span><b>+$5</b></label>
+          <label><input type="checkbox" value="AI Workflow Automation"><span>AI Workflow Automation</span><b>+$5</b></label>
+          <label><input type="checkbox" value="Email Outreach &amp; Deliverability"><span>Email Outreach &amp; Deliverability</span><b>+$5</b></label>
+          <label><input type="checkbox" value="Operations &amp; SOPs"><span>Operations &amp; SOPs</span><b>+$5</b></label>
         </div>
         <div class="ratebox">
           <div class="rl">
@@ -728,7 +728,7 @@
             <div class="track"><div class="fill" id="scopefill"></div></div>
           </div>
         </div>
-        <p class="plannote">⚡ Base rate $10/hr · each added service +$1 · capped at $15/hr. Prices fixed in USD.</p>
+        <p class="plannote">⚡ Base rate $8/hr (VA) · each additional scope +$5/hr. Prices fixed in USD.</p>
       </div>
 
       <div class="pcard">
@@ -736,19 +736,19 @@
         <p class="plansub">Reserved monthly hours with priority. Your rate depends on the scope you pick.</p>
         <div class="hb">
           <div class="hrow">
-            <div><b>Essential</b><small>Virtual or Executive Assistance</small></div>
-            <div class="hrate">$10<small>/hr</small></div>
-            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Essential%20package%20($10/hr)">Choose</a>
+            <div><b>Essential</b><small>Virtual Assistance · 1 scope</small></div>
+            <div class="hrate">$8<small>/hr</small></div>
+            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Essential%20package%20($8/hr)">Choose</a>
           </div>
           <div class="hrow pop">
-            <div><b>Growth<span class="popbadge">Popular</span></b><small>Assistance + Lead Gen or CRM Management</small></div>
-            <div class="hrate">$12<small>/hr</small></div>
-            <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Growth%20package%20($12/hr)">Choose</a>
+            <div><b>Growth<span class="popbadge">Popular</span></b><small>VA + one specialized scope · 2 scopes</small></div>
+            <div class="hrate">$13<small>/hr</small></div>
+            <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Growth%20package%20($13/hr)">Choose</a>
           </div>
           <div class="hrow">
-            <div><b>Scale</b><small>Full stack — Assistance + Lead Gen + Automation</small></div>
-            <div class="hrate">$15<small>/hr</small></div>
-            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Scale%20package%20($15/hr)">Choose</a>
+            <div><b>Scale</b><small>VA + two specialized scopes · 3 scopes</small></div>
+            <div class="hrate">$18<small>/hr</small></div>
+            <a class="btn ghost" href="mailto:ace.gerada@gmail.com?subject=Scale%20package%20($18/hr)">Choose</a>
           </div>
         </div>
         <p class="plannote">⚡ Every engagement starts with a free discovery call.</p>
@@ -827,7 +827,7 @@ document.querySelectorAll('.titem .top').forEach(top => top.addEventListener('cl
   top.closest('.titem').classList.toggle('open');
 }));
 
-// Scope-based pricing — $10 base, +$1 per service, capped at $15
+// Scope-based pricing — $8 base (VA), +$5 per additional scope
 const optList = document.getElementById('optlist');
 const servCount = document.getElementById('servcount');
 const rateEl = document.getElementById('rate');
@@ -841,10 +841,10 @@ function scopeLabel(n){
 function updateScope(){
   const picked = [...optList.querySelectorAll('input:checked')];
   const n = picked.length;
-  const rate = Math.min(10 + (n - 1), 15);
+  const rate = 8 + 5 * (n - 1);
   servCount.textContent = n + ' service' + (n === 1 ? '' : 's') + ' · ' + scopeLabel(n);
   rateEl.textContent = '$' + rate;
-  scopeFill.style.width = Math.min(((rate - 10) / 5) * 100, 100) + '%';
+  scopeFill.style.width = Math.min(((rate - 8) / 30) * 100, 100) + '%';
   const svcs = ' (' + picked.map(p => p.value).join(', ') + ')';
   buildCta.href = 'mailto:ace.gerada@gmail.com?subject=' + encodeURIComponent("I'd like a scope" + svcs + " at $" + rate + "/hr");
 }

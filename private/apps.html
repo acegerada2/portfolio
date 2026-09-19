@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ace Gerada · Job Application Tracker</title>
-<meta name="description" content="Live job application tracker — KPIs, pipeline composition, weekly trends, and a searchable application table. Data persists in your browser.">
+<title>Private · Job Application Tracker</title>
+<meta name="description" content="Private job application tracker.">
+<meta name="robots" content="noindex, nofollow">
 <style>
   :root{
     --bg:#faf6ef; --bg2:#fffdf8; --card:#ffffff; --card2:#f4ecdf;
@@ -168,6 +169,68 @@
   footer{margin-top:26px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   footer a:hover{color:var(--accent)}
 
+  /* ---------- Access gate ---------- */
+  .gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;
+    background:radial-gradient(900px 500px at 80% -10%, rgba(217,158,95,.18), transparent 55%),
+               radial-gradient(700px 400px at 10% 110%, rgba(95,143,111,.12), transparent 50%),
+               var(--bg);
+    transition:opacity .45s}
+  .gate.gone{opacity:0;pointer-events:none}
+  .gatebox{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:38px 34px;
+    width:min(400px,calc(100% - 32px));text-align:center;box-shadow:var(--shadow)}
+  .gatebox .lock{width:58px;height:58px;margin:0 auto 16px;border-radius:18px;display:grid;place-items:center;font-size:26px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:var(--shadow2)}
+  .gatebox h2{font-family:var(--serif);font-size:24px;font-weight:700;margin-bottom:6px}
+  .gatebox p{color:var(--muted);font-size:13.5px;margin-bottom:20px}
+  .gatebox input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+    font-size:14px;font-family:inherit;color:var(--ink);outline:none;text-align:center;letter-spacing:2px;transition:.15s}
+  .gatebox input:focus{border-color:var(--accent)}
+  .gatebox button{width:100%;margin-top:12px;padding:12px;border-radius:999px;border:none;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-weight:800;font-size:14px;cursor:pointer;transition:.15s}
+  .gatebox button:hover{transform:translateY(-1px)}
+  .gateErr{color:var(--bad);font-size:12.5px;font-weight:700;margin-top:12px;min-height:18px}
+  .gatebox .hint{font-size:11.5px;color:var(--muted);margin-top:16px}
+
+  /* ---------- Chat widget ---------- */
+  .chatfab{position:fixed;right:22px;bottom:22px;z-index:90;width:56px;height:56px;border-radius:50%;border:none;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:23px;cursor:pointer;
+    box-shadow:var(--shadow);transition:.2s;display:grid;place-items:center}
+  .chatfab:hover{transform:translateY(-2px) scale(1.04)}
+  .chat{position:fixed;right:22px;bottom:90px;z-index:90;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));
+    background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+    overflow:hidden;transform-origin:bottom right;transition:transform .25s,opacity .25s;opacity:0;transform:scale(.92) translateY(10px);pointer-events:none}
+  .chat.open{opacity:1;transform:none;pointer-events:auto}
+  .chathead{display:flex;align-items:center;gap:11px;padding:14px 16px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 14%,transparent),transparent);border-bottom:1px solid var(--line)}
+  .chathead .av{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:17px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:800}
+  .chathead b{font-family:var(--serif);font-size:15px}
+  .chathead small{display:block;color:var(--muted);font-size:11px}
+  .chathead .st{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-left:auto;flex:none}
+  .chathead .st.on{background:var(--good)}
+  .chatmsgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg2)}
+  .msg{max-width:85%;padding:10px 13px;border-radius:15px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+  .msg.user{align-self:flex-end;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-bottom-right-radius:5px}
+  .msg.bot{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:5px}
+  .msg.err{background:color-mix(in srgb,var(--bad) 12%,transparent);color:var(--bad);border:1px solid color-mix(in srgb,var(--bad) 30%,transparent)}
+  .msg .typing{display:inline-flex;gap:4px;padding:4px 2px}
+  .msg .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+  .msg .typing i:nth-child(2){animation-delay:.2s}
+  .msg .typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  .chiprow{display:flex;gap:6px;padding:10px 12px 4px;flex-wrap:wrap;border-top:1px solid var(--line)}
+  .chip{background:var(--bg);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;
+    padding:6px 11px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
+  .chip:hover{color:var(--accent);border-color:var(--accent)}
+  .chatinput{display:flex;gap:8px;padding:10px 12px 14px;border-top:1px solid var(--line)}
+  .chatinput input{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 13px;
+    font-size:13.5px;font-family:inherit;color:var(--ink);outline:none;transition:.15s}
+  .chatinput input:focus{border-color:var(--accent)}
+  .chatinput button{width:40px;height:40px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#fff;font-size:16px;cursor:pointer;flex:none;transition:.15s}
+  .chatinput button:hover{transform:translateY(-1px)}
+  .chatinput button:disabled{opacity:.5;cursor:default;transform:none}
+
   @media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:900px){
     .app{grid-template-columns:1fr}
@@ -192,17 +255,51 @@
 </head>
 <body data-theme="light">
 
+<!-- ---------- Access gate ---------- -->
+<div class="gate" id="gate" role="dialog" aria-label="Private tracker access">
+  <div class="gatebox">
+    <div class="lock">🔒</div>
+    <h2>Private tracker</h2>
+    <p>This tracker is for the owner only. Enter your access code to continue.</p>
+    <input id="gateInput" type="password" placeholder="Access code" autocomplete="off" aria-label="Access code">
+    <button id="gateBtn">Unlock tracker</button>
+    <div class="gateErr" id="gateErr"></div>
+    <div class="hint">Code required · not linked anywhere public</div>
+  </div>
+</div>
+
+<!-- ---------- Chat widget ---------- -->
+<button class="chatfab" id="chatFab" aria-label="Open Jobhunter agent chat">💬</button>
+<div class="chat" id="chat" role="dialog" aria-label="Jobhunter agent chat">
+  <div class="chathead">
+    <div class="av">J</div>
+    <div><b>Jobhunter Agent</b><small>Your job-search assistant</small></div>
+    <span class="st" id="chatStatus" title="Agent status"></span>
+  </div>
+  <div class="chatmsgs" id="chatMsgs"></div>
+  <div class="chiprow" id="chipRow">
+    <button class="chip" data-p="Analyze this job description for me: [paste JD here]">🔍 Analyze a JD</button>
+    <button class="chip" data-p="Draft a cover letter for a Virtual Assistant role. Here are the details: [role, company, key requirements]">✉ Cover letter</button>
+    <button class="chip" data-p="Give me interview prep for an Executive Assistant interview — likely questions and STAR stories.">🎤 Interview prep</button>
+    <button class="chip" data-p="Review my application pipeline and suggest next steps.">📊 Pipeline advice</button>
+  </div>
+  <div class="chatinput">
+    <input id="chatInput" type="text" placeholder="Ask about a job, cover letter, interview…" aria-label="Message the agent">
+    <button id="chatSend" aria-label="Send message">➤</button>
+  </div>
+</div>
+
 <div class="app">
   <!-- ---------- Sidebar ---------- -->
   <aside class="side">
-    <div class="brand"><span class="mark">AG</span><div>Ace Gerada<small>Job Tracker</small></div></div>
+    <div class="brand"><span class="mark">AG</span><div>Ace Gerada<small>Private Tracker</small></div></div>
     <nav class="nav" aria-label="Tracker sections">
       <a href="#overview" class="on">📊 Overview</a>
       <a href="#pipeline">🧭 Pipeline</a>
       <a href="#applications">📋 Applications</a>
     </nav>
     <div class="foot">
-      <a href="index.html">← Back to portfolio</a>
+      <a href="index.html">← Portfolio home</a>
       <a href="#" id="themeBtn" aria-label="Toggle theme">◐ Toggle theme</a>
     </div>
   </aside>
@@ -211,7 +308,7 @@
   <main class="main" id="overview">
     <div class="topbar">
       <div>
-        <div class="crumb"><a href="index.html">Portfolio</a> / <a href="dashboard.html">Profile</a> / Tracker</div>
+        <div class="crumb">Private · Job Tracker</div>
         <h1 class="title">Job Application Tracker</h1>
         <p class="sub">Every application, one command center. Track <b>pipeline health</b>, spot <b>response trends</b>, and never lose a follow-up again. Data lives in your browser — add, filter, and sort freely.</p>
       </div>
@@ -318,7 +415,7 @@
 
     <footer>
       <span>Last updated · <span id="updated"></span></span>
-      <span>© 2026 Ace John Gerada · <a href="index.html">Back to portfolio</a></span>
+      <span>© 2026 Ace John Gerada · <a href="index.html">Portfolio home</a></span>
     </footer>
   </main>
 </div>
@@ -742,7 +839,126 @@ document.getElementById('updated').textContent = new Date().toLocaleDateString('
 let rT;
 window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => { renderDonut(); renderTrend(); }, 150); });
 
-renderAll();
-</script>
+/* ---------- access gate ---------- */
+const CODE_HASH = 'ea238cd43bc5a8d9be2f48edcd2aed9ab5459dabe11b2bcbdcddd7f31ea392c0';
+const sha256 = async str => {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+};
+async function tryUnlock(){
+  const code = $('#gateInput').value;
+  if (!code) return;
+  if (await sha256(code) === CODE_HASH){
+    sessionStorage.setItem('ace-unlocked', '1');
+    $('#gate').classList.add('gone');
+    $('#gateInput').value = '';
+    $('#gateErr').textContent = '';
+    renderAll();
+  } else {
+    $('#gateErr').textContent = 'Incorrect code — try again.';
+    $('#gateInput').select();
+  }
+}
+$('#gateBtn').addEventListener('click', tryUnlock);
+$('#gateInput').addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+if (sessionStorage.getItem('ace-unlocked') === '1') $('#gate').classList.add('gone');
+
+/* ---------- chat widget ---------- */
+const chatEl = $('#chat'), chatFab = $('#chatFab'), chatMsgs = $('#chatMsgs');
+const chatInput = $('#chatInput'), chatSend = $('#chatSend'), chatStatus = $('#chatStatus');
+const CHAT_API = 'https://text.pollinations.ai/openai';
+const CHAT_MODEL = 'openai';
+let chatBusy = false;
+let chatHistory = [];
+
+function trackerSummary(){
+  const byStatus = {};
+  apps.forEach(a => { byStatus[a.status] = (byStatus[a.status] || 0) + 1; });
+  const recent = apps.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 8)
+    .map(a => '- ' + a.company + ' (' + a.role + ') — ' + STATUS[a.status].label + ', applied ' + a.date).join('\n');
+  return 'Total applications: ' + apps.length + '\n' +
+    'By status: ' + Object.entries(byStatus).map(([k, v]) => STATUS[k].label + ': ' + v).join(', ') + '\n' +
+    'Most recent:\n' + (recent || '- none');
+}
+
+function systemPrompt(){
+  return 'You are Jobhunter, the user\'s personal job-search assistant. You help track applications, analyze job postings, tailor resumes, write cover letters, and prep for interviews.\n\n' +
+    'OWNER PROFILE:\n' +
+    '- Name: Ace John Gerada (also "Ace Gerada")\n' +
+    '- Role: Virtual Executive Assistant & B2B Lead Generation specialist\n' +
+    '- Experience: 9+ years; rates from $8/hr\n' +
+    '- Portfolio: acegerada2.github.io/portfolio\n\n' +
+    'CURRENT APPLICATION PIPELINE (live from the tracker):\n' + trackerSummary() + '\n\n' +
+    'CAPABILITIES:\n' +
+    '- Analyze job descriptions: match score, strengths, gaps, red flags, apply/skip recommendation\n' +
+    '- Tailor resume bullets and write achievement-focused statements\n' +
+    '- Write personalized cover letters\n' +
+    '- Interview prep: likely questions, STAR stories, talking points\n' +
+    '- Pipeline strategy and follow-up advice\n\n' +
+    'STYLE: Concise and practical. Lead with the recommendation, then the reasoning. Use short paragraphs and bullets. Never fabricate experience, metrics, or credentials — if a gap exists, address it honestly. The user is a VA/lead-gen specialist, so tailor examples to that field.';
+}
+
+function addMsg(role, text){
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  div.textContent = text;
+  chatMsgs.appendChild(div);
+  chatMsgs.scrollTop = chatMsgs.scrollHeight;
+  return div;
+}
+
+async function ask(prompt){
+  if (chatBusy) return;
+  chatBusy = true;
+  chatSend.disabled = true;
+  chatStatus.classList.add('on');
+  addMsg('user', prompt);
+  const typing = addMsg('bot', '');
+  typing.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+  try {
+    const res = await fetch(CHAT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: CHAT_MODEL,
+        messages: [{ role: 'system', content: systemPrompt() }, ...chatHistory, { role: 'user', content: prompt }]
+      })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const j = await res.json();
+    const text = (j.choices?.[0]?.message?.content || '').trim();
+    if (!text) throw new Error('Empty response');
+    if (/reached its budget|raise the key budget/i.test(text)) throw new Error('The free AI service is temporarily out of capacity — try again in a minute.');
+    typing.textContent = text;
+    chatMsgs.scrollTop = chatMsgs.scrollHeight;
+    chatHistory.push({ role: 'user', content: prompt }, { role: 'assistant', content: text });
+  } catch (err) {
+    typing.className = 'msg err';
+    typing.textContent = '⚠ ' + err.message;
+  }
+  chatBusy = false;
+  chatSend.disabled = false;
+  chatStatus.classList.remove('on');
+}
+
+chatFab.addEventListener('click', () => {
+  chatEl.classList.toggle('open');
+  if (chatEl.classList.contains('open')) chatInput.focus();
+});
+chatSend.addEventListener('click', () => {
+  const v = chatInput.value.trim();
+  if (!v) return;
+  chatInput.value = '';
+  ask(v);
+});
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') chatSend.click(); });
+document.querySelectorAll('#chipRow .chip').forEach(c => c.addEventListener('click', () => {
+  chatEl.classList.add('open');
+  chatInput.value = c.dataset.p;
+  chatInput.focus();
+}));
+
+/* ---------- init ---------- */
+renderAll();</script>
 </body>
 </html>

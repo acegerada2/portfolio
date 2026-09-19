@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ace John Gerada — Resume</title>
+<meta name="description" content="Ace John Gerada — Virtual Executive Assistant & B2B Lead Generation specialist. 9+ years supporting C-level leaders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2118; --muted:#6f5f4c; --faint:#8d7c66;
+    --accent:#c2603f; --accent2:#d98e5f; --gold:#d9a441; --sage:#5f8f6f;
+    --line:rgba(43,33,24,.14); --line2:rgba(43,33,24,.07);
+    --cream:#faf6ef; --cream2:#f4ecdf; --card:#ffffff;
+    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --sans:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{
+    font-family:var(--sans);color:var(--ink);line-height:1.42;
+    background:
+      radial-gradient(900px 480px at 90% -10%, rgba(217,158,95,.14), transparent 55%),
+      radial-gradient(800px 420px at -10% 30%, rgba(95,143,111,.08), transparent 50%),
+      var(--cream);
+    -webkit-font-smoothing:antialiased;
+    padding:34px 16px 60px;
+  }
+
+  /* ---------- Web toolbar ---------- */
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;
+    background:color-mix(in srgb,var(--cream) 82%,transparent);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:10px 16px}
+  .toolbar .inner{display:flex;align-items:center;gap:12px;width:100%;max-width:210mm}
+  .toolbar .crumb{font-size:12.5px;color:var(--muted);font-weight:600}
+  .toolbar .crumb a{color:var(--accent);text-decoration:none}
+  .toolbar .crumb a:hover{text-decoration:underline}
+  .toolbar .spacer{flex:1}
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;
+    font-weight:700;font-size:13px;cursor:pointer;border:none;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 20px rgba(194,96,63,.3)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- Sheet ---------- */
+  .sheet{
+    width:210mm;max-width:100%;margin:64px auto 0;background:var(--card);
+    box-shadow:0 24px 60px rgba(93,66,38,.18);border-radius:6px;overflow:hidden;
+    padding:10mm 11mm;
+  }
+
+  /* ---------- Header ---------- */
+  .head{border-bottom:2.5px solid var(--accent);padding-bottom:4mm;margin-bottom:4.5mm}
+  .name{font-family:var(--serif);font-size:27px;font-weight:700;letter-spacing:.4px;line-height:1.05}
+  .name .dot{color:var(--accent)}
+  .title{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--accent);margin-top:2px;font-weight:500}
+  .contactrow{display:flex;flex-wrap:wrap;gap:3px 14px;margin-top:4px;font-size:8.8px;color:var(--muted)}
+  .contactrow a{color:var(--muted);text-decoration:none}
+  .contactrow a:hover{color:var(--accent)}
+  .contactrow .sep{color:var(--line)}
+  .contactrow b{color:var(--ink);font-weight:700}
+
+  /* ---------- Sections ---------- */
+  .sec{margin-bottom:3.2mm}
+  .sec h2{font-family:var(--serif);font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:2.8mm}
+  .sec h2::after{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,var(--accent),var(--accent2),transparent)}
+  .summary{font-size:9.6px;color:var(--muted);text-align:justify}
+  .summary b{color:var(--ink)}
+  .badges{display:flex;flex-wrap:wrap;gap:3.5px;margin-top:2.6mm}
+  .badge{font-size:7.9px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);
+    border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:2.5px 9px}
+
+  /* ---------- Jobs ---------- */
+  .job{margin-bottom:2.8mm;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .jobhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .company{font-family:var(--serif);font-size:11.5px;font-weight:700;color:var(--ink)}
+  .company .ind{display:inline-block;width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,var(--accent),var(--accent2));margin-right:6px}
+  .dates{font-size:8.4px;font-weight:700;color:var(--accent);white-space:nowrap}
+  .role{font-size:9.2px;font-weight:600;color:var(--muted);font-style:italic;margin:1px 0 2.5px}
+  .job ul{margin:1.5px 0 0 13px}
+  .job li{font-size:9.2px;color:var(--muted);margin-bottom:1.3px;text-align:justify}
+  .job li::marker{color:var(--accent2)}
+  .job li b{color:var(--ink);font-weight:700}
+
+  /* ---------- Skills & tools grid ---------- */
+  .skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:5mm 8mm}
+  .skillgroup{break-inside:avoid;margin-bottom:3mm}
+  .skillgroup h3{font-size:9px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+  .skillgroup p{font-size:9px;color:var(--muted);line-height:1.5}
+  .toolchips{display:flex;flex-wrap:wrap;gap:3.5px}
+  .chip{font-size:8px;font-weight:700;color:var(--ink);background:var(--cream2);
+    border:1px solid var(--line);border-radius:999px;padding:2.5px 8px}
+  .edu{font-size:9.4px;color:var(--muted)}
+  .edu b{color:var(--ink);font-size:10px}
+  .edu .when{color:var(--accent);font-weight:700;font-size:8.8px;margin-top:1px}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+  .tquote{background:var(--cream2);border:1px solid var(--line);border-radius:6px;padding:3mm;break-inside:avoid}
+  .tquote p{font-size:8.8px;font-style:italic;color:var(--ink);text-align:justify;line-height:1.45}
+  .tquote .tmeta{margin-top:1.8mm;font-size:8px;font-weight:700;color:var(--accent)}
+
+  /* ---------- Print ---------- */
+  @page{size:A4;margin:0}
+  @media print{
+    body{background:#fff;padding:0}
+    .toolbar{display:none}
+    .sheet{box-shadow:none;border-radius:0;margin:0;width:210mm;min-height:297mm;padding:9mm 11mm}
+    .job{break-inside:avoid}
+    .skillgroup{break-inside:avoid}
+  }
+  @media(max-width:760px){
+    body{padding:16px 10px 40px}
+    .sheet{margin-top:56px;padding:8mm 6mm}
+    .skillgrid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar" role="toolbar" aria-label="Resume actions">
+  <div class="inner">
+    <span class="crumb"><a href="index.html">← Ace Gerada</a> · Resume</span>
+    <span class="spacer"></span>
+    <a class="btn ghost" href="index.html">Home</a>
+    <button class="btn primary" onclick="window.print()">⬇ Print / Save as PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+
+  <header class="head">
+    <div class="name">Ace John Gerada<span class="dot">.</span></div>
+    <div class="title">Virtual Executive Assistant · B2B Lead Generation · AI Workflow Automation</div>
+    <div class="contactrow">
+      <span><b>✉</b> <a href="mailto:ace.gerada@gmail.com">ace.gerada@gmail.com</a></span>
+      <span class="sep">|</span>
+      <span><b>in</b> <a href="https://www.linkedin.com/in/virtualacesistant/" target="_blank" rel="noopener">linkedin.com/in/virtualacesistant</a></span>
+      <span class="sep">|</span>
+      <span>Remote · Philippines · Worldwide time zones</span>
+    </div>
+  </header>
+
+  <section class="sec">
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      Results-driven <b>Virtual Executive Assistant</b> and <b>B2B Lead Generation</b> specialist with <b>9+ years</b> supporting
+      C-level and VP leaders across real estate, hospitality, education, and professional services. Proven in building and scaling
+      outbound pipelines, qualifying leads against ICP criteria, managing CRM ecosystems, and automating workflows with AI tools
+      such as ChatGPT and Claude. Combines executive-support precision with growth operations to win more qualified meetings.
+    </p>
+    <div class="badges">
+      <span class="badge">Executive Support</span><span class="badge">B2B Lead Generation</span>
+      <span class="badge">ICP Research</span><span class="badge">Email &amp; LinkedIn Outreach</span>
+      <span class="badge">CRM Administration</span><span class="badge">AI Workflow Automation</span>
+      <span class="badge">Email Deliverability</span><span class="badge">SOP Development</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Drumheller Construction Management</span><span class="dates">Mar 2026 – Aug 2026</span></div>
+      <div class="role">Lead Generation Specialist · Construction · Remote</div>
+      <ul>
+        <li>Owned the end-to-end pipeline — lead list management, data and CRM clean-up, ICP matching, and email/LinkedIn outreach.</li>
+        <li>Built targeted prospect lists in Apollo from defined ICP criteria; kept prospect data accurate across HubSpot and Pipedrive.</li>
+        <li>Designed and deployed full email outreach automations in HubSpot and Pipedrive, including workflow logic, follow-ups, and lead routing.</li>
+        <li>Built <b>Claude-based systems</b> that automate ICP matching and lead qualification, cutting manual research time and freeing hours for outreach.</li>
+        <li>Monitored deliverability, open rates, list quality, and campaign performance; produced data reporting.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>AKKO</span><span class="dates">Jul 2025 – Mar 2026</span></div>
+      <div class="role">Executive Assistant · Computer &amp; Technology · Remote</div>
+      <ul>
+        <li>Supported the VP with inbox and calendar management, event planning, and task follow-ups across HubSpot and ClickUp.</li>
+        <li>Conducted competitor analysis and lead research; built contact lists and ran email and LinkedIn outreach.</li>
+        <li>Converted executive meeting recordings into structured action items and tracked HubSpot tasks to completion.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>BrainGainzLC</span><span class="dates">Mar 2024 – Mar 2025</span></div>
+      <div class="role">Executive Assistant · Education · Remote</div>
+      <ul>
+        <li>Redesigned operational procedures, cutting redundant steps and improving workflow efficiency by <b>80%</b>.</li>
+        <li>Prepared educational materials, planned events, created content, and managed client/student inquiries.</li>
+        <li>Managed the executive calendar, travel arrangements, and website content maintenance (WordPress / Elementor).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>BlueAstro</span><span class="dates">Jan 2025 – Mar 2025</span></div>
+      <div class="role">Admin Assistant · Remote</div>
+      <ul>
+        <li>Managed sales tracking and project reporting in Asana; quality-checked and launched client offer pages with developers.</li>
+        <li>Drafted and edited webpages; performed data and CRM clean-up; managed domain purchases and renewals.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>MintLeads</span><span class="dates">Nov 2023 – Mar 2024</span></div>
+      <div class="role">Operations Specialist · Remote</div>
+      <ul>
+        <li>Audited and maintained prospect databases, improving database accuracy to <b>95%</b>.</li>
+        <li>Managed prospect blacklist and unsubscribe processes to protect sender reputation and email deliverability.</li>
+        <li>Supported B2B lead generation and management operations.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Valcove Hospitality</span><span class="dates">Apr 2023 – Oct 2023</span></div>
+      <div class="role">Executive Assistant · Business Development · Hospitality · Remote</div>
+      <ul>
+        <li>Managed B2B outreach across email, LinkedIn, and HubSpot — research, follow-up, lead nurturing, and pipeline management.</li>
+        <li>Built contact lists, cleaned up and migrated CRM data, and created presentations for prospect communication.</li>
+        <li>Worked directly with the Founder and CEO to coordinate business development activities.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Extenteam</span><span class="dates">Jun 2021 – Nov 2023</span></div>
+      <div class="role">Business Development Associate / Lead Generation Specialist · Hospitality · Remote</div>
+      <ul>
+        <li>Executed multi-touch B2B outreach campaigns targeting hospitality decision-makers via LinkedIn Sales Navigator and email automation.</li>
+        <li>Managed calendar, inbox, and LinkedIn social media; conducted ICP profiling, event research, and travel planning.</li>
+        <li>Conducted market and competitive research to sharpen prospect targeting; supported referral growth.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Portillo Realty Group</span><span class="dates">Sep 2021 – Sep 2022</span></div>
+      <div class="role">Executive Assistant · Real Estate · Remote</div>
+      <ul>
+        <li>Managed the CEO's scheduling, travel, and priorities; coordinated vendors, property assessments, maintenance budgets, and operational follow-ups.</li>
+        <li>Handled property listings (MLS), CRM management and clean-up, social media, blog posting, and LinkedIn engagement.</li>
+        <li>Created SOPs and onboarding manuals; ran targeted social campaigns that lifted audience engagement by <b>25%</b>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>TrueGuard Property Management</span><span class="dates">May 2019 – Jun 2021</span></div>
+      <div class="role">Executive Assistant · Real Estate · In Office</div>
+      <ul>
+        <li>Handled customer inquiries with first-call resolution on billing accounts.</li>
+        <li>Managed order provisioning, processing, and checking; troubleshot devices using CRM and DOS-based tools.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>YesVirtualPH</span><span class="dates">Aug 2017 – Feb 2020</span></div>
+      <div class="role">Property Management Assistant · Real Estate · In Office</div>
+      <ul>
+        <li>Managed executive calendars, travel, and meetings to optimize leadership time.</li>
+        <li>Oversaw property assessments, vendor coordination, and budgeting for maintenance projects.</li>
+        <li>Served as the primary contact for property owners, tenants, and vendors; maintained CRM records.</li>
+        <li>Managed property listings on MLS; created SOPs and training manuals; assisted in drafting contracts.</li>
+        <li>Provided executive support to the CEO, offering insights and administrative assistance.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Telstra</span><span class="dates">Nov 2015 – Feb 2017</span></div>
+      <div class="role">Customer Service Representative · Telecommunications · In Office</div>
+      <ul>
+        <li>Delivered quality results through customer inquiry handling, account modifications, order processing, up-selling, and device troubleshooting.</li>
+        <li>Developed call strategies for best-possible resolution; handled sales, high-risk account management, rate plan optimization, and retention with <b>100% effectiveness</b>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead"><span class="company"><span class="ind"></span>Sprint</span><span class="dates">Nov 2015 – Feb 2017</span></div>
+      <div class="role">Senior Collections Specialist · Telecommunications · In Office</div>
+      <ul>
+        <li>Managed collections on delinquent wireless accounts, negotiating payment arrangements and settlements to recover outstanding balances.</li>
+        <li>Resolved billing disputes and account discrepancies with first-call resolution, preserving customer relationships while recovering revenue.</li>
+        <li>Handled high-risk and high-balance accounts, applying escalation and retention strategies to minimize losses.</li>
+        <li>Maintained accurate account records in CRM systems, documenting all interactions, payment commitments, and follow-ups.</li>
+        <li>Met monthly collection targets and quality assurance standards while supporting customer retention.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials">
+      <div class="tquote">
+        <p>"Ace removed the redundant steps in our operations end to end. What used to take our team days now takes moments."</p>
+        <div class="tmeta">— Workflow redesign · BrainGainzLC</div>
+      </div>
+      <div class="tquote">
+        <p>"Our prospect database went from messy to mission-grade, and our sender reputation stopped getting us flagged."</p>
+        <div class="tmeta">— Data audit · MintLeads</div>
+      </div>
+      <div class="tquote">
+        <p>"Targeted social campaigns he built brought measurable engagement growth month over month."</p>
+        <div class="tmeta">— Engagement campaign · Portillo Realty Group</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Skills &amp; Tools</h2>
+    <div class="skillgrid">
+      <div>
+        <div class="skillgroup"><h3>Lead Generation</h3><p>ICP Research &amp; Profiling · Lead List Building · Lead Qualification · B2B Prospecting · Email &amp; LinkedIn Outreach · Pipeline Management</p></div>
+        <div class="skillgroup"><h3>Executive Support</h3><p>Inbox &amp; Calendar Management · Event &amp; Travel Planning · Meeting Prep &amp; Action Items · Stakeholder Coordination · Report Creation</p></div>
+        <div class="skillgroup"><h3>CRM &amp; Data</h3><p>CRM Administration &amp; Clean-up · Database Hygiene · Data Analysis · Data Entry · Account Management</p></div>
+        <div class="skillgroup"><h3>AI &amp; Automation</h3><p>AI Workflow Automation · ChatGPT · Claude · Process Improvement · Email Deliverability Management</p></div>
+        <div class="skillgroup"><h3>Operations</h3><p>SOP Development · Project Management · Quality Assurance · Attention to Detail · Complex Problem Analysis</p></div>
+        <div class="skillgroup"><h3>Content &amp; Social</h3><p>Social Media Management · Blog Writing · Content Creation · Presentation Creation · Website Maintenance</p></div>
+        <div class="skillgroup"><h3>Customer</h3><p>Customer Management · Customer Support · Client Relationship · First-Call Resolution</p></div>
+      </div>
+      <div>
+        <div class="skillgroup"><h3>CRM &amp; Data Tools</h3><div class="toolchips"><span class="chip">HubSpot</span><span class="chip">Pipedrive</span><span class="chip">Salesforce</span><span class="chip">Apollo.ai</span><span class="chip">Seamless.ai</span><span class="chip">LinkedIn Sales Nav</span><span class="chip">RocketReach</span><span class="chip">Swordfish</span></div></div>
+        <div class="skillgroup"><h3>Email &amp; Deliverability</h3><div class="toolchips"><span class="chip">Instantly</span><span class="chip">Mailchimp</span><span class="chip">ZeroBounce</span><span class="chip">Emailable</span></div></div>
+        <div class="skillgroup"><h3>AI &amp; Automation</h3><div class="toolchips"><span class="chip">ChatGPT</span><span class="chip">Claude</span><span class="chip">Claude Code</span></div></div>
+        <div class="skillgroup"><h3>Project &amp; Comms</h3><div class="toolchips"><span class="chip">ClickUp</span><span class="chip">Asana</span><span class="chip">Trello</span><span class="chip">Monday.com</span><span class="chip">Slack</span><span class="chip">Teams</span><span class="chip">Zoom</span><span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Hubstaff</span></div></div>
+        <div class="skillgroup"><h3>Content &amp; Web</h3><div class="toolchips"><span class="chip">Canva</span><span class="chip">Buffer</span><span class="chip">Meta Business Suite</span><span class="chip">WordPress</span><span class="chip">Elementor</span><span class="chip">Calendly</span><span class="chip">DocuSign</span><span class="chip">Acrobat Reader</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Education</h2>
+    <div class="edu">
+      <b>National College of Science and Technology</b> — BS, Electronics and Communications Engineering
+      <div class="when">Jun 2012 – May 2014 · Philippines</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// Keep the toolbar from overlapping the sheet on short screens
+document.querySelector('.btn.primary').addEventListener('click', () => {
+  setTimeout(() => window.print(), 60);
+});
+</script>
+</body>
+</html>

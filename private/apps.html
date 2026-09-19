@@ -209,6 +209,21 @@
   .chatinput button:hover{transform:translateY(-1px)}
   .chatinput button:disabled{opacity:.5;cursor:default;transform:none}
 
+  /* ---------- Agent section ---------- */
+  .agentcard{margin-top:18px}
+  .agentcard > h3{margin-bottom:14px}
+  .agentgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:stretch}
+  .agentchat{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}
+  .agentchat .chatmsgs{height:300px;flex:none}
+  .agentadd{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;padding:20px;background:var(--card)}
+  .agentadd h4{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:2px}
+  .agentadd .hint{margin-bottom:14px}
+  .agentadd .field{margin-bottom:12px}
+  .agentadd .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .agentadd .addbtn{width:100%;margin-top:4px;padding:12px;border-radius:999px;font-weight:800;font-size:14px;cursor:pointer;border:none;transition:.15s}
+  .addok{font-size:12.5px;font-weight:700;color:var(--good);margin-top:10px;min-height:16px;text-align:center}
+  .addok.bad{color:var(--bad)}
+
   @media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:900px){
     .app{grid-template-columns:1fr}
@@ -218,6 +233,7 @@
     .nav a{padding:8px 12px;font-size:13px}
     .side .foot{margin:0 0 0 auto;padding:0;border:none;flex-direction:row}
     .grid{grid-template-columns:1fr}
+    .agentgrid{grid-template-columns:1fr}
   }
   @media(max-width:640px){
     .kpis{grid-template-columns:1fr 1fr;gap:10px}
@@ -233,26 +249,8 @@
 </head>
 <body data-theme="light">
 
-<!-- ---------- Chat widget ---------- -->
-<button class="chatfab" id="chatFab" aria-label="Open Jobhunter agent chat">💬</button>
-<div class="chat" id="chat" role="dialog" aria-label="Jobhunter agent chat">
-  <div class="chathead">
-    <div class="av">J</div>
-    <div><b>Jobhunter Agent</b><small>Your job-search assistant</small></div>
-    <span class="st" id="chatStatus" title="Agent status"></span>
-  </div>
-  <div class="chatmsgs" id="chatMsgs"></div>
-  <div class="chiprow" id="chipRow">
-    <button class="chip" data-p="Analyze this job description for me: [paste JD here]">🔍 Analyze a JD</button>
-    <button class="chip" data-p="Draft a cover letter for a Virtual Assistant role. Here are the details: [role, company, key requirements]">✉ Cover letter</button>
-    <button class="chip" data-p="Give me interview prep for an Executive Assistant interview — likely questions and STAR stories.">🎤 Interview prep</button>
-    <button class="chip" data-p="Review my application pipeline and suggest next steps.">📊 Pipeline advice</button>
-  </div>
-  <div class="chatinput">
-    <input id="chatInput" type="text" placeholder="Ask about a job, cover letter, interview…" aria-label="Message the agent">
-    <button id="chatSend" aria-label="Send message">➤</button>
-  </div>
-</div>
+<!-- Quick jump to the agent section -->
+<button class="chatfab" id="chatFab" aria-label="Jump to Jobhunter agent">💬</button>
 
 <div class="app">
   <!-- ---------- Sidebar ---------- -->
@@ -262,6 +260,7 @@
       <a href="#overview" class="on">📊 Overview</a>
       <a href="#pipeline">🧭 Pipeline</a>
       <a href="#applications">📋 Applications</a>
+      <a href="#agent">🤖 Agent</a>
     </nav>
     <div class="foot">
       <a href="index.html">← Portfolio home</a>
@@ -335,6 +334,72 @@
         <h3>📈 Applications over time <span class="hint">weekly</span></h3>
         <div class="chart" id="trendWrap" style="height:230px">
           <svg id="trend" role="img" aria-label="Weekly application volume"></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agent + quick add -->
+    <div class="card agentcard" id="agent">
+      <h3>🤖 Jobhunter Agent <span class="hint">your job-search assistant</span></h3>
+      <div class="agentgrid">
+        <div class="agentchat">
+          <div class="chathead">
+            <div class="av">J</div>
+            <div><b>Jobhunter Agent</b><small>Your job-search assistant</small></div>
+            <span class="st" id="chatStatus" title="Agent status"></span>
+          </div>
+          <div class="chatmsgs" id="chatMsgs"></div>
+          <div class="chiprow" id="chipRow">
+            <button class="chip" data-p="Analyze this job description for me: [paste JD here]">🔍 Analyze a JD</button>
+            <button class="chip" data-p="Draft a cover letter for a Virtual Assistant role. Here are the details: [role, company, key requirements]">✉ Cover letter</button>
+            <button class="chip" data-p="Give me interview prep for an Executive Assistant interview — likely questions and STAR stories.">🎤 Interview prep</button>
+            <button class="chip" data-p="Review my application pipeline and suggest next steps.">📊 Pipeline advice</button>
+          </div>
+          <div class="chatinput">
+            <input id="chatInput" type="text" placeholder="Ask about a job, cover letter, interview…" aria-label="Message the agent">
+            <button id="chatSend" aria-label="Send message">➤</button>
+          </div>
+        </div>
+        <div class="agentadd">
+          <h4>＋ Add an application</h4>
+          <p class="hint">Log a new application you just sent out.</p>
+          <form id="addForm2" novalidate>
+            <div class="field">
+              <label for="f2Company">Company *</label>
+              <input id="f2Company" required placeholder="e.g. Northwind Consulting" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f2Role">Role *</label>
+              <input id="f2Role" required placeholder="e.g. Executive Assistant" autocomplete="organization-title">
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="f2Status">Status</label>
+                <select id="f2Status">
+                  <option value="applied">Applied</option>
+                  <option value="screening">Screening</option>
+                  <option value="interview">Interview</option>
+                  <option value="offer">Offer</option>
+                  <option value="rejected">Rejected</option>
+                  <option value="withdrawn">Withdrawn</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f2Date">Applied date</label>
+                <input id="f2Date" type="date">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f2Source">Source</label>
+              <input id="f2Source" placeholder="LinkedIn · Indeed · Referral · Company site">
+            </div>
+            <div class="field">
+              <label for="f2Notes">Notes</label>
+              <textarea id="f2Notes" placeholder="Recruiter contact, next steps, follow-up date…"></textarea>
+            </div>
+            <button type="submit" class="btn2 primary addbtn">Save application</button>
+            <div class="addok" id="addOk" role="status"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -763,21 +828,49 @@ document.getElementById('addBtn').addEventListener('click', () => {
   dialog.showModal();
 });
 document.getElementById('cancelBtn').addEventListener('click', () => dialog.close());
+function addApplication(data){
+  apps.unshift({ id: uid(), ...data });
+  save(); renderAll();
+}
 document.getElementById('addForm').addEventListener('submit', e => {
   e.preventDefault();
   const company = document.getElementById('fCompany').value.trim();
   const role = document.getElementById('fRole').value.trim();
   if (!company || !role) return;
-  apps.unshift({
-    id: uid(), company, role,
+  addApplication({
+    company, role,
     status: document.getElementById('fStatus').value,
     date: document.getElementById('fDate').value || new Date().toISOString().slice(0, 10),
     source: document.getElementById('fSource').value.trim(),
     notes: document.getElementById('fNotes').value.trim()
   });
-  save(); renderAll();
   dialog.close();
   document.getElementById('addForm').reset();
+});
+
+/* ---------- inline add form (agent section) ---------- */
+const addOk = document.getElementById('addOk');
+document.getElementById('addForm2').addEventListener('submit', e => {
+  e.preventDefault();
+  const company = document.getElementById('f2Company').value.trim();
+  const role = document.getElementById('f2Role').value.trim();
+  if (!company || !role){
+    addOk.classList.add('bad');
+    addOk.textContent = 'Company and role are required.';
+    return;
+  }
+  addApplication({
+    company, role,
+    status: document.getElementById('f2Status').value,
+    date: document.getElementById('f2Date').value || new Date().toISOString().slice(0, 10),
+    source: document.getElementById('f2Source').value.trim(),
+    notes: document.getElementById('f2Notes').value.trim()
+  });
+  document.getElementById('addForm2').reset();
+  document.getElementById('f2Date').value = new Date().toISOString().slice(0, 10);
+  addOk.classList.remove('bad');
+  addOk.textContent = '✓ Added ' + company + ' — ' + role + ' to your tracker.';
+  setTimeout(() => { addOk.textContent = ''; }, 4000);
 });
 
 /* ---------- render all ---------- */
@@ -797,7 +890,7 @@ const obs = new IntersectionObserver(entries => {
     }
   });
 }, { rootMargin:'-40% 0px -55% 0px' });
-['overview','pipeline','applications'].forEach(id => { const el = document.getElementById(id); el && obs.observe(el); });
+['overview','pipeline','applications','agent'].forEach(id => { const el = document.getElementById(id); el && obs.observe(el); });
 
 /* ---------- last updated + resize ---------- */
 document.getElementById('updated').textContent = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
@@ -805,7 +898,7 @@ let rT;
 window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => { renderDonut(); renderTrend(); }, 150); });
 
 /* ---------- chat widget ---------- */
-const chatEl = $('#chat'), chatFab = $('#chatFab'), chatMsgs = $('#chatMsgs');
+const chatFab = $('#chatFab'), chatMsgs = $('#chatMsgs');
 const chatInput = $('#chatInput'), chatSend = $('#chatSend'), chatStatus = $('#chatStatus');
 const CHAT_API = 'https://text.pollinations.ai/openai';
 const CHAT_MODEL = 'openai';
@@ -883,8 +976,8 @@ async function ask(prompt){
 }
 
 chatFab.addEventListener('click', () => {
-  chatEl.classList.toggle('open');
-  if (chatEl.classList.contains('open')) chatInput.focus();
+  document.getElementById('agent').scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth' });
+  setTimeout(() => chatInput.focus(), 450);
 });
 chatSend.addEventListener('click', () => {
   const v = chatInput.value.trim();
@@ -894,7 +987,6 @@ chatSend.addEventListener('click', () => {
 });
 chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') chatSend.click(); });
 document.querySelectorAll('#chipRow .chip').forEach(c => c.addEventListener('click', () => {
-  chatEl.classList.add('open');
   chatInput.value = c.dataset.p;
   chatInput.focus();
 }));

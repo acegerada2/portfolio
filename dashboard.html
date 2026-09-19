@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ace Gerada · Executive Assistant Profile</title>
+<title>Ace Gerada | Business Support &amp; Growth Systems</title>
+<meta name="description" content="Interactive profile for Ace Gerada: business support and growth systems. Services, rates, skills, tools, testimonials, and experience.">
 <style>
   :root{
-    --bg:#faf6ef; --bg2:#fffdf8; --card:#ffffff; --card2:#f4ecdf;
-    --ink:#2b2118; --muted:#7d6c58; --accent:#c2603f; --accent2:#d98e5f;
-    --gold:#d9a441; --sage:#5f8f6f; --good:#4f8a63; --bad:#c25b4a;
-    --line:rgba(43,33,24,.12); --shadow:0 18px 44px rgba(93,66,38,.14);
-    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --bg:#ffffff; --bg2:#f6f9ff; --card:#ffffff; --card2:#eef4ff;
+    --ink:#0b1c33; --muted:#5a6b85; --accent:#2563eb; --accent2:#0ea5e9;
+    --gold:#d97706; --sage:#16a34a; --good:#16a34a; --bad:#dc2626;
+    --line:rgba(11,28,51,.10); --shadow:0 18px 44px rgba(37,99,235,.10);
+    --sans:"Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   }
   [data-theme="dark"]{
-    --bg:#1d1711; --bg2:#241d15; --card:#2a2219; --card2:#332a1f;
-    --ink:#f4ecdf; --muted:#b3a08a; --accent:#e08a5f; --accent2:#f0b27a;
-    --gold:#e5b95c; --sage:#8fbf9f; --good:#7fbf92; --bad:#e07a6a;
-    --line:rgba(244,236,223,.14); --shadow:0 18px 44px rgba(0,0,0,.45);
+    --bg:#0a1220; --bg2:#0e1830; --card:#101c33; --card2:#16233f;
+    --ink:#eef4ff; --muted:#93a5c4; --accent:#5b8cff; --accent2:#38bdf8;
+    --gold:#fbbf24; --sage:#4ade80; --good:#4ade80; --bad:#f87171;
+    --line:rgba(238,244,255,.12); --shadow:0 18px 44px rgba(0,0,0,.45);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{
-    font-family:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    background:radial-gradient(1100px 500px at 90% -10%, rgba(217,158,95,.14), transparent 55%),
-               radial-gradient(800px 450px at -10% 30%, rgba(95,143,111,.10), transparent 50%),
+    font-family:var(--sans); line-height:1.55; min-height:100vh;
+    background:radial-gradient(1100px 500px at 90% -10%, rgba(14,165,233,.10), transparent 55%),
+               radial-gradient(800px 450px at -10% 30%, rgba(37,99,235,.08), transparent 50%),
                var(--bg);
-    color:var(--ink); line-height:1.55; min-height:100vh;
+    color:var(--ink);
   }
   a{color:var(--accent);text-decoration:none}
   .app{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
@@ -32,16 +33,16 @@
   /* ---------- Sidebar ---------- */
   .side{border-right:1px solid var(--line);padding:22px 18px;display:flex;flex-direction:column;gap:4px;
     position:sticky;top:0;height:100vh;background:color-mix(in srgb, var(--bg2) 60%, transparent)}
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.3px;margin:0 6px 20px}
-  .brand .mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:15px;
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.3px;margin:0 6px 20px}
+  .brand .mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:14px;
     background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:800}
-  .brand small{display:block;font-family:var(--sans,"Segoe UI");font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+  .brand small{display:block;font-family:var(--sans);font-size:9.5px;color:var(--muted);font-weight:700;letter-spacing:.8px;text-transform:uppercase}
   .nav{display:flex;flex-direction:column;gap:2px}
   .nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:11px;color:var(--muted);
     font-size:14px;font-weight:600;transition:.15s}
   .nav a:hover{color:var(--ink);background:var(--card)}
-  .nav a.on{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 16%,transparent),transparent);
-    color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+  .nav a.on{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 14%,transparent),transparent);
+    color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
   .side .foot{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid var(--line)}
   .side .foot a{font-size:13px;font-weight:600;color:var(--muted);display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px}
   .side .foot a:hover{color:var(--accent)}
@@ -51,8 +52,8 @@
   .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .crumb{font-size:12.5px;color:var(--muted);font-weight:600}
   .crumb a:hover{color:var(--accent)}
-  h1.title{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.4px;margin:6px 0 4px}
-  .sub{color:var(--muted);font-size:13.5px;max-width:720px}
+  h1.title{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.8px;margin:6px 0 4px}
+  .sub{color:var(--muted);font-size:13.5px;max-width:760px}
   .sub b{color:var(--accent)}
   .tbar-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding-top:6px}
   .iconbtn{width:38px;height:38px;border-radius:11px;background:var(--card);border:1px solid var(--line);
@@ -67,7 +68,7 @@
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 14px;transition:transform .2s}
   .kpi:hover{transform:translateY(-3px)}
   .kpi .l{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px}
-  .kpi .v{font-family:var(--serif);font-size:32px;font-weight:700;letter-spacing:-.5px;margin:8px 0 6px}
+  .kpi .v{font-size:32px;font-weight:800;letter-spacing:-1px;margin:8px 0 6px}
   .kpi .d{font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 9px}
   .kpi .d.up{color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent)}
   .kpi .d.dn{color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,transparent)}
@@ -76,7 +77,7 @@
   .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-bottom:16px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
-  .card h3{font-family:var(--serif);font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+  .card h3{font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
   .card .hint{font-size:12px;color:var(--muted);font-weight:600}
   .chart{position:relative;width:100%}
 
@@ -91,8 +92,8 @@
   .ratebox{margin-top:14px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px}
   .ratebox .rl{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
   .ratebox .rl small{color:var(--muted);font-size:12px;font-weight:700}
-  .ratebox .rate{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--accent);line-height:1}
-  .ratebox .rate small{font-family:var(--sans,"Segoe UI");font-size:12.5px;color:var(--muted);font-weight:600}
+  .ratebox .rate{font-size:38px;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-1px}
+  .ratebox .rate small{font-size:12.5px;color:var(--muted);font-weight:600}
   .scopemeter{margin-top:12px}
   .scopemeter .sl{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.6px;text-transform:uppercase}
   .scopemeter .track{height:8px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);margin-top:6px;overflow:hidden}
@@ -151,9 +152,9 @@
   td .ct{color:var(--muted);font-size:12px}
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px}
   .badge i{width:6px;height:6px;border-radius:50%;background:currentColor}
-  .st-exec{color:#c2603f;background:color-mix(in srgb,#c2603f 13%,transparent)}
-  .st-lead{color:#5f8f6f;background:color-mix(in srgb,#5f8f6f 13%,transparent)}
-  .st-ops{color:#8a6a9e;background:color-mix(in srgb,#8a6a9e 13%,transparent)}
+  .st-exec{color:#2563eb;background:color-mix(in srgb,#2563eb 13%,transparent)}
+  .st-lead{color:#16a34a;background:color-mix(in srgb,#16a34a 13%,transparent)}
+  .st-ops{color:#7c3aed;background:color-mix(in srgb,#7c3aed 13%,transparent)}
   .empty{padding:34px;text-align:center;color:var(--muted);font-size:13.5px;display:none}
   .empty.show{display:block}
   .empty .em{font-size:30px;display:block;margin-bottom:8px}
@@ -187,7 +188,7 @@
 <div class="app">
   <!-- ---------- Sidebar ---------- -->
   <aside class="side">
-    <div class="brand"><span class="mark">AG</span><div>Ace Gerada<small>Executive Assistant</small></div></div>
+    <div class="brand"><span class="mark">AG</span><div>Ace Gerada<small>Business Support &amp; Growth Systems</small></div></div>
     <nav class="nav" aria-label="Dashboard sections">
       <a href="#overview" class="on">📊 Overview</a>
       <a href="#services">🧮 Services &amp; Rates</a>
@@ -206,9 +207,9 @@
   <main class="main" id="overview">
     <div class="topbar">
       <div>
-        <div class="crumb"><a href="index.html">Portfolio</a> / Profile</div>
-        <h1 class="title">Executive Assistant Profile</h1>
-        <p class="sub">9+ years turning chaos into calm for C-level leaders. I run your <b>inbox, calendar, pipeline, and ops</b> — then automate the busywork so you get hours back every week. Executive precision meets growth operations: more qualified meetings, cleaner CRMs, and AI-powered systems that scale.</p>
+        <div class="crumb"><a href="index.html">Portfolio</a> / Dashboard</div>
+        <h1 class="title">Business Support &amp; Growth Systems</h1>
+        <p class="sub">8 years turning operational chaos into systems for founders and growing businesses. I run your <b>inbox, calendar, pipeline, and ops</b>, then automate the busywork so you get hours back every week. Executive precision meets growth operations: more qualified meetings, cleaner CRMs, and AI-powered systems that scale.</p>
       </div>
       <div class="tbar-right">
         <a class="cta" href="mailto:ace.gerada@gmail.com?subject=Let's%20work%20together">✉ Book a call</a>
@@ -248,7 +249,7 @@
     <div class="grid">
       <div class="card" id="services">
         <h3>🧮 Services &amp; scope-based rate <span class="hint">$8 base · +$5 per scope</span></h3>
-        <p class="hint" style="margin-bottom:4px">Tick the services you need — rate starts at $8/hr for Virtual Assistance and adds $5 per additional scope.</p>
+        <p class="hint" style="margin-bottom:4px">Tick the services you need. Rate starts at $8/hr for Virtual Assistance and adds $5 per additional scope.</p>
         <div class="svc" id="svclist">
           <label><input type="checkbox" value="Virtual Assistance" checked><span>Virtual Assistance</span><b>+$0</b></label>
           <label><input type="checkbox" value="Executive Assistance"><span>Executive Assistance</span><b>+$5</b></label>
@@ -292,38 +293,44 @@
         <h3>🧰 Toolbox <span class="hint">30+ tools mastered</span></h3>
         <div class="toolfilters" id="toolfilters">
           <button class="tchip active" data-f="all">All</button>
-          <button class="tchip" data-f="crm">CRM &amp; Data</button>
+          <button class="tchip" data-f="crm">CRM &amp; Sales</button>
           <button class="tchip" data-f="lead">Lead Gen</button>
-          <button class="tchip" data-f="email">Email &amp; Delivery</button>
+          <button class="tchip" data-f="email">Outreach</button>
           <button class="tchip" data-f="ai">AI &amp; Automation</button>
-          <button class="tchip" data-f="proj">Project &amp; Comms</button>
+          <button class="tchip" data-f="proj">Ops &amp; Comms</button>
+          <button class="tchip" data-f="prop">Property Mgmt</button>
         </div>
         <div class="toolgrid" id="toolgrid">
           <div class="tool" data-f="crm"><span class="ic"></span>HubSpot</div>
           <div class="tool" data-f="crm"><span class="ic"></span>Pipedrive</div>
+          <div class="tool" data-f="crm"><span class="ic"></span>Zoho</div>
           <div class="tool" data-f="crm"><span class="ic"></span>Salesforce</div>
-          <div class="tool" data-f="lead"><span class="ic"></span>Apollo.io</div>
+          <div class="tool" data-f="lead"><span class="ic"></span>Apollo</div>
           <div class="tool" data-f="lead"><span class="ic"></span>Seamless.ai</div>
           <div class="tool" data-f="lead"><span class="ic"></span>LinkedIn Sales Nav</div>
-          <div class="tool" data-f="lead"><span class="ic"></span>RocketReach</div>
+          <div class="tool" data-f="lead"><span class="ic"></span>LinkedIn Recruiter</div>
           <div class="tool" data-f="lead"><span class="ic"></span>Swordfish</div>
           <div class="tool" data-f="email"><span class="ic"></span>Instantly</div>
-          <div class="tool" data-f="email"><span class="ic"></span>Mailchimp</div>
+          <div class="tool" data-f="email"><span class="ic"></span>HubSpot Sequences</div>
           <div class="tool" data-f="email"><span class="ic"></span>ZeroBounce</div>
           <div class="tool" data-f="email"><span class="ic"></span>Emailable</div>
           <div class="tool" data-f="ai"><span class="ic"></span>Claude</div>
-          <div class="tool" data-f="ai"><span class="ic"></span>Claude Code</div>
-          <div class="tool" data-f="ai"><span class="ic"></span>HubSpot Workflows</div>
-          <div class="tool" data-f="ai"><span class="ic"></span>Pipedrive Automations</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>ClickUp</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Asana</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Trello</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Monday.com</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Slack</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Teams</div>
-          <div class="tool" data-f="proj"><span class="ic"></span>Zoom</div>
+          <div class="tool" data-f="ai"><span class="ic"></span>AI-assisted workflows</div>
+          <div class="tool" data-f="ai"><span class="ic"></span>CRM automation</div>
+          <div class="tool" data-f="ai"><span class="ic"></span>Lead enrichment</div>
           <div class="tool" data-f="proj"><span class="ic"></span>Google Workspace</div>
           <div class="tool" data-f="proj"><span class="ic"></span>Microsoft 365</div>
+          <div class="tool" data-f="proj"><span class="ic"></span>Asana</div>
+          <div class="tool" data-f="proj"><span class="ic"></span>ClickUp</div>
+          <div class="tool" data-f="proj"><span class="ic"></span>Trello</div>
+          <div class="tool" data-f="proj"><span class="ic"></span>Slack</div>
+          <div class="tool" data-f="proj"><span class="ic"></span>Notion</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>Buildium</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>Propertyware</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>AppFolio</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>Yardi</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>Zillow</div>
+          <div class="tool" data-f="prop"><span class="ic"></span>PropertyGuru</div>
         </div>
       </div>
 
@@ -353,7 +360,7 @@
 
     <!-- Experience table -->
     <div class="card tablecard" id="experience">
-      <h3>💼 Experience <span class="hint">9 roles · 2017 – present</span></h3>
+      <h3>💼 Experience <span class="hint">9 roles · 2017 to present</span></h3>
       <div class="filters">
         <div class="search">
           <span aria-hidden="true">🔍</span>
@@ -410,7 +417,7 @@ document.body.dataset.theme === 'dark' && ($('#themeBtn2').textContent = '☀');
 
 /* ---------- KPI count-up ---------- */
 const KPIS = [
-  { el:'kpiY', t:9,  s:'+' },
+  { el:'kpiY', t:8,  s:'+' },
   { el:'kpiW', t:80, s:'%' },
   { el:'kpiD', t:95, s:'%' },
   { el:'kpiE', t:25, s:'%' }
@@ -441,11 +448,11 @@ function drawSpark(id, data){
   const d = pts.map((p, j) => (j ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
   const gid = 'sg' + Math.random().toString(36).slice(2);
   svg.innerHTML = '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1">' +
-    '<stop offset="0" stop-color="#c2603f" stop-opacity=".30"/><stop offset="1" stop-color="#c2603f" stop-opacity="0"/></linearGradient></defs>' +
+    '<stop offset="0" stop-color="#2563eb" stop-opacity=".30"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></linearGradient></defs>' +
     '<path d="' + d + ' L' + w + ' ' + h + ' L0 ' + h + ' Z" fill="url(#' + gid + ')" stroke="none"/>' +
-    '<path d="' + d + '" fill="none" stroke="#c2603f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+    '<path d="' + d + '" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
 }
-drawSpark('sparkY', [5,6,6,7,7,8,8,9]);
+drawSpark('sparkY', [4,5,5,6,6,7,7,8]);
 drawSpark('sparkW', [55,60,62,68,70,74,77,80]);
 drawSpark('sparkD', [82,85,86,88,90,92,94,95]);
 drawSpark('sparkE', [12,14,15,17,19,21,23,25]);
@@ -497,15 +504,15 @@ chips.forEach(c => c.addEventListener('click', () => {
 
 /* ---------- experience table ---------- */
 const ROLES = [
-  { company:'Drumheller Construction Management', role:'Lead Generation Specialist', period:'Mar 2026 – Aug 2026', cat:'lead' },
-  { company:'AKKO', role:'Executive Assistant & Lead Gen Specialist', period:'Jul 2025 – Mar 2026', cat:'exec' },
-  { company:'BlueAstro', role:'Administrative Assistant', period:'Jan 2025 – Mar 2025', cat:'ops' },
-  { company:'BrainGainzLC', role:'Executive Assistant', period:'Mar 2024 – Mar 2025', cat:'exec' },
-  { company:'MintLeads', role:'Operations Specialist', period:'Nov 2023 – Mar 2024', cat:'ops' },
-  { company:'Valcove Hospitality', role:'Business Dev / Lead Gen Specialist', period:'Apr 2023 – Oct 2023', cat:'lead' },
-  { company:'Extenteam', role:'Business Dev / Lead Gen Specialist', period:'Jun 2021 – Nov 2023', cat:'lead' },
-  { company:'Portillo Realty Group', role:'Executive Assistant', period:'Sep 2021 – Sep 2022 · May 2019 – Jun 2021', cat:'exec' },
-  { company:'YesVirtualPH', role:'Property Management Assistant', period:'Aug 2017 – Feb 2020', cat:'ops' }
+  { company:'Drumheller Construction Management', role:'Lead Generation Specialist', period:'Mar 2026 to Aug 2026', cat:'lead' },
+  { company:'AKKO', role:'Executive Assistant & Lead Gen Specialist', period:'Jul 2025 to Mar 2026', cat:'exec' },
+  { company:'BlueAstro', role:'Administrative Assistant', period:'Jan 2025 to Mar 2025', cat:'ops' },
+  { company:'BrainGainzLC', role:'Executive Assistant', period:'Mar 2024 to Mar 2025', cat:'exec' },
+  { company:'MintLeads', role:'Operations Specialist', period:'Nov 2023 to Mar 2024', cat:'ops' },
+  { company:'Valcove Hospitality', role:'Business Dev / Lead Gen Specialist', period:'Apr 2023 to Oct 2023', cat:'lead' },
+  { company:'Extenteam', role:'Business Dev / Lead Gen Specialist', period:'Jun 2021 to Nov 2023', cat:'lead' },
+  { company:'Portillo Realty Group', role:'Executive Assistant', period:'Sep 2021 to Sep 2022 · May 2019 to Jun 2021', cat:'exec' },
+  { company:'YesVirtualPH', role:'Property Management Assistant', period:'Aug 2017 to Feb 2020', cat:'ops' }
 ];
 const CATS = { exec:['Executive','st-exec'], lead:['Lead Gen','st-lead'], ops:['Ops','st-ops'] };
 const tbody = $('#tbody');

@@ -119,7 +119,7 @@
     background:var(--card);border:1px solid var(--line);border-top:0;
     border-radius:0 0 var(--r-card) var(--r-card);
     box-shadow:var(--shadow)}
-  .logo{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1rem;color:var(--ink)}
+  .logo{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1rem;color:var(--ink);min-height:44px}
   .logo .mark{width:2.25rem;height:2.25rem;border-radius:.6rem;display:grid;place-items:center;
     background:var(--yellow);color:#0c0a09;font-family:var(--font-h);font-weight:700;font-size:.95rem;flex:none}
   .logo small{display:block;font-size:.625rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);line-height:1.3}
@@ -128,10 +128,10 @@
   .navlinks a:hover{color:var(--ink);background:var(--card2)}
   .navlinks a.on{color:var(--ink);background:var(--yellow-soft)}
   .nav-cta{display:flex;align-items:center;gap:.6rem;margin-left:.75rem}
-  .nav-cta .btn{padding:.5rem 1.1rem;min-height:40px;font-size:.9375rem}
+  .nav-cta .btn{padding:.5rem 1.1rem;min-height:44px;font-size:.9375rem;white-space:nowrap}
   .navtext{font-size:.9375rem;font-weight:500;color:var(--muted);padding:.5rem .6rem;border-radius:var(--r-btn)}
   .navtext:hover{color:var(--ink);background:var(--card2)}
-  .iconbtn{width:40px;height:40px;border-radius:var(--r-btn);background:var(--card);
+  .iconbtn{width:44px;height:44px;border-radius:var(--r-btn);background:var(--card);
     border:1px solid var(--line);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .15s}
   .iconbtn:hover{border-color:var(--line-strong)}
   .iconbtn svg{width:1.15rem;height:1.15rem;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
@@ -218,7 +218,7 @@
   .tab[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow)}
   .tab .ic{width:2.25rem;height:2.25rem;background:var(--card);border:1px solid var(--line)}
   .tab[aria-selected="true"] .ic{background:var(--yellow-soft);border-color:transparent}
-  .tab .sells-mini{display:block;font-size:.6875rem;font-weight:700;letter-spacing:.06em;
+  .tab .sells-mini{display:block;font-size:.75rem;font-weight:700;letter-spacing:.06em;
     text-transform:uppercase;color:var(--muted);margin-top:.15rem}
   .tabpanel{padding:clamp(1.5rem,3vw,2.25rem)}
   .tabpanel[hidden]{display:none}
@@ -234,7 +234,7 @@
     border:1px solid var(--line);border-radius:var(--r-chip);padding:.35rem .7rem}
   .result{background:var(--green-soft);border:1px solid var(--green-line);border-radius:var(--r-chip);
     padding:.9rem 1.1rem;color:var(--green-deep);font-size:.9375rem;font-weight:600}
-  .result small{display:block;font-size:.6875rem;font-weight:800;letter-spacing:.08em;
+  .result small{display:block;font-size:.75rem;font-weight:800;letter-spacing:.08em;
     text-transform:uppercase;opacity:.75;margin-bottom:.25rem}
 
   /* ============================================================
@@ -261,10 +261,15 @@
     min-height:clamp(20rem,44vh,30rem);display:flex;flex-direction:column;justify-content:flex-end;
     padding:2rem;text-decoration:none;isolation:isolate}
   .uc-card:nth-child(3){grid-column:1}
-  .uc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .uc-art{position:absolute;inset:0;width:100%;height:100%;z-index:-2;
+    transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+  .uc-card:hover .uc-art{transform:scale(1.045)}
   .uc-card::after{content:"";position:absolute;inset:0;z-index:-1;
-    background:linear-gradient(rgba(0,0,0,0) 40%,rgba(0,0,0,.72));transition:background .3s}
-  .uc-card:hover::after{background:linear-gradient(rgba(0,0,0,.15) 20%,rgba(0,0,0,.8))}
+    background:linear-gradient(rgba(0,0,0,0) 35%,rgba(0,0,0,.5) 100%);transition:background .3s}
+  .uc-card:hover::after{background:linear-gradient(rgba(0,0,0,.08) 35%,rgba(0,0,0,.6) 100%)}
+  .uc-body{position:relative;width:100%;padding:1.35rem 1.4rem 1.5rem;
+    background:rgba(12,10,9,.84);border:1px solid rgba(255,255,255,.1);border-radius:12px;
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
   .uc-card .tagline{color:rgba(255,255,255,.75)}
   .uc-card h3{font-family:var(--font-h);font-size:1.6rem;font-weight:700;letter-spacing:-.01em;margin:.6rem 0 .5rem}
   .uc-card p{font-size:.9375rem;color:rgba(255,255,255,.88);max-width:24rem}
@@ -296,7 +301,7 @@
   .wstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
     padding:1.35rem 1.1rem;text-align:center;transition:border-color .2s,box-shadow .2s}
   .wstep:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
-  .wstep .n{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow-deep);
+  .wstep .n{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow-deep);
     background:var(--yellow-soft);border-radius:var(--r-chip);padding:.3rem .6rem;display:inline-block}
   .wstep h3{font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin:.85rem 0 .35rem;color:var(--head)}
   .wstep p{font-size:.8125rem;color:var(--muted);line-height:1.5}
@@ -325,10 +330,10 @@
   .case:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
   .case .meta{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
   .case .co{font-family:var(--font-h);font-size:1.2rem;font-weight:700;color:var(--head);letter-spacing:-.01em}
-  .case .ctag{font-size:.6875rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  .case .ctag{font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
     color:var(--yellow-deep);background:var(--yellow-soft);border-radius:var(--r-chip);padding:.35rem .7rem}
   .case .row{font-size:.9375rem}
-  .case .row b{display:block;font-size:.6875rem;font-weight:800;letter-spacing:.08em;
+  .case .row b{display:block;font-size:.75rem;font-weight:800;letter-spacing:.08em;
     text-transform:uppercase;color:var(--muted2);margin-bottom:.2rem}
   .case .row p{color:var(--muted)}
   .case .result{margin-top:auto}
@@ -404,18 +409,20 @@
   .footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
   .footer-cols h4{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
     color:var(--muted2);margin-bottom:.6rem}
-  .footer-cols a{display:block;font-size:.9375rem;color:var(--muted);padding:.3rem 0;transition:color .15s}
+  .footer-cols a{display:block;font-size:.9375rem;color:var(--muted);padding:.7rem 0;transition:color .15s}
   .footer-cols a:hover{color:var(--ink)}
   .footer-right{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
   .footer-right h4{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
   .footer-right a.mail{font-family:var(--font-h);font-size:1.15rem;font-weight:700;color:var(--head);
-    text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+    text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong);
+    display:inline-flex;align-items:center;min-height:44px}
   .footer-right a.mail:hover{text-decoration-color:var(--yellow)}
   .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
     margin-top:2rem;padding-top:1.35rem;border-top:1px solid var(--line);
     font-size:.875rem;color:var(--muted2)}
   .footer-legal{display:flex;gap:1.25rem;flex-wrap:wrap}
-  .footer-legal a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+  .footer-legal a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;
+    text-decoration-color:var(--line-strong);display:inline-flex;align-items:center;min-height:44px}
   .footer-legal a:hover{color:var(--ink)}
 
   /* ============================================================
@@ -467,12 +474,22 @@
     .footer-cols{grid-template-columns:1fr}
     .footer-bottom{flex-direction:column;align-items:flex-start}
     .logo small{display:none}
+    .uc-card{padding:1.5rem}
+  }
+  @media(max-width:400px){
+    .logo>span:last-child{display:none}
+    .nav-cta{margin-left:.5rem;gap:.45rem}
+    .nav-cta .btn{padding:.5rem .85rem;font-size:.875rem}
   }
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
       transition-duration:.01ms!important;scroll-behavior:auto!important}
   }
 </style>
+<script>
+/* apply stored dark theme before first paint (light is the default) */
+try{if(localStorage.getItem('ag-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}
+</script>
 </head>
 <body data-theme="light">
 
@@ -806,28 +823,128 @@
     </div>
     <div class="uc-grid">
       <a class="uc-card" href="#services">
-        <img src="downloads/JSH-triptych-work.jpg" alt="" loading="lazy" aria-hidden="true">
-        <p class="tagline">For founders</p>
-        <h3>Founder Support</h3>
-        <p>For founders drowning in the day to day. Protected time, handled inbox, and cleaner operations.</p>
-        <div class="uc-tags"><span>Executive Assistance</span><span>Virtual Assistance</span><span>Operations &amp; SOPs</span></div>
-        <span class="more">More protected time. Less operational overhead. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        <svg class="uc-art" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="uc-a1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#262117"/><stop offset="1" stop-color="#131110"/>
+            </linearGradient>
+            <radialGradient id="uc-b1" cx="0.76" cy="0.24" r="0.55">
+              <stop offset="0" stop-color="#ffd335" stop-opacity="0.30"/>
+              <stop offset="0.6" stop-color="#ffd335" stop-opacity="0.07"/>
+              <stop offset="1" stop-color="#ffd335" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="uc-p1" width="26" height="26" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#ffd335" opacity="0.12"/>
+            </pattern>
+          </defs>
+          <rect width="600" height="460" fill="url(#uc-a1)"/>
+          <rect width="600" height="460" fill="url(#uc-p1)"/>
+          <rect width="600" height="460" fill="url(#uc-b1)"/>
+          <g fill="none" stroke="#ffd335" stroke-linecap="round">
+            <circle cx="450" cy="140" r="170" stroke-opacity="0.10" stroke-width="1.5"/>
+            <circle cx="450" cy="140" r="126" stroke-opacity="0.18" stroke-width="1.5"/>
+            <circle cx="450" cy="140" r="82" stroke-opacity="0.34" stroke-width="1.75"/>
+            <circle cx="450" cy="140" r="42" stroke-opacity="0.9" stroke-width="2.5"/>
+            <path d="M450 116v26l18 12" stroke-opacity="0.95" stroke-width="3"/>
+          </g>
+          <circle cx="450" cy="98" r="5.5" fill="#ffd335"/>
+          <circle cx="450" cy="58" r="4" fill="#ffd335" opacity="0.5"/>
+          <g>
+            <rect x="64" y="146" width="124" height="10" rx="5" fill="#ffd335" opacity="0.26"/>
+            <rect x="64" y="168" width="86" height="10" rx="5" fill="#ffd335" opacity="0.16"/>
+            <rect x="64" y="190" width="104" height="10" rx="5" fill="#ffd335" opacity="0.10"/>
+          </g>
+        </svg>
+        <div class="uc-body">
+          <p class="tagline">For founders</p>
+          <h3>Founder Support</h3>
+          <p>For founders drowning in the day to day. Protected time, handled inbox, and cleaner operations.</p>
+          <div class="uc-tags"><span>Executive Assistance</span><span>Virtual Assistance</span><span>Operations &amp; SOPs</span></div>
+          <span class="more">More protected time. Less operational overhead. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </div>
       </a>
       <a class="uc-card" href="#services">
-        <img src="downloads/JSH-triptych-creative.jpg" alt="" loading="lazy" aria-hidden="true">
-        <p class="tagline">For sales teams</p>
-        <h3>Sales Support</h3>
-        <p>For teams that need more conversations and a pipeline they can actually see.</p>
-        <div class="uc-tags"><span>B2B Lead Generation</span><span>CRM &amp; Pipeline Management</span><span>Email Outreach</span></div>
-        <span class="more">A more organized, consistent prospecting engine. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        <svg class="uc-art" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="uc-a2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1c2117"/><stop offset="1" stop-color="#111310"/>
+            </linearGradient>
+            <radialGradient id="uc-b2" cx="0.28" cy="0.2" r="0.6">
+              <stop offset="0" stop-color="#84cc16" stop-opacity="0.26"/>
+              <stop offset="1" stop-color="#84cc16" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="uc-f2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#84cc16" stop-opacity="0.26"/>
+              <stop offset="1" stop-color="#84cc16" stop-opacity="0"/>
+            </linearGradient>
+            <pattern id="uc-p2" width="26" height="26" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#84cc16" opacity="0.12"/>
+            </pattern>
+          </defs>
+          <rect width="600" height="460" fill="url(#uc-a2)"/>
+          <rect width="600" height="460" fill="url(#uc-p2)"/>
+          <rect width="600" height="460" fill="url(#uc-b2)"/>
+          <g stroke="#fafaf9" stroke-opacity="0.05" stroke-width="1.5">
+            <path d="M0 360h600M0 280h600M0 200h600M0 120h600"/>
+          </g>
+          <path d="M40 336 L130 300 L210 316 L300 240 L380 258 L470 170 L560 118 L560 460 L40 460 Z" fill="url(#uc-f2)"/>
+          <polyline points="40,336 130,300 210,316 300,240 380,258 470,170 560,118"
+            fill="none" stroke="#84cc16" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <g fill="#111310" stroke="#84cc16" stroke-width="2.5">
+            <circle cx="40" cy="336" r="5"/><circle cx="130" cy="300" r="5"/><circle cx="210" cy="316" r="5"/>
+            <circle cx="300" cy="240" r="5"/><circle cx="380" cy="258" r="5"/><circle cx="470" cy="170" r="5"/>
+          </g>
+          <circle cx="560" cy="118" r="16" fill="#84cc16" opacity="0.28"/>
+          <circle cx="560" cy="118" r="7.5" fill="#84cc16"/>
+        </svg>
+        <div class="uc-body">
+          <p class="tagline">For sales teams</p>
+          <h3>Sales Support</h3>
+          <p>For teams that need more conversations and a pipeline they can actually see.</p>
+          <div class="uc-tags"><span>B2B Lead Generation</span><span>CRM &amp; Pipeline Management</span><span>Email Outreach</span></div>
+          <span class="more">A more organized, consistent prospecting engine. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </div>
       </a>
       <a class="uc-card" href="#services">
-        <img src="downloads/JSH-triptych-headshot.jpg" alt="" loading="lazy" aria-hidden="true">
-        <p class="tagline">For growing businesses</p>
-        <h3>Business Systems</h3>
-        <p>For businesses ready to stop depending on people's heads and start running on documented systems.</p>
-        <div class="uc-tags"><span>Operations &amp; SOPs</span><span>AI Workflow Automation</span><span>CRM Setup</span></div>
-        <span class="more">Repeatable processes with less manual work. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        <svg class="uc-art" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="uc-a3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#231a14"/><stop offset="1" stop-color="#131110"/>
+            </linearGradient>
+            <radialGradient id="uc-b3" cx="0.72" cy="0.62" r="0.6">
+              <stop offset="0" stop-color="#f97316" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="uc-p3" width="26" height="26" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#f97316" opacity="0.12"/>
+            </pattern>
+          </defs>
+          <rect width="600" height="460" fill="url(#uc-a3)"/>
+          <rect width="600" height="460" fill="url(#uc-p3)"/>
+          <rect width="600" height="460" fill="url(#uc-b3)"/>
+          <g stroke="#f97316" stroke-opacity="0.5" stroke-width="1.75" fill="none" stroke-linecap="round">
+            <path d="M130 132 L272 92"/>
+            <path d="M130 132 L196 236"/>
+            <path d="M272 92 L404 158"/>
+            <path d="M196 236 L330 276"/>
+            <path d="M404 158 L470 268" stroke-dasharray="7 8"/>
+            <path d="M330 276 L470 268"/>
+          </g>
+          <circle cx="404" cy="158" r="27" fill="#f97316" opacity="0.16"/>
+          <circle cx="130" cy="132" r="14" fill="#131110" stroke="#a8a29e" stroke-width="2"/>
+          <circle cx="272" cy="92" r="10" fill="#131110" stroke="#ffd335" stroke-width="2"/>
+          <circle cx="196" cy="236" r="10" fill="#131110" stroke="#a8a29e" stroke-width="2"/>
+          <circle cx="404" cy="158" r="16" fill="#f97316"/>
+          <circle cx="330" cy="276" r="10" fill="#131110" stroke="#a8a29e" stroke-width="2"/>
+          <circle cx="470" cy="268" r="13" fill="#131110" stroke="#84cc16" stroke-width="2.5"/>
+        </svg>
+        <div class="uc-body">
+          <p class="tagline">For growing businesses</p>
+          <h3>Business Systems</h3>
+          <p>For businesses ready to stop depending on people's heads and start running on documented systems.</p>
+          <div class="uc-tags"><span>Operations &amp; SOPs</span><span>AI Workflow Automation</span><span>CRM Setup</span></div>
+          <span class="more">Repeatable processes with less manual work. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </div>
       </a>
     </div>
   </div>
@@ -1121,12 +1238,12 @@
 </footer>
 
 <script>
-/* ---------- theme (persisted, respects system preference) ---------- */
+/* ---------- theme (persisted; light is the default) ---------- */
 const themeBtn = document.getElementById('themeBtn');
 const stored = localStorage.getItem('ag-theme');
-const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const startTheme = stored || (systemDark ? 'dark' : 'light');
+const startTheme = stored === 'dark' ? 'dark' : 'light';
 const applyTheme = t => {
+  document.documentElement.dataset.theme = t;
   document.body.dataset.theme = t;
   themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
 };

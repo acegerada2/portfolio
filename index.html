@@ -9,321 +9,516 @@
 <meta property="og:title" content="Ace Gerada | Executive Support, Lead Generation &amp; Business Systems">
 <meta property="og:description" content="More capacity. Better systems. Less operational overhead. Remote business support and growth systems for founders and growing teams.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232563eb'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'>AG</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23ffd335'/><text x='50' y='69' font-size='52' font-family='Georgia,serif' font-weight='700' fill='%230c0a09' text-anchor='middle'>AG</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,400..700&family=Fraunces:opsz,wght@9..144,400..800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<noscript><style>.tabpanel[hidden]{display:block!important}.tabpanel{margin-top:2rem}</style></noscript>
 <style>
+  /* ============================================================
+     Design system — modeled on zest.co
+     Palette: warm stone neutrals · yellow primary · lime accents
+     Type: Fraunces (display serif) · Figtree (humanist sans)
+     ============================================================ */
   :root{
-    --bg:#ffffff; --bg2:#f6f9ff; --card:#ffffff; --card2:#eef4ff;
-    --ink:#0b1c33; --muted:#5a6b85; --accent:#2563eb; --accent2:#0ea5e9;
-    --line:rgba(11,28,51,.10); --shadow:0 18px 44px rgba(37,99,235,.10);
-    --good:#16a34a; --gold:#d97706;
-    --sans:"Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --bg:#fafaf9; --card:#fdfdfc; --card2:#f5f5f4;
+    --ink:#0c0a09; --head:#292524; --muted:#57534e; --muted2:#78716c;
+    --line:#e7e5e4; --line-strong:#d6d3d1;
+    --yellow:#ffd335; --yellow-hover:#fdc012; --yellow-soft:#fff6c2; --yellow-deep:#723911;
+    --green:#84cc16; --green-soft:#ecfccb; --green-deep:#365314; --green-line:rgba(132,204,22,.4);
+    --orange-soft:#ffedd5; --orange-deep:#7c2d12;
+    --focus:#0c0a09;
+    --shadow:0 1px 4px rgba(0,0,0,.05);
+    --shadow-lg:0 18px 44px rgba(28,25,23,.10);
+    --r-card:1rem; --r-btn:.5rem; --r-chip:.5rem;
+    --font-h:"Fraunces",Georgia,"Times New Roman",serif;
+    --font-b:"Figtree",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --pad-x:clamp(1rem,4vw,1.5rem);
+    --sec-y:clamp(4rem,7vw,6rem);
+    --hl-size:.34em; --hl-pos:86%;
   }
   [data-theme="dark"]{
-    --bg:#0a1220; --bg2:#0e1830; --card:#101c33; --card2:#16233f;
-    --ink:#eef4ff; --muted:#93a5c4; --accent:#5b8cff; --accent2:#38bdf8;
-    --line:rgba(238,244,255,.12); --shadow:0 18px 44px rgba(0,0,0,.45);
-    --good:#4ade80; --gold:#fbbf24;
+    --bg:#0c0a09; --card:#1c1917; --card2:#292524;
+    --ink:#fafaf9; --head:#e7e5e4; --muted:#a8a29e; --muted2:#a8a29e;
+    --line:#292524; --line-strong:#44403c;
+    --yellow-soft:rgba(255,211,53,.13); --yellow-deep:#fdc012;
+    --green-soft:rgba(132,204,22,.12); --green-deep:#bef264; --green-line:rgba(163,230,53,.35);
+    --orange-soft:rgba(249,115,22,.15); --orange-deep:#fdba74;
+    --focus:#ffd335;
+    --shadow:0 1px 4px rgba(0,0,0,.4);
+    --shadow-lg:0 18px 44px rgba(0,0,0,.5);
+    --hl-size:.15em; --hl-pos:100%;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    font-family:var(--sans); background:var(--bg); color:var(--ink);
-    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    font-family:var(--font-b); background:var(--bg); color:var(--ink);
+    font-size:1rem; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  a{color:var(--accent);text-decoration:none}
   img{max-width:100%;display:block}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;
-    letter-spacing:1.6px;text-transform:uppercase;color:var(--accent)}
-  .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-  h2.sec{font-size:clamp(26px,3.6vw,40px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin:14px 0 12px}
-  .lead{color:var(--muted);font-size:clamp(15px,1.6vw,17.5px);max-width:680px}
-  section{padding:88px 0;position:relative}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;
-    font-weight:700;font-size:14.5px;transition:.2s;border:1px solid transparent;cursor:pointer;font-family:inherit}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:var(--shadow)}
-  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(37,99,235,.22)}
-  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .btn:focus-visible,.iconbtn:focus-visible,.nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:80rem;margin:0 auto;padding:0 var(--pad-x)}
+  section{padding:var(--sec-y) 0;position:relative}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .skip{position:absolute;left:16px;top:-60px;z-index:200;background:var(--yellow);color:#0c0a09;
+    padding:.6rem 1.1rem;border-radius:var(--r-btn);font-weight:600;transition:top .15s}
+  .skip:focus{top:12px}
 
-  /* ---------- Header ---------- */
-  header{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 82%,transparent);
-    backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .navrow{display:flex;align-items:center;gap:22px;height:68px}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16.5px;letter-spacing:-.3px;color:var(--ink)}
-  .logo .mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-size:14px;font-weight:800;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;flex:none}
-  .logo small{display:block;font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted)}
-  .navlinks{display:flex;align-items:center;gap:2px;margin-left:auto}
-  .navlinks a{color:var(--muted);font-size:13.5px;font-weight:600;padding:9px 12px;border-radius:10px;transition:.15s}
+  /* ---------- Type ---------- */
+  .tagline{font-size:.875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2)}
+  h1,h2{font-family:var(--font-h);font-weight:700;letter-spacing:-.01em;line-height:1.2;color:var(--head);font-optical-sizing:auto}
+  h1{font-size:clamp(2.25rem,4.6vw,3rem)}
+  h2{font-size:clamp(1.9rem,3.3vw,2.488rem)}
+  h3{line-height:1.3}
+  .lead{color:var(--muted);font-size:1.0625rem;max-width:44rem;margin-top:1rem}
+  .sec-head{max-width:46rem}
+  .sec-head .tagline{margin-bottom:1rem}
+  .muted{color:var(--muted)}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.6rem 1.25rem;min-height:44px;border-radius:var(--r-btn);
+    font-weight:500;font-size:1rem;line-height:1.5;cursor:pointer;
+    border:1px solid transparent;background:transparent;color:var(--ink);
+    transition:background-color .2s,border-color .2s,color .2s}
+  .btn-primary{background:var(--yellow);color:#0c0a09;border-color:var(--yellow)}
+  .btn-primary:hover{background:var(--yellow-hover);border-color:var(--yellow-hover)}
+  .btn-secondary{border-color:rgba(12,10,9,.18);color:var(--ink)}
+  .btn-secondary:hover{border-color:var(--ink);background:rgba(12,10,9,.04)}
+  [data-theme="dark"] .btn-secondary{border-color:rgba(250,250,249,.26)}
+  [data-theme="dark"] .btn-secondary:hover{border-color:var(--ink);background:rgba(250,250,249,.06)}
+  .btn-dark{background:#0c0a09;color:#fafaf9}
+  .btn-dark:hover{background:#292524}
+  .btn-group{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+
+  /* ---------- Cards ---------- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card)}
+  .card-hover{transition:border-color .2s,background-color .2s,box-shadow .2s}
+  .card-hover:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+
+  /* ---------- Icons ---------- */
+  .ic{width:2.5rem;height:2.5rem;flex:none;display:grid;place-items:center;
+    border-radius:var(--r-chip);background:var(--yellow-soft);color:var(--head)}
+  .ic svg{width:1.25rem;height:1.25rem}
+  .ic.green{background:var(--green-soft)}
+  svg.i{width:1.25rem;height:1.25rem;stroke:currentColor;fill:none;stroke-width:1.75;
+    stroke-linecap:round;stroke-linejoin:round;flex:none}
+  svg.i.sm{width:1rem;height:1rem}
+  svg.i.lg{width:1.5rem;height:1.5rem}
+
+  /* ============================================================
+     Navbar — floating card bar (rounded bottom), zest-style
+     ============================================================ */
+  header{position:sticky;top:0;z-index:60;background:transparent}
+  .navbar{max-width:80rem;margin:0 auto;min-height:4.5rem;
+    display:flex;align-items:center;gap:1.25rem;
+    padding:0 clamp(1rem,3vw,2rem);
+    background:var(--card);border:1px solid var(--line);border-top:0;
+    border-radius:0 0 var(--r-card) var(--r-card);
+    box-shadow:var(--shadow)}
+  .logo{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1rem;color:var(--ink)}
+  .logo .mark{width:2.25rem;height:2.25rem;border-radius:.6rem;display:grid;place-items:center;
+    background:var(--yellow);color:#0c0a09;font-family:var(--font-h);font-weight:700;font-size:.95rem;flex:none}
+  .logo small{display:block;font-size:.625rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);line-height:1.3}
+  .navlinks{display:flex;align-items:center;gap:.15rem;margin-left:auto}
+  .navlinks a{color:var(--muted);font-size:.9375rem;font-weight:500;padding:.5rem .8rem;border-radius:var(--r-btn);transition:color .15s,background-color .15s}
   .navlinks a:hover{color:var(--ink);background:var(--card2)}
-  .navlinks a.on{color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
-  .nav-cta{display:flex;align-items:center;gap:10px}
-  .iconbtn{width:38px;height:38px;border-radius:11px;background:var(--card);border:1px solid var(--line);
-    color:var(--ink);cursor:pointer;font-size:15px;transition:.15s;font-family:inherit}
-  .iconbtn:hover{border-color:var(--accent)}
-  .nav-cta .btn{padding:11px 20px;font-size:13.5px}
+  .navlinks a.on{color:var(--ink);background:var(--yellow-soft)}
+  .nav-cta{display:flex;align-items:center;gap:.6rem;margin-left:.75rem}
+  .nav-cta .btn{padding:.5rem 1.1rem;min-height:40px;font-size:.9375rem}
+  .navtext{font-size:.9375rem;font-weight:500;color:var(--muted);padding:.5rem .6rem;border-radius:var(--r-btn)}
+  .navtext:hover{color:var(--ink);background:var(--card2)}
+  .iconbtn{width:40px;height:40px;border-radius:var(--r-btn);background:var(--card);
+    border:1px solid var(--line);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .15s}
+  .iconbtn:hover{border-color:var(--line-strong)}
+  .iconbtn svg{width:1.15rem;height:1.15rem;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
   .burger{display:none}
+  #themeBtn .moon{display:block}#themeBtn .sun{display:none}
+  [data-theme="dark"] #themeBtn .moon{display:none}
+  [data-theme="dark"] #themeBtn .sun{display:block}
 
-  /* ---------- Hero ---------- */
-  .hero{padding:96px 0 84px;background:
-    radial-gradient(900px 480px at 85% -10%, rgba(14,165,233,.14), transparent 55%),
-    radial-gradient(700px 420px at -10% 20%, rgba(37,99,235,.10), transparent 50%),
-    var(--bg)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(34px,5.2vw,58px);font-weight:800;letter-spacing:-2px;line-height:1.06;margin:18px 0 20px}
-  .hero h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .sub{color:var(--muted);font-size:clamp(15.5px,1.7vw,18px);max-width:560px}
-  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 38px}
-  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:640px}
-  .hstat .v{font-size:24px;font-weight:800;letter-spacing:-.5px}
-  .hstat .v em{font-style:normal;color:var(--accent)}
-  .hstat .l{font-size:11.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.7px;margin-top:2px}
+  /* ============================================================
+     Hero — text left / photo card right
+     ============================================================ */
+  .hero{padding-top:clamp(3rem,5vw,5rem);padding-bottom:clamp(3.5rem,6vw,5rem)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .hero h1{margin:1.1rem 0 1.25rem}
+  .hero h1 .hl{font-style:normal;background-image:linear-gradient(var(--yellow),var(--yellow));
+    background-repeat:no-repeat;background-size:100% var(--hl-size);background-position:0 var(--hl-pos);
+    -webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .hero .sub{color:var(--muted);font-size:1.125rem;max-width:34rem}
+  .hero .btn-group{margin-top:1.75rem}
   .hero-photo{position:relative}
-  .hero-photo .frame{border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);
-    background:linear-gradient(135deg,var(--card2),var(--card))}
-  .hero-photo img{width:100%;height:520px;object-fit:cover;object-position:top}
-  .float-chip{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:12px 16px;box-shadow:var(--shadow);font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:9px}
-  .float-chip .dot{width:9px;height:9px;border-radius:50%;background:var(--good);flex:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 18%,transparent)}
-  .fc1{top:26px;left:-26px;animation:floaty 5s ease-in-out infinite}
-  .fc2{bottom:30px;right:-20px;animation:floaty 6s ease-in-out 1s infinite}
-  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .hero-photo .frame{border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line);
+    box-shadow:var(--shadow-lg);background:var(--card2);position:relative}
+  .hero-photo .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 45% at 80% 0%,rgba(255,211,53,.22),transparent 70%)}
+  .hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top}
+  .avail{position:absolute;left:1rem;bottom:1rem;z-index:2;display:flex;align-items:center;gap:.55rem;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
+    padding:.6rem .9rem;font-size:.8125rem;font-weight:600;box-shadow:var(--shadow-lg)}
+  .avail .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--green);flex:none;
+    box-shadow:0 0 0 4px rgba(132,204,22,.22)}
 
-  /* ---------- Problem ---------- */
-  .problem{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 30px}
-  .pain{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.2s}
-  .pain:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .pain .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:18px;margin-bottom:14px;
-    background:color-mix(in srgb,var(--accent) 10%,transparent)}
-  .pain h3{font-size:15.5px;font-weight:700;margin-bottom:6px}
-  .pain p{font-size:13.5px;color:var(--muted)}
-  .problem .bridge{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(90deg,var(--accent),var(--accent2));
-    color:#fff;border-radius:18px;padding:22px 26px;font-weight:700;font-size:clamp(15px,1.8vw,19px);box-shadow:var(--shadow)}
-  .problem .bridge span{font-weight:600;opacity:.92}
+  /* ============================================================
+     Proof band — stat rows (zest logo4 pattern)
+     ============================================================ */
+  .proof-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
+  .proof-head .lead{margin-bottom:1.75rem}
+  .stat-list{display:grid;gap:.6rem}
+  .stat-row{display:grid;grid-template-columns:7.5rem 1fr;gap:1.25rem;align-items:center;
+    padding:1.1rem 1.5rem;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-card);transition:border-color .2s,box-shadow .2s}
+  .stat-row:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
+  .stat-num{font-family:var(--font-h);font-weight:700;font-size:1.9rem;letter-spacing:-.01em;
+    line-height:1;color:var(--head);text-align:right}
+  .stat-body b{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2)}
+  .stat-body p{font-size:.9375rem;color:var(--muted);margin-top:.2rem}
 
-  /* ---------- What I help with ---------- */
-  .cats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px}
-  .cat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px;text-align:center;transition:.2s}
-  .cat:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .cat .tag{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)}
-  .cat .nm{font-size:14px;font-weight:700;margin-top:8px;line-height:1.35}
-  .cat .sv{font-size:12px;color:var(--muted);margin-top:6px}
+  /* ============================================================
+     Section: problem — pain cards + yellow bridge band
+     ============================================================ */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.75rem}
+  .pain{padding:1.5rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    transition:border-color .2s,box-shadow .2s}
+  .pain:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .pain h3{font-size:1.0625rem;font-weight:700;margin:1.1rem 0 .4rem;color:var(--head)}
+  .pain p{font-size:.9375rem;color:var(--muted)}
+  .bridge{margin-top:1.5rem;background:var(--yellow);color:#0c0a09;border-radius:var(--r-card);
+    padding:1.5rem 1.75rem;font-family:var(--font-h);font-weight:700;
+    font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.35;letter-spacing:-.01em}
+  .bridge span{font-family:var(--font-b);font-weight:500;font-size:.98em}
 
-  /* ---------- Services ---------- */
-  .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .svc-filters{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 24px}
-  .chip{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:9px 16px;border-radius:999px;
-    font-weight:700;font-size:12.5px;cursor:pointer;transition:.15s;font-family:inherit}
-  .chip:hover{border-color:var(--accent);color:var(--accent)}
-  .chip.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
-  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:.2s}
-  .svc:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .svc.hide{display:none}
-  .svc .top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-  .svc .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:21px;flex:none;
-    background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,transparent),color-mix(in srgb,var(--accent2) 14%,transparent))}
-  .sells{font-size:10.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--accent);
-    background:color-mix(in srgb,var(--accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
-    padding:6px 12px;border-radius:999px;white-space:nowrap}
-  .svc h3{font-size:19px;font-weight:800;letter-spacing:-.4px}
-  .svc .solves{font-size:13.5px;color:var(--muted)}
-  .svc .solves b{color:var(--ink)}
-  .svc .handles{display:flex;flex-wrap:wrap;gap:6px}
-  .svc .handles span{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--bg2);border:1px solid var(--line);
-    border-radius:999px;padding:5px 11px}
-  .svc .outcome{margin-top:auto;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 8%,transparent),color-mix(in srgb,var(--accent2) 8%,transparent));
-    border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:12px;padding:12px 15px;font-size:13.5px;font-weight:700}
-  .svc .outcome small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+  /* ============================================================
+     Section: outcome list — plain editorial items
+     ============================================================ */
+  .outcome-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:2.75rem}
+  .outcome{border-top:1px solid var(--line-strong);padding-top:1.25rem}
+  .outcome .ic{margin-bottom:1rem}
+  .outcome .tag{font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted2)}
+  .outcome h3{font-size:1rem;font-weight:700;margin:.45rem 0 .35rem;color:var(--head)}
+  .outcome p{font-size:.875rem;color:var(--muted)}
 
-  /* ---------- Value ladder + bundles ---------- */
-  .ladder{display:grid;grid-template-columns:1fr 1.4fr 1.4fr;gap:16px;margin-top:38px}
-  .lvl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;transition:.2s}
-  .lvl:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .lvl .tier{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent)}
-  .lvl.entry{border-top:3px solid var(--accent2)}
-  .lvl.core{border-top:3px solid var(--accent)}
-  .lvl.special{border-top:3px solid #7c3aed}
-  .lvl h3{font-size:18px;font-weight:800;margin:8px 0 4px}
-  .lvl .desc{font-size:13px;color:var(--muted);margin-bottom:14px}
-  .lvl ul{list-style:none;display:grid;gap:8px}
-  .lvl li{font-size:13.5px;font-weight:600;display:flex;gap:9px;align-items:flex-start}
-  .lvl li::before{content:"✓";color:var(--good);font-weight:800;flex:none}
-  .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-  .bundle{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:20px;padding:26px;transition:.2s}
-  .bundle:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .bundle .em{font-size:26px}
-  .bundle h3{font-size:17px;font-weight:800;margin:10px 0 6px}
-  .bundle p{font-size:13.5px;color:var(--muted)}
-  .bundle .in{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
-  .bundle .in span{font-size:11px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);
-    border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:999px;padding:4px 10px}
+  /* ============================================================
+     Section: services — tabbed panel (zest layout505)
+     ============================================================ */
+  .tabs{margin-top:2.75rem;border:1px solid var(--line);border-radius:var(--r-card);
+    background:var(--card);overflow:hidden;display:grid;grid-template-columns:1fr 1.6fr}
+  .tablist{display:grid;grid-auto-rows:1fr;border-right:1px solid var(--line)}
+  .tab{display:flex;align-items:center;gap:1rem;text-align:left;
+    padding:1.15rem 1.5rem;background:var(--card2);border:0;border-bottom:1px solid var(--line);
+    color:var(--muted);font-size:.9375rem;font-weight:600;cursor:pointer;
+    transition:background-color .2s,color .2s;position:relative}
+  .tab:last-child{border-bottom:0}
+  .tab:hover{color:var(--ink);background:var(--card)}
+  .tab[aria-selected="true"]{background:var(--card);color:var(--ink)}
+  .tab[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow)}
+  .tab .ic{width:2.25rem;height:2.25rem;background:var(--card);border:1px solid var(--line)}
+  .tab[aria-selected="true"] .ic{background:var(--yellow-soft);border-color:transparent}
+  .tab .sells-mini{display:block;font-size:.6875rem;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+  .tabpanel{padding:clamp(1.5rem,3vw,2.25rem)}
+  .tabpanel[hidden]{display:none}
+  .tabpanel .ptag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--yellow-deep);
+    background:var(--yellow-soft);border-radius:var(--r-chip);padding:.4rem .75rem}
+  .tabpanel h3{font-family:var(--font-h);font-size:1.6rem;font-weight:700;letter-spacing:-.01em;
+    color:var(--head);margin:1rem 0 .75rem}
+  .tabpanel .solves{font-size:1rem;color:var(--muted);max-width:44rem}
+  .tabpanel .solves b{color:var(--ink);font-weight:600}
+  .handles{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.25rem 0 1.5rem;list-style:none}
+  .handles li{font-size:.8125rem;font-weight:600;color:var(--muted);background:var(--card2);
+    border:1px solid var(--line);border-radius:var(--r-chip);padding:.35rem .7rem}
+  .result{background:var(--green-soft);border:1px solid var(--green-line);border-radius:var(--r-chip);
+    padding:.9rem 1.1rem;color:var(--green-deep);font-size:.9375rem;font-weight:600}
+  .result small{display:block;font-size:.6875rem;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;opacity:.75;margin-bottom:.25rem}
 
-  /* ---------- How I think ---------- */
-  .think-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;transition:.2s}
-  .step:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .step .n{font-size:30px;font-weight:800;letter-spacing:-1px;color:transparent;-webkit-text-stroke:1.5px var(--accent);line-height:1}
-  .step h3{font-size:14.5px;font-weight:700;margin:12px 0 5px}
-  .step p{font-size:12.5px;color:var(--muted)}
+  /* ============================================================
+     Section: ladder — 3 tiers
+     ============================================================ */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.75rem}
+  .lvl{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    padding:1.75rem;border-top:3px solid var(--green);transition:border-color .2s,box-shadow .2s}
+  .lvl:nth-child(2){border-top-color:var(--yellow)}
+  .lvl:nth-child(3){border-top-color:var(--orange-soft)}
+  .lvl:hover{box-shadow:var(--shadow-lg)}
+  .lvl .tier{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+  .lvl h3{font-family:var(--font-h);font-size:1.3rem;font-weight:700;color:var(--head);margin:.6rem 0 .5rem}
+  .lvl .desc{font-size:.9375rem;color:var(--muted);margin-bottom:1rem}
+  .lvl ul{list-style:none;display:grid;gap:.5rem}
+  .lvl li{font-size:.9375rem;font-weight:500;display:flex;gap:.6rem;align-items:flex-start;color:var(--ink)}
+  .lvl li svg{margin-top:.28rem;color:var(--green)}
 
-  /* ---------- How I work ---------- */
-  .work{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .work-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:38px}
-  .wstep{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;transition:.2s}
-  .wstep:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .wstep .n{font-size:11px;font-weight:800;letter-spacing:1.2px;color:var(--accent)}
-  .wstep h3{font-size:14px;font-weight:800;margin:8px 0 4px}
-  .wstep p{font-size:11.5px;color:var(--muted);line-height:1.45}
+  /* ============================================================
+     Section: use-case image cards (zest layout423)
+     ============================================================ */
+  .uc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.75rem}
+  .uc-card{position:relative;overflow:hidden;border-radius:var(--r-card);color:#fff;
+    min-height:clamp(20rem,44vh,30rem);display:flex;flex-direction:column;justify-content:flex-end;
+    padding:2rem;text-decoration:none;isolation:isolate}
+  .uc-card:nth-child(3){grid-column:1}
+  .uc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .uc-card::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(rgba(0,0,0,0) 40%,rgba(0,0,0,.72));transition:background .3s}
+  .uc-card:hover::after{background:linear-gradient(rgba(0,0,0,.15) 20%,rgba(0,0,0,.8))}
+  .uc-card .tagline{color:rgba(255,255,255,.75)}
+  .uc-card h3{font-family:var(--font-h);font-size:1.6rem;font-weight:700;letter-spacing:-.01em;margin:.6rem 0 .5rem}
+  .uc-card p{font-size:.9375rem;color:rgba(255,255,255,.88);max-width:24rem}
+  .uc-card .uc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+  .uc-card .uc-tags span{font-size:.75rem;font-weight:600;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.28);border-radius:var(--r-chip);padding:.3rem .65rem;backdrop-filter:blur(4px)}
+  .uc-card .more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;
+    font-size:.9375rem;font-weight:600;color:#fff}
+  .uc-card .more svg{transition:transform .2s}
+  .uc-card:hover .more svg{transform:translateX(4px)}
 
-  /* ---------- Tools ---------- */
-  .tool-cats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px}
-  .tcat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px;transition:.2s}
-  .tcat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .tcat h3{font-size:13.5px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-  .tcat .em{font-size:17px}
-  .tcat .tools{display:flex;flex-wrap:wrap;gap:6px}
-  .tcat .tools span{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--bg2);border:1px solid var(--line);
-    border-radius:999px;padding:5px 11px}
-  .tools-note{margin-top:22px;font-size:12.5px;color:var(--muted);background:color-mix(in srgb,var(--accent) 6%,transparent);
-    border:1px dashed color-mix(in srgb,var(--accent) 30%,transparent);border-radius:12px;padding:12px 16px}
+  /* ============================================================
+     Section: thinking steps
+     ============================================================ */
+  .think-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.75rem}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:1.5rem;
+    transition:border-color .2s,box-shadow .2s}
+  .step:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .step .n{font-family:var(--font-h);font-size:1.75rem;font-weight:700;line-height:1;
+    color:var(--yellow-deep);background:var(--yellow-soft);border-radius:var(--r-chip);
+    display:inline-block;padding:.45rem .6rem}
+  .step h3{font-size:.98rem;font-weight:700;margin:.9rem 0 .3rem;color:var(--head)}
+  .step p{font-size:.875rem;color:var(--muted)}
 
-  /* ---------- Case studies ---------- */
-  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:38px}
-  .case{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:.2s}
-  .case:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .case .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .case .co{font-size:15px;font-weight:800}
-  .case .tag{font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent);
-    background:color-mix(in srgb,var(--accent) 10%,transparent);border-radius:999px;padding:5px 11px}
-  .case .row{font-size:13.5px}
-  .case .row b{display:block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  /* ============================================================
+     Section: work steps
+     ============================================================ */
+  .work-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;margin-top:2.75rem}
+  .wstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    padding:1.35rem 1.1rem;text-align:center;transition:border-color .2s,box-shadow .2s}
+  .wstep:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .wstep .n{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow-deep);
+    background:var(--yellow-soft);border-radius:var(--r-chip);padding:.3rem .6rem;display:inline-block}
+  .wstep h3{font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin:.85rem 0 .35rem;color:var(--head)}
+  .wstep p{font-size:.8125rem;color:var(--muted);line-height:1.5}
+
+  /* ============================================================
+     Section: tools
+     ============================================================ */
+  .tool-cats{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.75rem}
+  .tcat{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:1.5rem 1.35rem;
+    transition:border-color .2s,box-shadow .2s}
+  .tcat:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .tcat .ic{margin-bottom:1rem}
+  .tcat h3{font-size:.9375rem;font-weight:700;color:var(--head);margin-bottom:.85rem}
+  .tcat ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+  .tcat li{font-size:.8125rem;font-weight:600;color:var(--muted);background:var(--card2);
+    border:1px solid var(--line);border-radius:var(--r-chip);padding:.3rem .65rem}
+  .tools-note{margin-top:1.5rem;font-size:.875rem;color:var(--muted);background:var(--card);
+    border:1px dashed var(--line-strong);border-radius:var(--r-card);padding:.9rem 1.15rem;max-width:52rem}
+
+  /* ============================================================
+     Section: case studies
+     ============================================================ */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.75rem}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    padding:1.75rem;display:flex;flex-direction:column;gap:.9rem;transition:border-color .2s,box-shadow .2s}
+  .case:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .case .meta{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+  .case .co{font-family:var(--font-h);font-size:1.2rem;font-weight:700;color:var(--head);letter-spacing:-.01em}
+  .case .ctag{font-size:.6875rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--yellow-deep);background:var(--yellow-soft);border-radius:var(--r-chip);padding:.35rem .7rem}
+  .case .row{font-size:.9375rem}
+  .case .row b{display:block;font-size:.6875rem;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted2);margin-bottom:.2rem}
   .case .row p{color:var(--muted)}
-  .case .res{margin-top:auto;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 8%,transparent),color-mix(in srgb,var(--accent2) 8%,transparent));
-    border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:12px;padding:12px 15px;font-size:13.5px;font-weight:700}
-  .case .res small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
-  .progression{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px}
-  .progression .pl{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-  .prog-track{display:flex;align-items:center;gap:0;flex-wrap:wrap}
-  .prog{display:flex;align-items:center;gap:10px}
-  .prog .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));flex:none}
-  .prog span{font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap}
-  .prog .arr{color:var(--line);font-weight:800;margin:0 12px}
+  .case .result{margin-top:auto}
+  .progression{margin-top:1.5rem;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:1.5rem 1.75rem}
+  .progression .pl{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted2);margin-bottom:1rem}
+  .prog-track{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem 0}
+  .prog{display:flex;align-items:center;gap:.55rem}
+  .prog .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--green);flex:none}
+  .prog span{font-size:.875rem;font-weight:600;color:var(--muted);white-space:nowrap}
+  .prog .arr{color:var(--line-strong);margin:0 .7rem}
 
-  /* ---------- About ---------- */
-  .about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:38px}
-  .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .about-photos .ph{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  /* ============================================================
+     Section: about
+     ============================================================ */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+  .about-photos .ph{border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
   .about-photos .ph img{width:100%;height:100%;object-fit:cover}
   .about-photos .ph.tall{grid-row:span 2}
-  .about-photos .ph.tall img{height:100%}
-  .about-copy p{font-size:15px;color:var(--muted);margin-bottom:14px}
-  .about-copy p b{color:var(--ink)}
-  .about-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
-  .fact{display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:600;background:var(--card);
-    border:1px solid var(--line);border-radius:12px;padding:11px 13px}
-  .fact .em{flex:none}
+  .about-copy .tagline{margin-bottom:1rem}
+  .about-copy p{font-size:1rem;color:var(--muted);margin-bottom:.9rem;max-width:38rem}
+  .about-copy p b{color:var(--ink);font-weight:600}
+  .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.5rem;list-style:none}
+  .about-facts li{display:flex;gap:.7rem;align-items:flex-start;font-size:.875rem;font-weight:500;
+    color:var(--muted);background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:.8rem .95rem}
+  .about-facts svg{margin-top:.15rem;color:var(--yellow-deep);stroke:var(--yellow-deep)}
 
-  /* ---------- Differentiation ---------- */
-  .diff-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px}
-  .diff{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 18px;text-align:center;transition:.2s}
-  .diff:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .diff .em{font-size:26px}
-  .diff h3{font-size:14px;font-weight:800;margin:12px 0 6px}
-  .diff p{font-size:12px;color:var(--muted);line-height:1.5}
+  /* ============================================================
+     Section: why — plain benefit items
+     ============================================================ */
+  .diff-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:2.75rem}
+  .diff{border-top:1px solid var(--line-strong);padding-top:1.25rem}
+  .diff .ic{margin-bottom:1rem}
+  .diff h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--head)}
+  .diff p{font-size:.875rem;color:var(--muted)}
 
-  /* ---------- CTA ---------- */
-  .cta-sec{padding:96px 0}
-  .cta-box{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:28px;padding:64px 48px;text-align:center;
-    color:#fff;position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(37,99,235,.35)}
-  .cta-box::before,.cta-box::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
-  .cta-box::before{width:340px;height:340px;top:-140px;right:-80px}
-  .cta-box::after{width:260px;height:260px;bottom:-120px;left:-60px}
-  .cta-box h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;position:relative;z-index:1}
-  .cta-box p{font-size:clamp(15px,1.7vw,18px);opacity:.94;max-width:560px;margin:16px auto 30px;position:relative;z-index:1}
-  .cta-box .btn{background:#fff;color:var(--accent);position:relative;z-index:1}
-  .cta-box .btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+  /* ============================================================
+     Section: CTA
+     ============================================================ */
+  .cta-sec{text-align:center}
+  .cta-box{max-width:44rem;margin:0 auto}
+  .cta-box .tagline{margin-bottom:1rem}
+  .cta-box p{color:var(--muted);font-size:1.0625rem;margin:1.1rem auto 1.9rem;max-width:36rem}
 
-  /* ---------- Contact ---------- */
-  .contact{background:var(--bg2);border-top:1px solid var(--line)}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:38px;align-items:start}
-  .contact-copy p{font-size:15px;color:var(--muted);margin-bottom:18px}
-  .contact-links{display:grid;gap:12px}
-  .clink{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:16px 18px;transition:.2s;color:var(--ink)}
-  .clink:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--shadow)}
-  .clink .em{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:19px;flex:none;
-    background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,transparent),color-mix(in srgb,var(--accent2) 12%,transparent))}
-  .clink b{display:block;font-size:14.5px}
-  .clink small{color:var(--muted);font-size:12.5px}
-  .contact-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
-  .contact-card h3{font-size:19px;font-weight:800;margin-bottom:6px}
-  .contact-card p{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+  /* ============================================================
+     Section: contact
+     ============================================================ */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,3.5rem);
+    margin-top:2.75rem;align-items:start}
+  .contact-copy > p{color:var(--muted);font-size:1.0625rem;margin-bottom:1.5rem;max-width:34rem}
+  .contact-links{display:grid;gap:.75rem}
+  .clink{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:1.1rem 1.25rem;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+  .clink:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+  .clink b{display:block;font-size:.98rem}
+  .clink small{color:var(--muted2);font-size:.8125rem}
+  .contact-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    padding:1.85rem;box-shadow:var(--shadow)}
+  .contact-card h3{font-family:var(--font-h);font-size:1.35rem;font-weight:700;color:var(--head);margin-bottom:.5rem}
+  .contact-card p{font-size:.9375rem;color:var(--muted);margin-bottom:1.35rem}
   .contact-card .btn{width:100%}
 
-  /* ---------- Footer ---------- */
-  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:13px}
-  .footrow{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-  .footrow a{color:var(--muted);font-weight:600}
-  .footrow a:hover{color:var(--accent)}
-  .footlinks{display:flex;gap:18px;flex-wrap:wrap}
+  /* ============================================================
+     Footer — card wrapper (zest footer13)
+     ============================================================ */
+  footer{padding:0 0 clamp(2rem,4vw,3rem)}
+  .footer-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    padding:clamp(1.5rem,4vw,2rem)}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
+  .footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .footer-cols h4{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted2);margin-bottom:.6rem}
+  .footer-cols a{display:block;font-size:.9375rem;color:var(--muted);padding:.3rem 0;transition:color .15s}
+  .footer-cols a:hover{color:var(--ink)}
+  .footer-right{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+  .footer-right h4{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+  .footer-right a.mail{font-family:var(--font-h);font-size:1.15rem;font-weight:700;color:var(--head);
+    text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+  .footer-right a.mail:hover{text-decoration-color:var(--yellow)}
+  .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+    margin-top:2rem;padding-top:1.35rem;border-top:1px solid var(--line);
+    font-size:.875rem;color:var(--muted2)}
+  .footer-legal{display:flex;gap:1.25rem;flex-wrap:wrap}
+  .footer-legal a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+  .footer-legal a:hover{color:var(--ink)}
 
-  /* ---------- Responsive ---------- */
-  @media(max-width:1024px){
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .hero-photo{max-width:560px}
-    .cats{grid-template-columns:repeat(3,1fr)}
-    .think-grid{grid-template-columns:repeat(2,1fr)}
-    .work-steps{grid-template-columns:repeat(3,1fr)}
-    .tool-cats{grid-template-columns:repeat(3,1fr)}
+  /* ============================================================
+     Responsive
+     ============================================================ */
+  @media(max-width:1100px){
+    .outcome-grid{grid-template-columns:repeat(3,1fr)}
     .diff-grid{grid-template-columns:repeat(3,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .ladder{grid-template-columns:1fr}
-    .bundles{grid-template-columns:1fr}
+    .tool-cats{grid-template-columns:repeat(3,1fr)}
+    .work-steps{grid-template-columns:repeat(3,1fr)}
+    .think-grid{grid-template-columns:repeat(2,1fr)}
+    .navlinks a{padding:.5rem .55rem;font-size:.875rem}
   }
-  @media(max-width:860px){
+  @media(max-width:960px){
     .navlinks{display:none}
-    .burger{display:inline-flex}
-    .navrow.open .navlinks{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;
-      background:var(--bg);border-bottom:1px solid var(--line);padding:14px 24px;gap:4px;box-shadow:var(--shadow)}
-    .navrow.open .navlinks a{padding:12px 14px}
+    .burger{display:grid}
+    .navbar{position:relative}
+    .navrow-open .navlinks{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+      align-items:stretch;background:var(--card);border:1px solid var(--line);border-top:0;
+      border-radius:0 0 var(--r-card) var(--r-card);padding:.75rem;gap:.15rem;
+      box-shadow:var(--shadow-lg);margin:0}
+    .navrow-open .navlinks a{padding:.75rem .9rem;font-size:1rem}
+    .navtext{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .hero-photo{max-width:32rem}
+    .proof-grid{grid-template-columns:1fr;gap:2.5rem}
     .pain-grid{grid-template-columns:1fr 1fr}
-    .svc-grid{grid-template-columns:1fr}
+    .tabs{grid-template-columns:1fr}
+    .tablist{border-right:0;border-bottom:1px solid var(--line)}
+    .ladder{grid-template-columns:1fr}
+    .uc-grid{grid-template-columns:1fr}
+    .uc-card:nth-child(3){grid-column:1}
+    .uc-card{min-height:19rem}
     .cases{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr;gap:2.5rem}
     .contact-grid{grid-template-columns:1fr}
-    .hero-stats{grid-template-columns:repeat(2,1fr)}
-    .fc1{left:12px}
-    .fc2{right:12px}
+    .footer-top{grid-template-columns:1fr}
   }
-  @media(max-width:560px){
-    section{padding:64px 0}
-    .pain-grid{grid-template-columns:1fr}
-    .cats{grid-template-columns:1fr 1fr}
-    .think-grid{grid-template-columns:1fr}
-    .work-steps{grid-template-columns:1fr 1fr}
-    .tool-cats{grid-template-columns:1fr 1fr}
+  @media(max-width:640px){
+    .outcome-grid{grid-template-columns:1fr 1fr}
     .diff-grid{grid-template-columns:1fr 1fr}
+    .tool-cats{grid-template-columns:1fr 1fr}
+    .work-steps{grid-template-columns:1fr 1fr}
+    .think-grid{grid-template-columns:1fr}
+    .pain-grid{grid-template-columns:1fr}
     .about-facts{grid-template-columns:1fr}
-    .cta-box{padding:48px 24px}
-    .hero{padding:64px 0 56px}
-    .hero-photo img{height:420px}
+    .stat-row{grid-template-columns:5.5rem 1fr;padding:1rem 1.15rem;gap:.9rem}
+    .stat-num{font-size:1.55rem}
+    .footer-cols{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;align-items:flex-start}
+    .logo small{display:none}
   }
   @media (prefers-reduced-motion: reduce){
-    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+      transition-duration:.01ms!important;scroll-behavior:auto!important}
   }
 </style>
 </head>
 <body data-theme="light">
 
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ================= ICON SPRITE ================= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-trend-down" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 7 7"/><path d="M21 13v4h-4"/></symbol>
+  <symbol id="i-trend-up" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M17 7h4v4"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M10 3.5a2 2 0 014 0V5h3.5a1.5 1.5 0 011.5 1.5V10h1.5a2 2 0 010 4H19v3.5a1.5 1.5 0 01-1.5 1.5H14v-1.5a2 2 0 00-4 0V19H6.5A1.5 1.5 0 015 17.5V14H3.5a2 2 0 010-4H5V6.5A1.5 1.5 0 016.5 5H10V3.5z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></symbol>
+  <symbol id="i-crosshair" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-columns" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+  <symbol id="i-workflow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h4a5 5 0 015 5v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0111 0"/><path d="M16 5.5a3.2 3.2 0 010 5.4M17.5 19a5.5 5.5 0 00-2-4.2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M2.5 9L12 4.5 21.5 9 12 13.5 2.5 9z"/><path d="M6.5 11v4.5c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V11"/><path d="M21.5 9v5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1v-9.5z"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 14.5a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1.03 1.56V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.56-1.03H3a2 2 0 110-4h.1a1.7 1.7 0 001.55-1.1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34H9a1.7 1.7 0 001.03-1.56V3a2 2 0 114 0v.1a1.7 1.7 0 001.03 1.56 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87V9c.24.63.84 1.05 1.52 1.06H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1.03z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 10-1.7 6.3"/><path d="M20 4v7h-7"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><path d="M3 12h18"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="18" rx="1.5"/><path d="M16 9h3a1 1 0 011 1v10a1 1 0 01-1 1H4"/><path d="M8 7h4M8 11h4M8 15h4"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z"/><path d="M18.5 15.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9.9-2.3z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6a2.4 2.4 0 014.8 0V17M12 10.5V17"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
 <!-- ================= HEADER ================= -->
 <header>
-  <div class="wrap navrow" id="navrow">
-    <a class="logo" href="#top" aria-label="Ace Gerada home">
-      <span class="mark">AG</span>
+  <div class="navbar" id="navrow">
+    <a class="logo" href="#top" aria-label="Ace Gerada — home">
+      <span class="mark" aria-hidden="true">AG</span>
       <span>Ace Gerada<small>Business Support &amp; Growth Systems</small></span>
     </a>
     <nav class="navlinks" aria-label="Main navigation">
@@ -336,55 +531,100 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
-      <a class="btn ghost" href="dashboard.html">📊 Dashboard</a>
-      <button class="iconbtn burger" id="burger" aria-label="Toggle menu">☰</button>
-      <button class="iconbtn" id="themeBtn" aria-label="Toggle theme">☾</button>
+      <a class="navtext" href="dashboard.html">Dashboard</a>
+      <button class="iconbtn" id="themeBtn" aria-label="Switch to dark theme">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <a class="btn btn-primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
+      <button class="iconbtn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
+<div id="top"></div>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Remote Business Support &amp; Growth Systems</span>
-      <h1>More Capacity.<br>Better Systems.<br><span class="grad">Less Operational Overhead.</span></h1>
+      <p class="tagline">Remote Business Support &amp; Growth Systems</p>
+      <h1>More Capacity. Better Systems. <em class="hl">Less Operational Overhead.</em></h1>
       <p class="sub">I help founders and growing businesses handle the work behind the business, build reliable sales processes, and turn repetitive tasks into organized systems. You focus on the decisions only you can make. I take ownership of everything around them.</p>
-      <div class="ctas">
-        <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
-        <a class="btn ghost" href="#services">Explore How I Can Help</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat"><div class="v"><em>9+</em></div><div class="l">Years of experience</div></div>
-        <div class="hstat"><div class="v"><em>4</em></div><div class="l">Industries served</div></div>
-        <div class="hstat"><div class="v"><em>30+</em></div><div class="l">Tools mastered</div></div>
-        <div class="hstat"><div class="v"><em>100%</em></div><div class="l">Remote &amp; async</div></div>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
+        <a class="btn btn-secondary" href="#services">Explore How I Can Help</a>
       </div>
     </div>
     <div class="hero-photo">
-      <div class="frame"><img src="downloads/JSH_7108-hero.jpg" alt="Ace Gerada, business support and growth systems partner" width="1000" height="1249"></div>
-      <div class="float-chip fc1"><span class="dot"></span>Available for new clients</div>
-      <div class="float-chip fc2">⚡ Systems that scale</div>
+      <div class="frame">
+        <img src="downloads/JSH_7108-hero.jpg" alt="Ace Gerada, business support and growth systems partner" width="1000" height="1249">
+        <div class="avail"><span class="dot" aria-hidden="true"></span>Available for new clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF / RESULTS ================= -->
+<section>
+  <div class="wrap proof-grid">
+    <div class="proof-head">
+      <p class="tagline">Customer Results</p>
+      <h2>Real engagements. Real outcomes.</h2>
+      <p class="lead">Each one shaped how I work today — fewer manual hours, cleaner data, and pipelines that don't let opportunities slip away.</p>
+      <a class="btn btn-secondary" href="#experience">Read the case studies</a>
+    </div>
+    <div class="stat-list">
+      <div class="stat-row">
+        <div class="stat-num">+80%</div>
+        <div class="stat-body"><b>BrainGainzLC</b><p>Efficiency gain in the operational workflows I redesigned end to end.</p></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">95%</div>
+        <div class="stat-body"><b>MintLeads</b><p>Database accuracy maintained, with sender reputation protected.</p></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">+25%</div>
+        <div class="stat-body"><b>Portillo Realty Group</b><p>Engagement lift on the targeted social campaigns I ran.</p></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">9+</div>
+        <div class="stat-body"><b>Years of experience</b><p>Supporting founders across real estate, construction, hospitality, and B2B.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= PROBLEM ================= -->
-<section class="problem" id="problem">
+<section id="problem">
   <div class="wrap">
-    <span class="eyebrow">The Problem</span>
-    <h2 class="sec">Does your business feel harder to run than it should?</h2>
-    <p class="lead">Most growing businesses don't fail because of the big decisions. They slow down because of the small ones that pile up. If any of these sound familiar, you're not alone.</p>
+    <div class="sec-head">
+      <p class="tagline">The Problem</p>
+      <h2>Does your business feel harder to run than it should?</h2>
+      <p class="lead">Most growing businesses don't fail because of the big decisions. They slow down because of the small ones that pile up. If any of these sound familiar, you're not alone.</p>
+    </div>
     <div class="pain-grid">
-      <div class="pain"><div class="ic">⏳</div><h3>Your time is spent on work someone else could own</h3><p>Inbox, scheduling, follow-ups, data entry. The work that keeps the business running is also the work that keeps you from growing it.</p></div>
-      <div class="pain"><div class="ic">📉</div><h3>Leads come in, but follow-ups are inconsistent</h3><p>Opportunities slip through the cracks because there is no reliable process behind them. You know the deals that "just went quiet."</p></div>
-      <div class="pain"><div class="ic">🗂️</div><h3>Your CRM doesn't reflect what's actually happening</h3><p>Stale deals, duplicate contacts, missing notes. When the data is wrong, every decision built on it is wrong too.</p></div>
-      <div class="pain"><div class="ic">🔁</div><h3>Your team repeats the same manual processes</h3><p>Copy, paste, re-enter, re-check. Hours disappear into work that software could do in seconds.</p></div>
-      <div class="pain"><div class="ic">🧩</div><h3>Important information lives across too many tools</h3><p>Nothing talks to anything. Context gets lost between apps, and people waste time hunting for what should be obvious.</p></div>
-      <div class="pain"><div class="ic">🎯</div><h3>Too much of the business still depends on you</h3><p>When you're the only person who knows how something works, you can't step away. And you can't scale.</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+        <h3>Your time is spent on work someone else could own</h3>
+        <p>Inbox, scheduling, follow-ups, data entry. The work that keeps the business running is also the work that keeps you from growing it.</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-trend-down"/></svg></span>
+        <h3>Leads come in, but follow-ups are inconsistent</h3>
+        <p>Opportunities slip through the cracks because there is no reliable process behind them. You know the deals that "just went quiet."</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-database"/></svg></span>
+        <h3>Your CRM doesn't reflect what's actually happening</h3>
+        <p>Stale deals, duplicate contacts, missing notes. When the data is wrong, every decision built on it is wrong too.</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-repeat"/></svg></span>
+        <h3>Your team repeats the same manual processes</h3>
+        <p>Copy, paste, re-enter, re-check. Hours disappear into work that software could do in seconds.</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-puzzle"/></svg></span>
+        <h3>Important information lives across too many tools</h3>
+        <p>Nothing talks to anything. Context gets lost between apps, and people waste time hunting for what should be obvious.</p></div>
+      <div class="pain"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span>
+        <h3>Too much of the business still depends on you</h3>
+        <p>When you're the only person who knows how something works, you can't step away. And you can't scale.</p></div>
     </div>
     <div class="bridge">That's where I come in. <span>I take ownership of the work behind the business and turn it into systems that run without you.</span></div>
   </div>
@@ -393,335 +633,361 @@
 <!-- ================= WHAT I HELP WITH ================= -->
 <section id="help">
   <div class="wrap">
-    <span class="eyebrow">What I Help With</span>
-    <h2 class="sec">Five ways I move your business forward</h2>
-    <p class="lead">Every service I offer maps to a business outcome. If it doesn't create time, opportunities, visibility, leverage, or consistency, it's not on the list.</p>
-    <div class="cats">
-      <div class="cat"><div class="tag">Get More Time</div><div class="nm">Virtual &amp; Executive Assistance</div><div class="sv">Capacity and protected focus</div></div>
-      <div class="cat"><div class="tag">Create More Opportunities</div><div class="nm">B2B Lead Gen &amp; Email Outreach</div><div class="sv">More relevant conversations</div></div>
-      <div class="cat"><div class="tag">Get Control</div><div class="nm">CRM &amp; Pipeline Management</div><div class="sv">Visibility into every deal</div></div>
-      <div class="cat"><div class="tag">Build Leverage</div><div class="nm">AI Workflow Automation</div><div class="sv">Repetitive work, automated</div></div>
-      <div class="cat"><div class="tag">Run Better</div><div class="nm">Operations &amp; SOPs</div><div class="sv">Consistency that scales</div></div>
+    <div class="sec-head">
+      <p class="tagline">What I Help With</p>
+      <h2>Five ways I move your business forward</h2>
+      <p class="lead">Every service I offer maps to a business outcome. If it doesn't create time, opportunities, visibility, leverage, or consistency, it's not on the list.</p>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+        <div class="tag">Get More Time</div><h3>Virtual &amp; Executive Assistance</h3><p>Capacity and protected focus</p></div>
+      <div class="outcome"><span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-trend-up"/></svg></span>
+        <div class="tag">Create More Opportunities</div><h3>B2B Lead Gen &amp; Email Outreach</h3><p>More relevant conversations</p></div>
+      <div class="outcome"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-columns"/></svg></span>
+        <div class="tag">Get Control</div><h3>CRM &amp; Pipeline Management</h3><p>Visibility into every deal</p></div>
+      <div class="outcome"><span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>
+        <div class="tag">Build Leverage</div><h3>AI Workflow Automation</h3><p>Repetitive work, automated</p></div>
+      <div class="outcome"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-workflow"/></svg></span>
+        <div class="tag">Run Better</div><h3>Operations &amp; SOPs</h3><p>Consistency that scales</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section class="services" id="services">
+<!-- ================= SERVICES (TABS) ================= -->
+<section id="services">
   <div class="wrap">
-    <span class="eyebrow">Services &amp; Business Outcomes</span>
-    <h2 class="sec">Sell the outcome, not the task</h2>
-    <p class="lead">I don't sell hours. I sell what those hours produce: more time, more opportunities, more visibility, more leverage, and a business that runs better. Pick the outcome you need.</p>
-    <div class="svc-filters" id="svcFilters">
-      <button class="chip on" data-f="all">All outcomes</button>
-      <button class="chip" data-f="time">Get More Time</button>
-      <button class="chip" data-f="opps">Create Opportunities</button>
-      <button class="chip" data-f="control">Get Control</button>
-      <button class="chip" data-f="leverage">Build Leverage</button>
-      <button class="chip" data-f="run">Run Better</button>
+    <div class="sec-head">
+      <p class="tagline">Services &amp; Business Outcomes</p>
+      <h2>Sell the outcome, not the task</h2>
+      <p class="lead">I don't sell hours. I sell what those hours produce: more time, more opportunities, more visibility, more leverage, and a business that runs better. Pick the outcome you need.</p>
     </div>
-    <div class="svc-grid" id="svcGrid">
 
-      <article class="svc" data-f="time">
-        <div class="top"><div class="ic">🧭</div><span class="sells">Sells: Capacity</span></div>
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Services">
+        <button class="tab" role="tab" id="tab-va" aria-controls="panel-va" aria-selected="true">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-compass"/></svg></span>
+          <span>Virtual Assistance<span class="sells-mini">Sells: Capacity</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-ea" aria-controls="panel-ea" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span>
+          <span>Executive Assistance<span class="sells-mini">Sells: Time</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-lead" aria-controls="panel-lead" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-trend-up"/></svg></span>
+          <span>B2B Lead Generation<span class="sells-mini">Sells: Opportunities</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-out" aria-controls="panel-out" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span>
+          <span>Email Outreach<span class="sells-mini">Sells: Reach</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-crm" aria-controls="panel-crm" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-columns"/></svg></span>
+          <span>CRM &amp; Pipeline<span class="sells-mini">Sells: Visibility</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>
+          <span>AI Workflow Automation<span class="sells-mini">Sells: Leverage</span></span>
+        </button>
+        <button class="tab" role="tab" id="tab-ops" aria-controls="panel-ops" aria-selected="false" tabindex="-1">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-workflow"/></svg></span>
+          <span>Operations &amp; SOPs<span class="sells-mini">Sells: Consistency</span></span>
+        </button>
+      </div>
+
+      <div class="tabpanel" role="tabpanel" id="panel-va" aria-labelledby="tab-va" tabindex="0">
+        <span class="ptag">Sells: Capacity</span>
         <h3>Virtual Assistance</h3>
         <p class="solves"><b>Solves:</b> business owners and teams overwhelmed by recurring administrative work that has to get done but doesn't need their attention.</p>
-        <div class="handles">
-          <span>Inbox management</span><span>Scheduling</span><span>Research</span><span>Data entry</span>
-          <span>Follow-ups</span><span>Spreadsheet updates</span><span>Customer communication</span><span>Admin coordination</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>Additional capacity without adding a full-time hire.</div>
-      </article>
+        <ul class="handles"><li>Inbox management</li><li>Scheduling</li><li>Research</li><li>Data entry</li><li>Follow-ups</li><li>Spreadsheet updates</li><li>Customer communication</li><li>Admin coordination</li></ul>
+        <div class="result"><small>Outcome</small>Additional capacity without adding a full-time hire.</div>
+      </div>
 
-      <article class="svc" data-f="time">
-        <div class="top"><div class="ic">🎯</div><span class="sells">Sells: Time</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-ea" aria-labelledby="tab-ea" tabindex="0" hidden>
+        <span class="ptag">Sells: Time</span>
         <h3>Executive Assistance</h3>
         <p class="solves"><b>Solves:</b> executives losing time and attention to administrative interruptions and operational noise that pull them away from decisions only they can make.</p>
-        <div class="handles">
-          <span>Calendar</span><span>Inbox</span><span>Meetings</span><span>Research</span>
-          <span>Follow-ups</span><span>Travel</span><span>Documentation</span><span>Coordination</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>Protected executive time and less mental overhead. You focus on the decisions only you can make. I handle everything around them.</div>
-      </article>
+        <ul class="handles"><li>Calendar</li><li>Inbox</li><li>Meetings</li><li>Research</li><li>Follow-ups</li><li>Travel</li><li>Documentation</li><li>Coordination</li></ul>
+        <div class="result"><small>Outcome</small>Protected executive time and less mental overhead. You focus on the decisions only you can make. I handle everything around them.</div>
+      </div>
 
-      <article class="svc" data-f="opps">
-        <div class="top"><div class="ic">📈</div><span class="sells">Sells: Opportunities</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-lead" aria-labelledby="tab-lead" tabindex="0" hidden>
+        <span class="ptag">Sells: Opportunities</span>
         <h3>B2B Lead Generation</h3>
         <p class="solves"><b>Solves:</b> poor prospect lists, wrong contacts, inconsistent prospecting, and hours of manual research that never turn into conversations.</p>
-        <div class="handles">
-          <span>ICP research</span><span>Prospect list building</span><span>Qualification</span>
-          <span>Outreach coordination</span><span>Pipeline hygiene</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>A repeatable prospecting process that gives your sales team more relevant people to talk to.</div>
-      </article>
+        <ul class="handles"><li>ICP research</li><li>Prospect list building</li><li>Qualification</li><li>Outreach coordination</li><li>Pipeline hygiene</li></ul>
+        <div class="result"><small>Outcome</small>A repeatable prospecting process that gives your sales team more relevant people to talk to.</div>
+      </div>
 
-      <article class="svc" data-f="opps">
-        <div class="top"><div class="ic">✉️</div><span class="sells">Sells: Reach</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-out" aria-labelledby="tab-out" tabindex="0" hidden>
+        <span class="ptag">Sells: Reach</span>
         <h3>Email Outreach &amp; Deliverability</h3>
         <p class="solves"><b>Solves:</b> spam folders, poor lists, high bounce rates, weak targeting, and follow-ups that never actually follow up.</p>
-        <div class="handles">
-          <span>Campaign setup</span><span>Sequencing</span><span>List hygiene</span>
-          <span>Deliverability monitoring</span><span>Blacklist &amp; unsubscribe management</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>Cleaner, more reliable outbound email that actually reaches the right prospects.</div>
-      </article>
+        <ul class="handles"><li>Campaign setup</li><li>Sequencing</li><li>List hygiene</li><li>Deliverability monitoring</li><li>Blacklist &amp; unsubscribe management</li></ul>
+        <div class="result"><small>Outcome</small>Cleaner, more reliable outbound email that actually reaches the right prospects.</div>
+      </div>
 
-      <article class="svc" data-f="control">
-        <div class="top"><div class="ic">🗂️</div><span class="sells">Sells: Visibility</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-crm" aria-labelledby="tab-crm" tabindex="0" hidden>
+        <span class="ptag">Sells: Visibility</span>
         <h3>CRM &amp; Pipeline Management</h3>
         <p class="solves"><b>Solves:</b> scattered leads, missed follow-ups, inaccurate data, stale deals, and reporting you can't trust.</p>
-        <div class="handles">
-          <span>CRM setup &amp; cleanup</span><span>Data hygiene &amp; enrichment</span>
-          <span>Deal stages &amp; workflows</span><span>Reporting</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>A cleaner, more reliable sales pipeline where opportunities don't disappear.</div>
-      </article>
+        <ul class="handles"><li>CRM setup &amp; cleanup</li><li>Data hygiene &amp; enrichment</li><li>Deal stages &amp; workflows</li><li>Reporting</li></ul>
+        <div class="result"><small>Outcome</small>A cleaner, more reliable sales pipeline where opportunities don't disappear.</div>
+      </div>
 
-      <article class="svc" data-f="leverage">
-        <div class="top"><div class="ic">⚡</div><span class="sells">Sells: Leverage</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" tabindex="0" hidden>
+        <span class="ptag">Sells: Leverage</span>
         <h3>AI Workflow Automation</h3>
         <p class="solves"><b>Solves:</b> human hours wasted on repetitive processes that software can handle faster, more accurately, and without complaining.</p>
-        <div class="handles">
-          <span>Lead enrichment</span><span>CRM updates</span><span>Data movement</span><span>Notifications</span>
-          <span>Qualification workflows</span><span>Reporting</span><span>Repetitive research</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>Repetitive work reduced, so your people focus on higher-value work.</div>
-      </article>
+        <ul class="handles"><li>Lead enrichment</li><li>CRM updates</li><li>Data movement</li><li>Notifications</li><li>Qualification workflows</li><li>Reporting</li><li>Repetitive research</li></ul>
+        <div class="result"><small>Outcome</small>Repetitive work reduced, so your people focus on higher-value work.</div>
+      </div>
 
-      <article class="svc" data-f="run">
-        <div class="top"><div class="ic">🧩</div><span class="sells">Sells: Consistency</span></div>
+      <div class="tabpanel" role="tabpanel" id="panel-ops" aria-labelledby="tab-ops" tabindex="0" hidden>
+        <span class="ptag">Sells: Consistency</span>
         <h3>Operations &amp; SOPs</h3>
         <p class="solves"><b>Solves:</b> processes living in people's heads, inconsistent execution, and a business that can't run without you in the middle of it.</p>
-        <div class="handles">
-          <span>SOP creation</span><span>Process redesign</span><span>Onboarding manuals</span><span>Tool stack audits</span>
-        </div>
-        <div class="outcome"><small>Outcome</small>Documented, repeatable systems your team can actually follow.</div>
-      </article>
-
+        <ul class="handles"><li>SOP creation</li><li>Process redesign</li><li>Onboarding manuals</li><li>Tool stack audits</li></ul>
+        <div class="result"><small>Outcome</small>Documented, repeatable systems your team can actually follow.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= VALUE LADDER + BUNDLES ================= -->
+<!-- ================= VALUE LADDER ================= -->
 <section id="ladder">
   <div class="wrap">
-    <span class="eyebrow">How to Start</span>
-    <h2 class="sec">A clear path from support to systems</h2>
-    <p class="lead">Start where the pain is, then grow into a full operating system. Every level builds on the one before it.</p>
+    <div class="sec-head">
+      <p class="tagline">How to Start</p>
+      <h2>A clear path from support to systems</h2>
+      <p class="lead">Start where the pain is, then grow into a full operating system. Every level builds on the one before it.</p>
+    </div>
     <div class="ladder">
-      <div class="lvl entry">
+      <div class="lvl">
         <div class="tier">Entry</div>
         <h3>Virtual Assistance</h3>
         <p class="desc">Capacity on demand. The fastest way to get recurring work off your plate.</p>
         <ul>
-          <li>Inbox and calendar support</li>
-          <li>Research and data entry</li>
-          <li>Follow-ups and coordination</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Inbox and calendar support</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Research and data entry</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Follow-ups and coordination</li>
         </ul>
       </div>
-      <div class="lvl core">
+      <div class="lvl">
         <div class="tier">Core</div>
         <h3>Executive Assistance, Lead Gen &amp; CRM</h3>
         <p class="desc">Protect your time and build a visible, reliable pipeline at the same time.</p>
         <ul>
-          <li>Executive support for leaders</li>
-          <li>B2B prospecting that produces conversations</li>
-          <li>A CRM your team can trust</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Executive support for leaders</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>B2B prospecting that produces conversations</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>A CRM your team can trust</li>
         </ul>
       </div>
-      <div class="lvl special">
+      <div class="lvl">
         <div class="tier">Specialized</div>
         <h3>Outreach, Automation &amp; Operations</h3>
         <p class="desc">Reach more prospects, remove manual work, and make the business run without you.</p>
         <ul>
-          <li>Email outreach that lands in inboxes</li>
-          <li>AI workflows that do the busywork</li>
-          <li>SOPs and systems that scale</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Email outreach that lands in inboxes</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>AI workflows that do the busywork</li>
+          <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>SOPs and systems that scale</li>
         </ul>
       </div>
     </div>
-    <div class="bundles">
-      <div class="bundle">
-        <div class="em">🧭</div>
+  </div>
+</section>
+
+<!-- ================= BUNDLES / USE-CASE IMAGE CARDS ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tagline">Ways to Work Together</p>
+      <h2>Pick the support your business needs</h2>
+      <p class="lead">Three starting points, built around the outcome you're after. Each one pulls from the full service list.</p>
+    </div>
+    <div class="uc-grid">
+      <a class="uc-card" href="#services">
+        <img src="downloads/JSH-triptych-work.jpg" alt="" loading="lazy" aria-hidden="true">
+        <p class="tagline">For founders</p>
         <h3>Founder Support</h3>
         <p>For founders drowning in the day to day. Protected time, handled inbox, and cleaner operations.</p>
-        <div class="in"><span>Executive Assistance</span><span>Virtual Assistance</span><span>Operations &amp; SOPs</span></div>
-        <p style="font-weight:700;color:var(--ink)">More protected time. Less operational overhead.</p>
-      </div>
-      <div class="bundle">
-        <div class="em">📈</div>
+        <div class="uc-tags"><span>Executive Assistance</span><span>Virtual Assistance</span><span>Operations &amp; SOPs</span></div>
+        <span class="more">More protected time. Less operational overhead. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+      </a>
+      <a class="uc-card" href="#services">
+        <img src="downloads/JSH-triptych-creative.jpg" alt="" loading="lazy" aria-hidden="true">
+        <p class="tagline">For sales teams</p>
         <h3>Sales Support</h3>
         <p>For teams that need more conversations and a pipeline they can actually see.</p>
-        <div class="in"><span>B2B Lead Generation</span><span>CRM &amp; Pipeline Management</span><span>Email Outreach</span></div>
-        <p style="font-weight:700;color:var(--ink)">A more organized, consistent prospecting engine.</p>
-      </div>
-      <div class="bundle">
-        <div class="em">⚙️</div>
+        <div class="uc-tags"><span>B2B Lead Generation</span><span>CRM &amp; Pipeline Management</span><span>Email Outreach</span></div>
+        <span class="more">A more organized, consistent prospecting engine. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+      </a>
+      <a class="uc-card" href="#services">
+        <img src="downloads/JSH-triptych-headshot.jpg" alt="" loading="lazy" aria-hidden="true">
+        <p class="tagline">For growing businesses</p>
         <h3>Business Systems</h3>
         <p>For businesses ready to stop depending on people's heads and start running on documented systems.</p>
-        <div class="in"><span>Operations &amp; SOPs</span><span>AI Workflow Automation</span><span>CRM Setup</span></div>
-        <p style="font-weight:700;color:var(--ink)">Repeatable processes with less manual work.</p>
-      </div>
+        <div class="uc-tags"><span>Operations &amp; SOPs</span><span>AI Workflow Automation</span><span>CRM Setup</span></div>
+        <span class="more">Repeatable processes with less manual work. <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ================= HOW I THINK ================= -->
-<section class="think" id="think">
+<section id="think">
   <div class="wrap">
-    <span class="eyebrow">How I Think</span>
-    <h2 class="sec">Systems first, tasks second</h2>
-    <p class="lead">Anyone can do a task. I look at the system around it, because that's where the real time and money are lost.</p>
+    <div class="sec-head">
+      <p class="tagline">How I Think</p>
+      <h2>Systems first, tasks second</h2>
+      <p class="lead">Anyone can do a task. I look at the system around it, because that's where the real time and money are lost.</p>
+    </div>
     <div class="think-grid">
-      <div class="step"><div class="n">01</div><h3>Identify the bottleneck</h3><p>Where is the work actually getting stuck?</p></div>
-      <div class="step"><div class="n">02</div><h3>Understand why it exists</h3><p>Process, tools, or ownership. Usually a mix.</p></div>
-      <div class="step"><div class="n">03</div><h3>Determine the business impact</h3><p>What is this costing in time, money, or attention?</p></div>
-      <div class="step"><div class="n">04</div><h3>Build a repeatable process</h3><p>Design the workflow before touching the work.</p></div>
-      <div class="step"><div class="n">05</div><h3>Execute the work</h3><p>Take ownership and get it done consistently.</p></div>
-      <div class="step"><div class="n">06</div><h3>Automate what makes sense</h3><p>Remove the manual steps software can own.</p></div>
-      <div class="step"><div class="n">07</div><h3>Document the process</h3><p>Write it down so anyone can follow it.</p></div>
-      <div class="step"><div class="n">08</div><h3>Measure and improve</h3><p>Review, refine, and make it better over time.</p></div>
+      <div class="step"><span class="n">01</span><h3>Identify the bottleneck</h3><p>Where is the work actually getting stuck?</p></div>
+      <div class="step"><span class="n">02</span><h3>Understand why it exists</h3><p>Process, tools, or ownership. Usually a mix.</p></div>
+      <div class="step"><span class="n">03</span><h3>Determine the business impact</h3><p>What is this costing in time, money, or attention?</p></div>
+      <div class="step"><span class="n">04</span><h3>Build a repeatable process</h3><p>Design the workflow before touching the work.</p></div>
+      <div class="step"><span class="n">05</span><h3>Execute the work</h3><p>Take ownership and get it done consistently.</p></div>
+      <div class="step"><span class="n">06</span><h3>Automate what makes sense</h3><p>Remove the manual steps software can own.</p></div>
+      <div class="step"><span class="n">07</span><h3>Document the process</h3><p>Write it down so anyone can follow it.</p></div>
+      <div class="step"><span class="n">08</span><h3>Measure and improve</h3><p>Review, refine, and make it better over time.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ================= HOW I WORK ================= -->
-<section class="work" id="how">
+<section id="how">
   <div class="wrap">
-    <span class="eyebrow">How I Work</span>
-    <h2 class="sec">A simple, proven approach</h2>
-    <p class="lead">No mystery, no guesswork. Just a clear sequence that gets you from chaos to systems.</p>
+    <div class="sec-head">
+      <p class="tagline">How I Work</p>
+      <h2>A simple, proven approach</h2>
+      <p class="lead">No mystery, no guesswork. Just a clear sequence that gets you from chaos to systems.</p>
+    </div>
     <div class="work-steps">
-      <div class="wstep"><div class="n">STEP 01</div><h3>Understand</h3><p>I learn your business, your tools, and your priorities before touching anything.</p></div>
-      <div class="wstep"><div class="n">STEP 02</div><h3>Organize</h3><p>I map the work, clean up the data, and set up clear ownership.</p></div>
-      <div class="wstep"><div class="n">STEP 03</div><h3>Execute</h3><p>I take the work off your plate and deliver it consistently.</p></div>
-      <div class="wstep"><div class="n">STEP 04</div><h3>Improve</h3><p>I review what's working and cut what isn't.</p></div>
-      <div class="wstep"><div class="n">STEP 05</div><h3>Systemize</h3><p>I document the process so it survives without me.</p></div>
-      <div class="wstep"><div class="n">STEP 06</div><h3>Automate</h3><p>I hand the repetitive parts to software and keep people for judgment.</p></div>
+      <div class="wstep"><span class="n">Step 01</span><h3>Understand</h3><p>I learn your business, your tools, and your priorities before touching anything.</p></div>
+      <div class="wstep"><span class="n">Step 02</span><h3>Organize</h3><p>I map the work, clean up the data, and set up clear ownership.</p></div>
+      <div class="wstep"><span class="n">Step 03</span><h3>Execute</h3><p>I take the work off your plate and deliver it consistently.</p></div>
+      <div class="wstep"><span class="n">Step 04</span><h3>Improve</h3><p>I review what's working and cut what isn't.</p></div>
+      <div class="wstep"><span class="n">Step 05</span><h3>Systemize</h3><p>I document the process so it survives without me.</p></div>
+      <div class="wstep"><span class="n">Step 06</span><h3>Automate</h3><p>I hand the repetitive parts to software and keep people for judgment.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= TOOLS & SYSTEMS ================= -->
+<!-- ================= TOOLS ================= -->
 <section id="tools">
   <div class="wrap">
-    <span class="eyebrow">Tools &amp; Systems</span>
-    <h2 class="sec">Experience with the tools your business already uses</h2>
-    <p class="lead">I work inside your existing stack. No forced migrations, no learning curve on your side.</p>
+    <div class="sec-head">
+      <p class="tagline">Tools &amp; Systems</p>
+      <h2>Experience with the tools your business already uses</h2>
+      <p class="lead">I work inside your existing stack. No forced migrations, no learning curve on your side.</p>
+    </div>
     <div class="tool-cats">
       <div class="tcat">
-        <h3><span class="em">📇</span>CRM / Sales</h3>
-        <div class="tools">
-          <span>HubSpot</span><span>Pipedrive</span><span>Zoho</span><span>Apollo</span>
-          <span>Seamless.ai</span><span>Swordfish</span><span>LinkedIn Sales Navigator</span><span>LinkedIn Recruiter</span>
-        </div>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg></span>
+        <h3>CRM / Sales</h3>
+        <ul><li>HubSpot</li><li>Pipedrive</li><li>Zoho</li><li>Apollo</li><li>Seamless.ai</li><li>Swordfish</li><li>LinkedIn Sales Navigator</li><li>LinkedIn Recruiter</li></ul>
       </div>
       <div class="tcat">
-        <h3><span class="em">✉️</span>Outreach</h3>
-        <div class="tools">
-          <span>Instantly</span><span>HubSpot Sequences</span><span>ZeroBounce</span><span>Emailable</span>
-        </div>
+        <span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span>
+        <h3>Outreach</h3>
+        <ul><li>Instantly</li><li>HubSpot Sequences</li><li>ZeroBounce</li><li>Emailable</li></ul>
       </div>
       <div class="tcat">
-        <h3><span class="em">🧰</span>Productivity / Ops</h3>
-        <div class="tools">
-          <span>Google Workspace</span><span>Microsoft Office</span><span>Asana</span><span>ClickUp</span>
-          <span>Trello</span><span>Slack</span><span>Notion</span>
-        </div>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-briefcase"/></svg></span>
+        <h3>Productivity / Ops</h3>
+        <ul><li>Google Workspace</li><li>Microsoft Office</li><li>Asana</li><li>ClickUp</li><li>Trello</li><li>Slack</li><li>Notion</li></ul>
       </div>
       <div class="tcat">
-        <h3><span class="em">🏠</span>Property Management</h3>
-        <div class="tools">
-          <span>Buildium</span><span>Propertyware</span><span>AppFolio</span><span>Yardi</span>
-          <span>Zillow</span><span>PropertyGuru</span>
-        </div>
+        <span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-building"/></svg></span>
+        <h3>Property Management</h3>
+        <ul><li>Buildium</li><li>Propertyware</li><li>AppFolio</li><li>Yardi</li><li>Zillow</li><li>PropertyGuru</li></ul>
       </div>
       <div class="tcat">
-        <h3><span class="em">🤖</span>AI / Automation</h3>
-        <div class="tools">
-          <span>Claude</span><span>AI-assisted workflows</span><span>CRM automation</span>
-          <span>Lead enrichment</span><span>Process automation</span>
-        </div>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-sparkles"/></svg></span>
+        <h3>AI / Automation</h3>
+        <ul><li>Claude</li><li>AI-assisted workflows</li><li>CRM automation</li><li>Lead enrichment</li><li>Process automation</li></ul>
       </div>
     </div>
     <p class="tools-note">Experience with these tools across client work. Depth varies by tool, and I'm comfortable learning your stack quickly.</p>
   </div>
 </section>
 
-<!-- ================= EXPERIENCE / CASE STUDIES ================= -->
-<section class="cases-sec" id="experience">
+<!-- ================= CASE STUDIES ================= -->
+<section id="experience">
   <div class="wrap">
-    <span class="eyebrow">Experience &amp; Case Studies</span>
-    <h2 class="sec">What I've actually done for clients</h2>
-    <p class="lead">Real engagements, real problems, real outcomes. Each one shaped how I work today.</p>
+    <div class="sec-head">
+      <p class="tagline">Experience &amp; Case Studies</p>
+      <h2>What I've actually done for clients</h2>
+      <p class="lead">Real engagements, real problems, real outcomes. Each one shaped how I work today.</p>
+    </div>
     <div class="cases">
 
       <article class="case">
-        <div class="meta"><span class="co">Drumheller Construction Management</span><span class="tag">Lead Gen</span></div>
+        <div class="meta"><span class="co">Drumheller Construction Management</span><span class="ctag">Lead Gen</span></div>
         <div class="row"><b>Problem</b><p>Manual prospect research consumed hours and slowed pipeline growth.</p></div>
         <div class="row"><b>What I did</b><p>Owned the end-to-end pipeline: ICP research, list building, outreach, and qualification. Built Claude-based systems that automate prospect matching.</p></div>
         <div class="row"><b>Tools</b><p>Apollo, HubSpot, Claude</p></div>
-        <div class="res"><small>Result</small>Manual research time cut, with a repeatable prospecting process in place.</div>
+        <div class="result"><small>Result</small>Manual research time cut, with a repeatable prospecting process in place.</div>
       </article>
 
       <article class="case">
-        <div class="meta"><span class="co">AKKO</span><span class="tag">Executive Support</span></div>
+        <div class="meta"><span class="co">AKKO</span><span class="ctag">Executive Support</span></div>
         <div class="row"><b>Problem</b><p>VP-level administrative noise consumed attention and follow-ups slipped.</p></div>
         <div class="row"><b>What I did</b><p>Ran inbox, calendar, and CRM administration across HubSpot and ClickUp. Turned meeting recordings into structured action items tracked to completion.</p></div>
         <div class="row"><b>Tools</b><p>HubSpot, ClickUp</p></div>
-        <div class="res"><small>Result</small>Action items tracked to done, not lost in follow-up limbo.</div>
+        <div class="result"><small>Result</small>Action items tracked to done, not lost in follow-up limbo.</div>
       </article>
 
       <article class="case">
-        <div class="meta"><span class="co">BrainGainzLC</span><span class="tag">Operations</span></div>
+        <div class="meta"><span class="co">BrainGainzLC</span><span class="ctag">Operations</span></div>
         <div class="row"><b>Problem</b><p>Redundant operational steps slowed the whole team.</p></div>
         <div class="row"><b>What I did</b><p>Redesigned operational procedures end to end, removing steps that didn't add value.</p></div>
         <div class="row"><b>Tools</b><p>Google Workspace, ClickUp</p></div>
-        <div class="res"><small>Result</small>80% efficiency gain in the redesigned workflows.</div>
+        <div class="result"><small>Result</small>80% efficiency gain in the redesigned workflows.</div>
       </article>
 
       <article class="case">
-        <div class="meta"><span class="co">MintLeads</span><span class="tag">Data &amp; Delivery</span></div>
+        <div class="meta"><span class="co">MintLeads</span><span class="ctag">Data &amp; Delivery</span></div>
         <div class="row"><b>Problem</b><p>The prospect database was messy and sender reputation was at risk.</p></div>
         <div class="row"><b>What I did</b><p>Audited and maintained prospect databases, and managed blacklists and unsubscribes to protect deliverability.</p></div>
         <div class="row"><b>Tools</b><p>HubSpot, ZeroBounce</p></div>
-        <div class="res"><small>Result</small>95% database accuracy and a protected sender reputation.</div>
+        <div class="result"><small>Result</small>95% database accuracy and a protected sender reputation.</div>
       </article>
 
       <article class="case">
-        <div class="meta"><span class="co">Portillo Realty Group</span><span class="tag">Marketing &amp; Ops</span></div>
+        <div class="meta"><span class="co">Portillo Realty Group</span><span class="ctag">Marketing &amp; Ops</span></div>
         <div class="row"><b>Problem</b><p>Team ramp-up was slow and engagement was flat.</p></div>
         <div class="row"><b>What I did</b><p>Created SOPs and onboarding manuals so new team members could ramp faster, and ran targeted social campaigns.</p></div>
         <div class="row"><b>Tools</b><p>Canva, social platforms</p></div>
-        <div class="res"><small>Result</small>25% engagement lift on the campaigns I ran.</div>
+        <div class="result"><small>Result</small>25% engagement lift on the campaigns I ran.</div>
       </article>
 
       <article class="case">
-        <div class="meta"><span class="co">Extenteam</span><span class="tag">B2B Outreach</span></div>
+        <div class="meta"><span class="co">Extenteam</span><span class="ctag">B2B Outreach</span></div>
         <div class="row"><b>Problem</b><p>Outreach was inconsistent and targeting was too broad.</p></div>
         <div class="row"><b>What I did</b><p>Executed multi-touch B2B outreach campaigns targeting hospitality decision-makers.</p></div>
         <div class="row"><b>Tools</b><p>LinkedIn Sales Navigator, email automation</p></div>
-        <div class="res"><small>Result</small>Consistent multi-touch campaigns with cleaner targeting.</div>
+        <div class="result"><small>Result</small>Consistent multi-touch campaigns with cleaner targeting.</div>
       </article>
 
     </div>
     <div class="progression">
       <div class="pl">The progression behind the work</div>
       <div class="prog-track">
-        <div class="prog"><span class="dot"></span><span>Administration</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>Executive Support</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>Business Development</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>Lead Generation</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>CRM / Sales Ops</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>Automation</span></div><span class="arr">→</span>
-        <div class="prog"><span class="dot"></span><span>Operations / Systems</span></div>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Administration</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Executive Support</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Business Development</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Lead Generation</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>CRM / Sales Ops</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Automation</span></div><span class="arr" aria-hidden="true">→</span>
+        <div class="prog"><span class="dot" aria-hidden="true"></span><span>Operations / Systems</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section class="about" id="about">
+<section id="about">
   <div class="wrap about-grid">
     <div class="about-photos">
       <div class="ph tall"><img src="downloads/JSH-triptych-headshot.jpg" alt="Ace Gerada portrait" loading="lazy"></div>
@@ -729,34 +995,41 @@
       <div class="ph"><img src="downloads/JSH-triptych-work.jpg" alt="Ace Gerada at work" loading="lazy"></div>
     </div>
     <div class="about-copy">
-      <span class="eyebrow">About Ace</span>
-      <h2 class="sec">The person behind the systems</h2>
-      <p>I'm <b>Ace John Gerada</b>. For the past <b>9+ years</b>, I've supported founders, executives, and growing businesses across real estate, construction, hospitality, and B2B services.</p>
+      <p class="tagline">About Ace</p>
+      <h2>The person behind the systems</h2>
+      <p style="margin-top:1.1rem">I'm <b>Ace John Gerada</b>. For the past <b>9+ years</b>, I've supported founders, executives, and growing businesses across real estate, construction, hospitality, and B2B services.</p>
       <p>I started in administration and property management, where I learned that the little things keep a business running. Then I moved into executive support, where I learned how much a leader's time is actually worth. From there I went into business development and lead generation, then CRM and sales operations, then automation and systems.</p>
       <p>Every step added a layer. Today I look at a business the way a systems person does: <b>what needs to happen, who owns it, and how do we make it repeatable?</b></p>
       <p>That's what I became good at. <b>Understanding what needs to happen, taking ownership of it, and finding ways to make the process better.</b></p>
-      <div class="about-facts">
-        <div class="fact"><span class="em">🎓</span>BS Electronics &amp; Communications Engineering, National College of Science and Technology</div>
-        <div class="fact"><span class="em">🌍</span>Remote-first, async-friendly, works across time zones</div>
-        <div class="fact"><span class="em">🏠</span>Experience across real estate, construction, hospitality, and B2B</div>
-        <div class="fact"><span class="em">📈</span>From admin to executive support to growth systems</div>
-      </div>
+      <ul class="about-facts">
+        <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-graduation"/></svg>BS Electronics &amp; Communications Engineering, National College of Science and Technology</li>
+        <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg>Remote-first, async-friendly, works across time zones</li>
+        <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"/></svg>Experience across real estate, construction, hospitality, and B2B</li>
+        <li><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trend-up"/></svg>From admin to executive support to growth systems</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ================= DIFFERENTIATION ================= -->
+<!-- ================= WHY WORK WITH ME ================= -->
 <section id="why">
   <div class="wrap">
-    <span class="eyebrow">Why Work With Me</span>
-    <h2 class="sec">Not just a task doer. A business partner.</h2>
-    <p class="lead">Most support people do what they're told. I bring perspective from every side of the business.</p>
+    <div class="sec-head">
+      <p class="tagline">Why Work With Me</p>
+      <h2>Not just a task doer. A business partner.</h2>
+      <p class="lead">Most support people do what they're told. I bring perspective from every side of the business.</p>
+    </div>
     <div class="diff-grid">
-      <div class="diff"><div class="em">🎯</div><h3>Executive perspective</h3><p>I've supported leaders directly. I know what deserves their attention and what doesn't.</p></div>
-      <div class="diff"><div class="em">📈</div><h3>Sales side</h3><p>I've run lead gen and outreach. I understand pipeline, not just tasks.</p></div>
-      <div class="diff"><div class="em">⚙️</div><h3>Operations</h3><p>I've redesigned processes end to end. I know how work actually flows.</p></div>
-      <div class="diff"><div class="em">🤖</div><h3>Technology</h3><p>I build AI workflows and CRM systems. I know what software should own.</p></div>
-      <div class="diff"><div class="em">🔁</div><h3>Improvement mindset</h3><p>I don't just do the work. I look for ways to make the system better.</p></div>
+      <div class="diff"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-eye"/></svg></span>
+        <h3>Executive perspective</h3><p>I've supported leaders directly. I know what deserves their attention and what doesn't.</p></div>
+      <div class="diff"><span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-trend-up"/></svg></span>
+        <h3>Sales side</h3><p>I've run lead gen and outreach. I understand pipeline, not just tasks.</p></div>
+      <div class="diff"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-cog"/></svg></span>
+        <h3>Operations</h3><p>I've redesigned processes end to end. I know how work actually flows.</p></div>
+      <div class="diff"><span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-cpu"/></svg></span>
+        <h3>Technology</h3><p>I build AI workflows and CRM systems. I know what software should own.</p></div>
+      <div class="diff"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span>
+        <h3>Improvement mindset</h3><p>I don't just do the work. I look for ways to make the system better.</p></div>
     </div>
   </div>
 </section>
@@ -765,35 +1038,42 @@
 <section class="cta-sec">
   <div class="wrap">
     <div class="cta-box">
+      <p class="tagline">Let's Talk</p>
       <h2>What's taking up too much of your time right now?</h2>
       <p>Tell me what's slowing you down, and I'll help you identify where I can take ownership.</p>
-      <a class="btn" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
+      <a class="btn btn-primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-copy">
-      <span class="eyebrow">Contact</span>
-      <h2 class="sec">Let's find where I can help</h2>
-      <p>No pressure, no sales pitch. Tell me what's eating your time and I'll tell you honestly where I can take ownership and where you don't need me.</p>
-      <div class="contact-links">
-        <a class="clink" href="mailto:ace.gerada@gmail.com">
-          <span class="em">✉️</span>
-          <span><b>ace.gerada@gmail.com</b><small>Fastest way to reach me</small></span>
-        </a>
-        <a class="clink" href="https://www.linkedin.com/in/virtualacesistant/" target="_blank" rel="noopener">
-          <span class="em">💼</span>
-          <span><b>LinkedIn</b><small>linkedin.com/in/virtualacesistant</small></span>
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tagline">Contact</p>
+      <h2>Let's find where I can help</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <p>No pressure, no sales pitch. Tell me what's eating your time and I'll tell you honestly where I can take ownership and where you don't need me.</p>
+        <div class="contact-links">
+          <a class="clink" href="mailto:ace.gerada@gmail.com">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span>
+            <span><b>ace.gerada@gmail.com</b><small>Fastest way to reach me</small></span>
+          </a>
+          <a class="clink" href="https://www.linkedin.com/in/virtualacesistant/" target="_blank" rel="noopener">
+            <span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></span>
+            <span><b>LinkedIn</b><small>linkedin.com/in/virtualacesistant</small></span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Start with a quick message</h3>
+        <p>Share what's taking up your time, and I'll reply with where I can help and how we'd work together.</p>
+        <a class="btn btn-primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">
+          <svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>Send me a message
         </a>
       </div>
-    </div>
-    <div class="contact-card">
-      <h3>Start with a quick message</h3>
-      <p>Share what's taking up your time, and I'll reply with where I can help and how we'd work together.</p>
-      <a class="btn primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">✉️ Send me a message</a>
     </div>
   </div>
 </section>
@@ -802,54 +1082,115 @@
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <div class="wrap footrow">
-    <span>© 2026 Ace John Gerada · Remote Business Support &amp; Growth Systems</span>
-    <div class="footlinks">
-      <a href="dashboard.html">Dashboard</a>
-      <a href="private/apps.html">Apps</a>
-      <a href="https://www.linkedin.com/in/virtualacesistant/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:ace.gerada@gmail.com">Email</a>
+  <div class="wrap">
+    <div class="footer-card">
+      <div class="footer-top">
+        <div class="footer-cols">
+          <div>
+            <h4>Links</h4>
+            <a href="#problem">The Problem</a>
+            <a href="#services">Services</a>
+            <a href="#how">How I Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#about">About</a>
+          </div>
+          <div>
+            <h4>More</h4>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="private/apps.html">Apps</a>
+            <a href="resume.html">Resume</a>
+            <a href="https://www.linkedin.com/in/virtualacesistant/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <h4>Get in touch</h4>
+          <a class="mail" href="mailto:ace.gerada@gmail.com">ace.gerada@gmail.com</a>
+          <a class="btn btn-primary" href="mailto:ace.gerada@gmail.com?subject=Let's%20talk%20about%20my%20business">Let's Talk</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Ace John Gerada · Remote Business Support &amp; Growth Systems</span>
+        <div class="footer-legal">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="private/apps.html">Apps</a>
+          <a href="mailto:ace.gerada@gmail.com">Email</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
-/* ---------- theme ---------- */
+/* ---------- theme (persisted, respects system preference) ---------- */
 const themeBtn = document.getElementById('themeBtn');
-const setTheme = () => {
-  const cur = document.body.dataset.theme;
-  document.body.dataset.theme = cur === 'dark' ? 'light' : 'dark';
-  themeBtn.textContent = document.body.dataset.theme === 'dark' ? '☀' : '☾';
+const stored = localStorage.getItem('ag-theme');
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const startTheme = stored || (systemDark ? 'dark' : 'light');
+const applyTheme = t => {
+  document.body.dataset.theme = t;
+  themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
 };
-themeBtn.addEventListener('click', setTheme);
+applyTheme(startTheme);
+themeBtn.addEventListener('click', () => {
+  const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('ag-theme', next);
+});
 
 /* ---------- mobile menu ---------- */
 const navrow = document.getElementById('navrow');
 const burger = document.getElementById('burger');
-burger.addEventListener('click', () => navrow.classList.toggle('open'));
-navrow.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', () => navrow.classList.remove('open')));
+const closeMenu = () => {
+  navrow.classList.remove('navrow-open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Open menu');
+  burger.querySelector('use').setAttribute('href', '#i-menu');
+};
+burger.addEventListener('click', () => {
+  const open = navrow.classList.toggle('navrow-open');
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  burger.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
+});
+navrow.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', closeMenu));
 
-/* ---------- service filters ---------- */
-const chips = document.querySelectorAll('#svcFilters .chip');
-const svcs = document.querySelectorAll('#svcGrid .svc');
-chips.forEach(c => c.addEventListener('click', () => {
-  chips.forEach(x => x.classList.remove('on'));
-  c.classList.add('on');
-  const f = c.dataset.f;
-  svcs.forEach(s => s.classList.toggle('hide', f !== 'all' && s.dataset.f !== f));
-}));
+/* ---------- service tabs (WAI-ARIA tabs pattern) ---------- */
+const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+const selectTab = (tab, focus = true) => {
+  tabs.forEach(t => {
+    const selected = t === tab;
+    t.setAttribute('aria-selected', String(selected));
+    t.tabIndex = selected ? 0 : -1;
+  });
+  panels.forEach(p => { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
+  if (focus) tab.focus();
+};
+tabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => selectTab(tab, false));
+  tab.addEventListener('keydown', e => {
+    let target = null;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') target = tabs[(i + 1) % tabs.length];
+    else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') target = tabs[(i - 1 + tabs.length) % tabs.length];
+    else if (e.key === 'Home') target = tabs[0];
+    else if (e.key === 'End') target = tabs[tabs.length - 1];
+    if (target) { e.preventDefault(); selectTab(target); }
+  });
+});
 
 /* ---------- active nav highlight ---------- */
 const navLinks = document.querySelectorAll('.navlinks a');
 const secs = ['problem','services','how','tools','experience','about','contact'];
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(en => {
-    if (en.isIntersecting){
-      navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
-secs.forEach(id => { const el = document.getElementById(id); el && obs.observe(el); });
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  secs.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+}
 </script>
 </body>
 </html>
